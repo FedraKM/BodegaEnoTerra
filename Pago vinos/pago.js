@@ -12,3 +12,11 @@ document.getElementById('icon-carrito').onclick = () => window.location.href = '
 
 //Incio sesion
 document.getElementById('iniciarSesion').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
+
+//lleva a la pagina de commpra-realizada.html
+const botonPagar = document.querySelector('.pagar-ahora');
+
+// Le agregamos el evento
+botonPagar.addEventListener('click', () => {
+    window.location.href = '../compra-realizada/compra-realizada.html';
+});
