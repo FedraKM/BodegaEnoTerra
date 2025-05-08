@@ -28,6 +28,14 @@
         </nav>
       </header>
 
+          
+      <!-- lupa -> barra de busqueda (AGREGADO)  -->
+      <div class="search-bar">
+        <img src="../Imagenes/lupa.png" alt="Buscar">
+        <input type="text" placeholder="Buscar...">
+        <button class="close-btn">&times;</button>
+      </div>
+
       <main class="checkout">
         <section class="formulario">
           <h2>Contacto <a id="iniciarSesion">Iniciar sesión</a></h2>
@@ -86,6 +94,7 @@
             </div>
          </div>
 
+         <!-- Opción 1: Tarjeta -->
          <div class="pago-tarjeta">
 
             <div class="una-columna">
@@ -121,6 +130,7 @@
             </div>
          </div>
 
+         <!-- Opción 2: Mercado Pago -->
          <div class="pago-alternativo">
             <div class="checkbox">
                 <input type="checkbox" id="mercado-pago">
@@ -133,7 +143,16 @@
                 <img src="../Imagenes/logo_mastercard.png" alt="MasterCard">
                 <span>+2</span>
             </div>
+
+            
          </div>
+
+         <div class="pago-cuerpo">
+          <img src="../Imagenes/navegador.png" alt="Ventana navegador" class="navegador-icono">
+          <p>
+            Después de hacer clic en “Pagar ahora”, serás redirigido a Mercado Pago para completar tu compra de forma segura.
+          </p>
+        </div>
 
          <button class="pagar-ahora">PAGAR AHORA</button>
 
@@ -169,6 +188,33 @@
           </div>
         </section>
       </main>
+      <!-- Carrito lateral -->
+      <div id="carrito-lateral">
+        <div class="carrito-header">
+          <h2>MI CARRITO</h2>
+          <img id="cerrar-carrito" src="../Imagenes/multiple.png" alt="Cerrar">
+        </div>
+        <ul id="lista-carrito"></ul>
+        <div class="carrito-body">
+          <p id="carrito-vacio">El carrito está vacío</p>
+        </div>
+        <div class="carrito-footer">
+          <div class="total-carrito">
+            <span class="label-total">Total:</span>
+            <span id="total-carrito">$0</span>
+          </div>
+          <p class="nota-envio">Gastos de envío y descuentos calculado al momento de pagar</p>
+          <div class="botonesCarrito">
+            <button class="btn-comprar">COMPRAR</button>
+            <button class="btn-seguir">SEGUIR COMPRANDO</button>
+          </div>
+          <p class="envio-gratis">¡YA TENÉS ENVÍO GRATIS!</p>
+        </div>
+      </div>
+
+      <div id="overlay"></div>
+      
       <script src="../Pago vinos/pago.js"></script>
+
 </body>
 </html>

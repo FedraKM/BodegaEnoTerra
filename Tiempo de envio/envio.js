@@ -8,11 +8,16 @@ document.getElementById('link-contacto').onclick = () => window.location.href = 
 // Íconos
 document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
 
-//Boton reservar
-document.getElementById('btn-reservar').addEventListener('click', function(e) {
-  e.preventDefault(); // Evita el comportamiento por defecto del <a>
-  window.location.href = '../Reservas/reservas.html'; // Redirige
-});
+//Acordeon funcionamiento
+const botones = document.querySelectorAll(".acordeon-btn");
+
+  botones.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      const respuesta = btn.nextElementSibling;
+      respuesta.style.display = (respuesta.style.display === "block") ? "none" : "block";
+    });
+  });
 
 //Funcionamiento de carrito
 document.addEventListener('DOMContentLoaded', () => {
@@ -114,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-  
+
 // --- BARRA DE BÚSQUEDA ---
 document.addEventListener("DOMContentLoaded", function () {
   const btnBuscar = document.getElementById("icon-buscar");

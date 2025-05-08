@@ -5,26 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto - Bodega EnoTerra</title>
   <link rel="stylesheet" href="contacto.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
 
 </head>
 <body>
   <header>
-    <img src="../Imagenes/logoEnoTerra.png" alt="Logo Enoterra" class="logo" />
-    <nav>
-      <ul class="nav-links">
-        <li><a id="link-home">HOME</a></li>
-        <li><a id="link-vinos">VINOS</a></li>
-        <li><a id="link-enoturismo">ENOTURISMO</a></li>
-        <li><a id="link-ubicacion">UBICACIÓN</a></li>
-        <li><a id="link-contacto">CONTACTO</a></li>
-        <li class="icons">
-          <a href="#"><img src="../Imagenes/agregar-usuario.png" alt="Usuario" class="icono" id="icon-usuario" /></a>
-          <a href="#"><img src="../Imagenes/lupa.png" alt="Buscar" class="icono" id="icon-buscar" /></a>
-          <a href="#"><img src="../Imagenes/carrito-de-compras.png" alt="Carrito" class="icono" id="icon-carrito"/></a>
-        </li>
-      </ul>
-    </nav>
+      <div class="logo">
+        <img src="../Imagenes/logoEnoTerra.png" alt="Enoterra">
+      </div>
+      <nav>
+        <ul>
+          <li><a id="link-home">HOME</a></li>
+          <li><a id="link-vinos">VINOS</a></li>
+          <li><a id="link-enoturismo">ENOTURISMO</a></li>
+          <li><a id="link-ubicacion">UBICACIÓN</a></li>
+          <li><a id="link-contacto">CONTACTO</a></li>
+        </ul>
+        <div class="iconos">
+          <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
+          <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
+          <img id="icon-carrito" src="../Imagenes/carrito-de-compras.png" alt="Carrito">
+        </div>
+      </nav>
   </header>
+
+  <!-- lupa -> barra de busqueda (AGREGADO)  -->
+  <div class="search-bar">
+    <img src="../Imagenes/lupa.png" alt="Buscar">
+    <input type="text" placeholder="Buscar...">
+    <button class="close-btn">&times;</button>
+  </div>
 
   <main>
     <section class="hero">
@@ -43,6 +53,32 @@
       </div>
     </section>
   </main>
+  <!-- Carrito lateral -->
+  <div id="carrito-lateral">
+    <div class="carrito-header">
+      <h2>MI CARRITO</h2>
+      <img id="cerrar-carrito" src="../Imagenes/multiple.png" alt="Cerrar">
+    </div>
+    <ul id="lista-carrito"></ul>
+    <div class="carrito-body">
+      <p id="carrito-vacio">El carrito está vacío</p>
+    </div>
+    <div class="carrito-footer">
+      <div class="total-carrito">
+        <span class="label-total">Total:</span>
+        <span id="total-carrito">$0</span>
+      </div>
+      <p class="nota-envio">Gastos de envío y descuentos calculado al momento de pagar</p>
+      <div class="botonesCarrito">
+        <button class="btn-comprar">COMPRAR</button>
+        <button class="btn-seguir">SEGUIR COMPRANDO</button>
+      </div>
+      <p class="envio-gratis">¡YA TENÉS ENVÍO GRATIS!</p>
+    </div>
+  </div>
+
+  <div id="overlay"></div>
+
   <script src="contacto.js"></script>
 </body>
 </html>
