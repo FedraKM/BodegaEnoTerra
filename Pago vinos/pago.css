@@ -173,6 +173,36 @@
     gap: 0.5rem;
   }
 
+  .pago-cuerpo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #F4F4F4;
+    padding: 1rem;
+
+    /* Bordes izquierdo, derecho e inferior */
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+
+    /* Solo redondear las esquinas inferiores */
+    border-radius: 0 0 8px 8px;
+
+    /* Asegurarse de que no haya borde arriba */
+    border-top: none;
+  }
+  
+  .navegador-icono {
+    width: 40%;
+    height: auto;
+  }
+  
+  .pago-cuerpo p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #444;
+  }
+
   .pagar-ahora {
     margin-top: 1.5rem;
     width: 100%;
@@ -196,7 +226,7 @@
     top: 6.5rem; /* espacio desde el top cuando hace sticky */
     align-self: flex-start;
     height: fit-content;
-    height: 500px;
+    height: 600px;
   }
   
   .producto {
