@@ -5,55 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registro - Enoterra</title>
   <link rel="stylesheet" href="registro.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <header>
+  <header class="encabezado">
     <div class="logo">
-      <img src="logoEnoTerra.png" alt="Enoterra" />
+      <img src="logoEnoTerra.png" alt="Enoterra" class="logo" />
     </div>
     <nav>
-      <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">VINOS</a></li>
-        <li><a href="#">ENOTURISMO</a></li>
-        <li><a href="#">UBICACIÓN</a></li>
-        <li><a href="#">CONTACTO</a></li>
+      <ul class="menu">
+        <li><a id="link-home">HOME</a></li>
+          <li><a id="link-vinos">VINOS</a></li>
+          <li><a id="link-enoturismo">ENOTURISMO</a></li>
+          <li><a id="link-ubicacion">UBICACIÓN</a></li>
+          <li><a id="link-contacto">CONTACTO</a></li>
       </ul>
       <div class="iconos">
-        <img src="agregar-usuario.png" alt="Usuario" />
-        <img src="lupa.png" alt="Buscar" />
-        <img src="carrito-de-compras.png" alt="Carrito" />
+        <img src="agregar-usuario.png" alt="Usuario" id="icon-usuario"/>
+        <img src="lupa.png" alt="Buscar" id="icon-buscar" />
+        <img src="carrito-de-compras.png" alt="Carrito" id="icon-carrito"/>
       </div>
     </nav>
   </header>
 
-  <main class="registro-container">
+  <main class="contenedor">
     <h1>REGISTRARSE</h1>
     <p class="instruccion">Escribe tu correo electrónico y contraseña para registrarte:</p>
 
-    <form class="formulario-registro">
-      <input type="email" placeholder="Correo electrónico" required />
-      <input type="password" placeholder="Contraseña" required />
-      <input type="password" placeholder="Confirmar contraseña" required />
-      <button type="submit">REGISTRARSE</button>
+    <form method="post">
+      <input type="email" id="correo" placeholder="Correo electrónico" required />
+
+      <div class="input-contrasena">
+        <input type="password" id="contrasena" placeholder="Contraseña" required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número">
+        <span id="toggle-password" style="cursor: pointer;">👁️</span>
+      </div>
+
+      <div class="input-contrasena">
+        <input type="password" id="re-contrasena" placeholder="Confirmar contraseña" required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número">
+        <span id="toggle-repassword" style="cursor: pointer;">👁️</span>
+      </div>
+
+      <button type="submit" id="btn-registrarse">REGISTRARSE</button>
     </form>
 
-    <p class="ya-cuenta">
-      ¿Ya tienes cuenta? <a href="#">Iniciar sesión</a>
-    </p>
+    <p class="registro">¿Ya tienes cuenta? <a href="#" id="link-iniciar-sesion">Iniciar sesión</a></p>
   </main>
 
-  <script>
-    const form = document.querySelector(".formulario-registro");
-    form.addEventListener("submit", function (e) {
-      const pass = form.querySelectorAll("input[type='password']");
-      if (pass[0].value !== pass[1].value) {
-        e.preventDefault();
-        alert("Las contraseñas no coinciden.");
-      }
-    });
-  </script>
+  <script src="registro.js"></script>
+
 
 </body>
 </html>
