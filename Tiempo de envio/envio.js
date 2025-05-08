@@ -10,22 +10,16 @@ document.getElementById('icon-usuario').onclick = () => window.location.href = '
 document.getElementById('icon-buscar').onclick = () => window.location.href = '../Busqueda/busqueda.html';
 
 
-//Boton comprar
-const botones = document.querySelectorAll('.comprar-btn');
+//Acordeon funcionamiento
+const botones = document.querySelectorAll(".acordeon-btn");
 
-botones.forEach(boton => {
-  boton.addEventListener('click', () => {
-    window.location.href = '../Pago vinos/pago.html';
+  botones.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      const respuesta = btn.nextElementSibling;
+      respuesta.style.display = (respuesta.style.display === "block") ? "none" : "block";
+    });
   });
-});
-
-//Boton envios
-document.addEventListener("DOMContentLoaded", () => {
-  const botonTiempos = document.querySelector(".ver-tiempos");
-  botonTiempos.addEventListener("click", () => {
-      window.location.href = "../Tiempo de envio/envio.html";
-  });
-});
 
 //Funcionamiento de carrito
 document.addEventListener('DOMContentLoaded', () => {

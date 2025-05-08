@@ -55,115 +55,94 @@
   }
   
   .banner {
-    background: url('../Imagenes/PortadaNuestrosVinos.jpg') no-repeat center center/cover;
+    background: url('../Imagenes/portadaEnvios.png') no-repeat center center/cover;
     padding: 120px 0;
     text-align: center;
     color: white;
   }
-  
-  .banner h2 {
-    font-size: 30px;
-    text-shadow: 1px 1px 2px #000;
+
+  .seguimiento-envio {
     text-align: center;
-  }
-  
-  .lanzamientos {
-    background-color: #4A0606; /* Fondo oscuro */
-    color: white; /* Texto blanco */
     padding: 40px 20px;
-    text-align: center;
-    position: relative; /* Necesario para posicionar las líneas */
-  }
-
-  .lanzamientos h2 {
-    font-size: 26px;
-    margin: 0;
-    padding: 0;
-    font-weight: lighter;
-    text-shadow: 1px 1px 2px #000;
-    position: relative; /* Para que las líneas se posicionen de forma relativa al título */
-  }
-
-  .lanzamientos h2::before,
-  .lanzamientos h2::after {
-    content: "";
-    position: absolute;
-    top: 50%; /* Centra las líneas en el eje vertical */
-    width: 50%; /* Las líneas cubrirán la mitad de la sección (izquierda y derecha) */
-    height: 2px; /* Grosor de las líneas */
-    background-color: white; /* Color blanco de la línea */
-  }
-
-  .lanzamientos h2::before {
-    right: 50%; /* La línea izquierda va desde el borde izquierdo hasta el final de la palabra */
-    margin-right: 110px; /* Espacio adicional entre la palabra y la línea */
-  }
-
-  .lanzamientos h2::after {
-    left: 50%; /* La línea derecha va desde el final de la palabra hasta el borde derecho */
-    margin-left: 110px; /* Espacio adicional entre la palabra y la línea */
-  }
-  
-  .productos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 30px;
-  }
-  
-  .producto {
-    background-color: #ececec;
+    background-color: #fff;
     color: #4A0606;
-    border-radius: 8px;
-    padding: 15px;
-    width: 230px;
-    position: relative;
+  }
+  
+  .seguimiento-envio h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .seguimiento-envio a {
+    color: #913B3B;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .seguimiento-envio .info-envio {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+  
+  .mapa-envio img {
+    max-width: 60%;
+    height: auto;
+  }
+
+  /*Acordeon de preguntas*/
+
+  .faq-envios {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Inria Serif', serif;
+  }
+  
+  .faq-envios h2 {
     text-align: center;
+    margin-bottom: 30px;
+    color: #4A0606;
   }
   
-  .producto img {
-    height: 255px;
+  .acordeon .pregunta {
+    border-bottom: 1px solid #444;
+    margin-bottom: 10px;
   }
   
-  .descuento {
-    background-color: #111;
-    color: white;
-    font-size: 12px;
-    border-radius: 50%;
-    padding: 10px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-  
-  .precio-original {
-    text-decoration: line-through;
-    color: #555;
-    margin: 5px 0;
-  }
-  
-  .precio-descuento {
+  .acordeon-btn {
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    font-size: 1.1rem;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
     color: #4A0606;
     font-weight: bold;
-    margin: 5px 0;
-    font-size: 24px;
   }
   
-  .detalle-precio {
-    font-size: 13px;
-    color: #444;
-    margin: 10px 0;
+  .acordeon-btn::after {
+    content: "▾";
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s;
   }
   
-  .agregar-carrito {
-    background-color: #560f13;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 13px;
-    cursor: pointer;
+  .acordeon-btn.active::after {
+    transform: rotate(180deg);
+  }
+  
+  .respuesta {
+    display: none;
+    padding: 0 15px 15px 15px;
+    color: #4A0606;
   }
 
   /*Carrito lateral*/
@@ -398,5 +377,3 @@
   margin-top: 20px;
   align-items: center;
 }
-
-
