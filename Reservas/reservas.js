@@ -11,5 +11,5 @@ document.getElementById('icon-buscar').onclick = () => window.location.href = '.
 document.getElementById('icon-carrito').onclick = () => window.location.href = '../DetalleProducto/compra.html';
 
 // Botones de reserva
-document.getElementById('btn-degustacion').onclick = () => window.location.href = '../Reservas/degustacion.html';
-document.getElementById('btn-almuerzo').onclick = () => window.location.href = '../Reservas/almuerzo.html';
+document.getElementById('link-degustaciones').onclick = () => window.location.href = '../reservas degustaciones/reservas-degustaciones.html';
+document.getElementById('link-almuerzos').onclick = () => window.location.href = '../reservas almuerzos/reservas-almuerzo.html';

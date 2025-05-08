@@ -7,24 +7,26 @@
   <link rel="stylesheet" href="reservas.css" />
 </head>
 <body>
-  <header>
+  <header class="navbar">
     <div class="logo">
-      <img src="logoEnoTerra.png" alt="Enoterra" />
+      <img src="../Imagenes/EnoterraLogo.jpeg" alt="Enoterra Logo" />
     </div>
+  
     <nav>
-      <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">VINOS</a></li>
-        <li><a href="#">ENOTURISMO</a></li>
-        <li><a href="#">UBICACIÓN</a></li>
-        <li><a href="#">CONTACTO</a></li>
+      <ul class="nav-links">
+        <li><a id="link-home">HOME</a></li>
+        <li><a id="link-vinos">VINOS</a></li>
+        <li><a id="link-enoturismo">ENOTURISMO</a></li>
+        <li><a id="link-ubicacion">UBICACIÓN</a></li>
+        <li><a id="link-contacto">CONTACTO</a></li>
       </ul>
-      <div class="iconos">
-        <img src="agregar-usuario.png" alt="Usuario" />
-        <img src="lupa.png" alt="Buscar" />
-        <img src="carrito-de-compras.png" alt="Carrito" />
-      </div>
     </nav>
+  
+    <div class="iconos">
+      <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
+      <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
+      <img id="icon-carrito" src="../Imagenes/carrito-de-compras.png" alt="Carrito">
+    </div>
   </header>
 
   <section class="hero">
@@ -43,7 +45,7 @@
       <h5>DEGUSTACIONES</h5>
       <h2>Hacer reserva</h2>
       <p>Para degustaciones, el horario es de mañana (10:30 hs.) o (11:30 hs).</p>
-      <a href="#" class="btn">RESERVAR</a>
+      <a id="link-degustaciones" class="btn">RESERVAR</a>
     </div>
 
     <div class="box almuerzo">
@@ -51,8 +53,9 @@
       <h5>ALMUERZO</h5>
       <h2>Hacer reserva</h2>
       <p>Horario de almuerzo de 12:30 hs a 14:30 hs.</p>
-      <a href="#" class="btn">RESERVAR</a>
+      <a id="link-almuerzos" class="btn">RESERVAR</a>
     </div>
   </section>
+  <script src="reservas.js"></script>
 </body>
 </html>

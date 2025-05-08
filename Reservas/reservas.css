@@ -51,7 +51,7 @@ nav ul li a {
 /* Hero */
 .hero {
   position: relative;
-  height: 60vh;
+  height: 40vh;
   background: url('fotoreservas.jpeg') center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -91,11 +91,21 @@ nav ul li a {
 }
 
 .box {
-  flex: 0 0 50vw;        
-  padding: 2rem;
+  flex: 0 0 50vw;
+  min-height: 400px; 
+  padding: 3rem;
   text-align: center;
   box-sizing: border-box;
+  
+  /* Centrado del contenido */
+  display: flex;
+  flex-direction: column; /* Acomoda el contenido en columna */
+  align-items: center;    /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
 }
+
+
+
 
 
 .degustaciones {

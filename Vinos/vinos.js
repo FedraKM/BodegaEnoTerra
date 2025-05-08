@@ -8,6 +8,8 @@ document.getElementById('link-contacto').onclick = () => window.location.href = 
 // Íconos
 document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
 document.getElementById('icon-buscar').onclick = () => window.location.href = '../Busqueda/busqueda.html';
+document.getElementById('icon-buscar').onclick = () => window.location.href = '../buscador-vinos/buscador.html';
+
 
 //Carrito lateral
 document.addEventListener('DOMContentLoaded', () => {

@@ -27,12 +27,14 @@
         <h1>INICIAR SESIÓN</h1>
         <p><strong>Escribe tu correo electrónico y contraseña para iniciar sesión:</strong></p>
 
-        <form>
-            <input type="email" placeholder="Correo electrónico" required>
+        <form method = "post">
+            <input type="email" id="correo" placeholder="Correo electrónico" required>
             <div class="input-contrasena">
-                <input type="password" placeholder="Contraseña" required>
-                <a href="#">¿olvidaste la contraseña?</a>
+                <input type="password" id="contrasena" placeholder="Contraseña" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número">
+                <span id="toggle-password" style="cursor: pointer;">👁️</span>
             </div>
+            <a href="#" class="link-olvido">¿Olvidaste la contraseña?</a>
             <button type="submit" id="btn-iniciar-sesion">INICIAR SESIÓN</button>
         </form>
 

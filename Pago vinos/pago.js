@@ -12,6 +12,7 @@ document.getElementById('icon-buscar').onclick = () => window.location.href = '.
 //Incio sesion
 document.getElementById('iniciarSesion').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
 
+
 //Funcionamiento de carrito
 document.addEventListener('DOMContentLoaded', () => {
     const carritoLateral = document.getElementById('carrito-lateral');
@@ -112,3 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+//lleva a la pagina de commpra-realizada.html
+const botonPagar = document.querySelector('.pagar-ahora');
+
+// Le agregamos el evento
+botonPagar.addEventListener('click', () => {
+    window.location.href = '../compra-realizada/compra-realizada.html';
+});
+
