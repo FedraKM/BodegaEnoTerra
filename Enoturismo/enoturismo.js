@@ -7,8 +7,6 @@ document.getElementById('link-contacto').onclick = () => window.location.href = 
 
 // Íconos
 document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
-document.getElementById('icon-buscar').onclick = () => window.location.href = '../Busqueda/busqueda.html';
-
 
 //Funcionamiento de carrito
 document.addEventListener('DOMContentLoaded', () => {
@@ -111,4 +109,59 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  //Funcionamiento formulario
+  document.addEventListener('DOMContentLoaded', () => {
+    const botonReservar = document.querySelector('.reservar-btn');
+    const popup = document.getElementById('popupFormulario');
+    const cerrarBtn = document.querySelector('.cerrar-popup');
+
+    botonReservar.addEventListener('click', () => {
+      popup.style.display = 'block';
+    });
+
+    cerrarBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    // Cierra el popup si se hace clic fuera del formulario
+    window.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.style.display = 'none';
+      }
+    });
+  });
+
+ // --- BARRA DE BÚSQUEDA ---
+ document.addEventListener("DOMContentLoaded", function () {
+  const btnBuscar = document.getElementById("icon-buscar");
+  const searchBar = document.querySelector(".search-bar");
+  const closeBtn = document.querySelector(".close-btn");
+
+  // Alternar visibilidad al hacer clic en el icono de búsqueda
+  btnBuscar.addEventListener("click", function (event) {
+    event.stopPropagation();
+    if (searchBar.style.display === "flex") {
+      searchBar.style.display = "none";
+    } else {
+      searchBar.style.display = "flex";
+    }
+  });
+
+  // Cerrar al hacer clic en el botón "X"
+  closeBtn.addEventListener("click", function () {
+    searchBar.style.display = "none";
+  });
+
+  // Cerrar al hacer clic fuera de la barra de búsqueda
+  document.addEventListener("click", function (event) {
+    if (searchBar.style.display === "flex" && !searchBar.contains(event.target) && event.target !== btnBuscar) {
+      searchBar.style.display = "none";
+    }
+  });
+
+  // Prevenir cierre si se hace clic dentro de la barra
+  searchBar.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+});
   

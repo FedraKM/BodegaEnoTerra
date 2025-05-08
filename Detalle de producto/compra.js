@@ -7,8 +7,6 @@ document.getElementById('link-contacto').onclick = () => window.location.href = 
 
 // Íconos
 document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
-document.getElementById('icon-buscar').onclick = () => window.location.href = '../Busqueda/busqueda.html';
-
 
 //Boton comprar
 const botones = document.querySelectorAll('.comprar-btn');
@@ -126,4 +124,39 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = '../Detalle de producto/compra.html'; 
     });
   }
+});
+
+
+ // --- BARRA DE BÚSQUEDA ---
+ document.addEventListener("DOMContentLoaded", function () {
+  const btnBuscar = document.getElementById("icon-buscar");
+  const searchBar = document.querySelector(".search-bar");
+  const closeBtn = document.querySelector(".close-btn");
+
+  // Alternar visibilidad al hacer clic en el icono de búsqueda
+  btnBuscar.addEventListener("click", function (event) {
+    event.stopPropagation();
+    if (searchBar.style.display === "flex") {
+      searchBar.style.display = "none";
+    } else {
+      searchBar.style.display = "flex";
+    }
+  });
+
+  // Cerrar al hacer clic en el botón "X"
+  closeBtn.addEventListener("click", function () {
+    searchBar.style.display = "none";
+  });
+
+  // Cerrar al hacer clic fuera de la barra de búsqueda
+  document.addEventListener("click", function (event) {
+    if (searchBar.style.display === "flex" && !searchBar.contains(event.target) && event.target !== btnBuscar) {
+      searchBar.style.display = "none";
+    }
+  });
+
+  // Prevenir cierre si se hace clic dentro de la barra
+  searchBar.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
 });

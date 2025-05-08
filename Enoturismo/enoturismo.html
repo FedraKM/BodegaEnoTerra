@@ -30,6 +30,15 @@
         </nav>
     </header>
 
+    
+    <!-- lupa -> barra de busqueda (AGREGADO)  -->
+    <div class="search-bar">
+      <img src="../Imagenes/lupa.png" alt="Buscar">
+      <input type="text" placeholder="Buscar...">
+      <button class="close-btn">&times;</button>
+    </div>
+
+
     <section class="banner">
         <h2>ENOTURISMO</h2>
     </section>
@@ -96,6 +105,32 @@
     </div>
 
     <div id="overlay"></div>
+
+    <!-- Formulario -->
+    <div class="popup" id="popupFormulario">
+      <button class="cerrar-popup">
+        <img src="../Imagenes/multiple.png" alt="Cerrar" />
+      </button>
+    
+      <form class="formulario">
+        <h3>RESERVA</h3>
+        <label>Nombre <input type="text" /></label>
+        <label>Apellido <input type="text" /></label>
+        <label>Fecha de reserva <input type="date" /></label>
+        <label>Hora <input type="time" /></label>
+        <label>Cantidad de comensales
+          <select>
+            <option>Seleccione</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 o más</option>
+          </select>
+        </label>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
 
     <script src="enoturismo.js"></script>
 </body>

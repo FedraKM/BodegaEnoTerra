@@ -5,32 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reservas - Enoterra</title>
   <link rel="stylesheet" href="reservas.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="navbar">
+  <header>
     <div class="logo">
-      <img src="../Imagenes/EnoterraLogo.jpeg" alt="Enoterra Logo" />
+      <img src="../Imagenes/logoEnoTerra.png" alt="Enoterra">
     </div>
-  
     <nav>
-      <ul class="nav-links">
+      <ul>
         <li><a id="link-home">HOME</a></li>
         <li><a id="link-vinos">VINOS</a></li>
         <li><a id="link-enoturismo">ENOTURISMO</a></li>
         <li><a id="link-ubicacion">UBICACIÓN</a></li>
         <li><a id="link-contacto">CONTACTO</a></li>
       </ul>
+      <div class="iconos">
+        <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
+        <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
+        <img id="icon-carrito" src="../Imagenes/carrito-de-compras.png" alt="Carrito">
+      </div>
     </nav>
-  
-    <div class="iconos">
-      <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
-      <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
-      <img id="icon-carrito" src="../Imagenes/carrito-de-compras.png" alt="Carrito">
-    </div>
   </header>
 
+  
+  <!-- lupa -> barra de busqueda (AGREGADO)  -->
+  <div class="search-bar">
+    <img src="../Imagenes/lupa.png" alt="Buscar">
+    <input type="text" placeholder="Buscar...">
+    <button class="close-btn">&times;</button>
+  </div>
+
   <section class="hero">
-    <div class="overlay">
+    <div class="banner">
       <h4>ENOTERRA</h4>
       <h1>RESTAURANTE</h1>
       <p>
@@ -41,7 +48,7 @@
 
   <section class="reservas">
     <div class="box degustaciones">
-      <img src="telefonoIcono.jpeg" alt="Teléfono" class="res-icon" />
+      <img src="../Imagenes/telefonoIcono.png" alt="Teléfono" class="res-icon" />
       <h5>DEGUSTACIONES</h5>
       <h2>Hacer reserva</h2>
       <p>Para degustaciones, el horario es de mañana (10:30 hs.) o (11:30 hs).</p>
@@ -49,13 +56,92 @@
     </div>
 
     <div class="box almuerzo">
-      <img src="comidaIcono.jpeg" alt="Cubiertos" class="res-icon" />
+      <img src="../Imagenes/comidaIcono.png" alt="Cubiertos" class="res-icon" />
       <h5>ALMUERZO</h5>
       <h2>Hacer reserva</h2>
       <p>Horario de almuerzo de 12:30 hs a 14:30 hs.</p>
       <a id="link-almuerzos" class="btn">RESERVAR</a>
     </div>
   </section>
+
+  <!-- Formulario almuerzo -->
+  <div class="popup" id="formularioAlmuerzo">
+    <button class="cerrar-popup">
+      <img src="../Imagenes/multiple.png" alt="Cerrar" />
+    </button>
+  
+    <form class="formulario">
+      <h3>RESERVA PARA ALMUERZOS</h3>
+      <label>Nombre <input type="text" /></label>
+      <label>Apellido <input type="text" /></label>
+      <label>Fecha de reserva <input type="date" /></label>
+      <label>Hora <input type="time" /></label>
+      <label>Cantidad de comensales
+        <select>
+          <option>Seleccione</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5 o más</option>
+        </select>
+      </label>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Formulario DEGUSTACIONES -->
+  <div class="popup" id="formularioDegustacion">
+    <button class="cerrar-popup">
+      <img src="../Imagenes/multiple.png" alt="Cerrar" />
+    </button>
+  
+    <form class="formulario">
+      <h3>RESERVA PARA DEGUSTACIONES</h3>
+      <label>Nombre <input type="text" /></label>
+      <label>Apellido <input type="text" /></label>
+      <label>Fecha de reserva <input type="date" /></label>
+      <label>Hora <input type="time" /></label>
+      <label>Cantidad de comensales
+        <select>
+          <option>Seleccione</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5 o más</option>
+        </select>
+      </label>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Carrito lateral -->
+  <div id="carrito-lateral">
+    <div class="carrito-header">
+      <h2>MI CARRITO</h2>
+      <img id="cerrar-carrito" src="../Imagenes/multiple.png" alt="Cerrar">
+    </div>
+    <ul id="lista-carrito"></ul>
+    <div class="carrito-body">
+      <p id="carrito-vacio">El carrito está vacío</p>
+    </div>
+    <div class="carrito-footer">
+      <div class="total-carrito">
+        <span class="label-total">Total:</span>
+        <span id="total-carrito">$0</span>
+      </div>
+      <p class="nota-envio">Gastos de envío y descuentos calculado al momento de pagar</p>
+      <div class="botonesCarrito">
+        <button class="btn-comprar">COMPRAR</button>
+        <button class="btn-seguir">SEGUIR COMPRANDO</button>
+      </div>
+      <p class="envio-gratis">¡YA TENÉS ENVÍO GRATIS!</p>
+    </div>
+  </div>
+
+  <div id="overlay"></div>
+
   <script src="reservas.js"></script>
 </body>
 </html>

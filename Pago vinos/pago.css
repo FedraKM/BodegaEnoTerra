@@ -526,3 +526,42 @@
   margin-top: 20px;
   align-items: center;
 }
+
+/* BARRA BUSQUEDA(esta oculta)*/
+.search-bar {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.search-bar img {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  font-size: 18px;
+  background: transparent;
+  outline: none;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #7c3d3d;
+  cursor: pointer;
+  margin-left: 10px;
+}
