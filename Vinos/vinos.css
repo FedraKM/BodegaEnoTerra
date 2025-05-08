@@ -165,3 +165,67 @@
     cursor: pointer;
   }
   
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .search-bar img {
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    border: none;
+    font-size: 18px;
+    background: transparent;
+    outline: none;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #7c3d3d;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .banner {
+    position: relative;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    margin: 20px 0;
+  }
+  
+  .overlay {
+    text-shadow: 1px 1px 2px #000;
+    background-color: #4a060691;
+    color: white;
+    width: 450px;
+    height: 55px;
+    font-weight: lighter;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 55px;
+    border-radius: 4px;
+    font-size: 24px;
+    z-index: 1;
+    cursor: pointer;
+  }
