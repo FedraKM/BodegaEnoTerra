@@ -10,22 +10,40 @@ document.getElementById('icon-usuario').onclick = () => window.location.href = '
 document.getElementById('icon-buscar').onclick = () => window.location.href = '../Busqueda/busqueda.html';
 document.getElementById('icon-carrito').onclick = () => window.location.href = '../Detalle de producto/compra.html';
 
-//Boton "Registrarse"
+// Botón "Registrarse"
 document.getElementById('btn-registrarse').onclick = (e) => {
   e.preventDefault();
-  
+
   const formulario = document.querySelector('form');
+  const pass = document.getElementById("contrasena").value;
+  const rePass = document.getElementById("re-contrasena").value;
 
-  if (formulario.checkValidity()) {
-      // Redirigir después del mensaje
-      window.location.href = '../Home/home.html'; 
-
-      // Mostrar mensaje de sesión iniciada
-      alert("Se ha registrado correctamente");
-  } else {
-      // Mostrar validación nativa del navegador
-      formulario.reportValidity();
+  if (!formulario.checkValidity()) {
+    formulario.reportValidity();
+    return;
   }
+
+  if (pass !== rePass) {
+    mostrarModal("Las contraseñas no coinciden.");
+    return;
+  }
+
+  // Si todo está bien
+  document.getElementById('modal').style.display = 'block';
+};
+
+// Botón cerrar modal success
+document.getElementById('btn-cerrar-success').onclick = () => {
+  // Oculta el modal
+  document.getElementById('modal').style.display = 'none';
+  
+  // Redirige al home
+  window.location.href = '../Home/home.html';
+};
+
+// Botón cerrar modal de error
+document.getElementById('btn-cerrar-error').onclick = () => {
+  document.getElementById('modal-error').style.display = 'none';
 };
 
 //Link Iniciar Sesión
@@ -54,13 +72,11 @@ if (toggleRePassword) {
   });
 }
 
-// Validar coincidencia de contraseñas al enviar
-document.querySelector("form").addEventListener("submit", function (e) {
-  const pass = document.getElementById("contrasena").value;
-  const rePass = document.getElementById("re-contrasena").value;
-  if (pass !== rePass) {
-    e.preventDefault();
-    alert("Las contraseñas no coinciden.");
-  }
-});
+
+// Función para mostrar el modal con mensaje personalizado
+function mostrarModal(mensaje) {
+  document.getElementById("mensaje-modal").textContent = mensaje;
+  document.getElementById("modal-error").style.display = "block";
+}
+
 

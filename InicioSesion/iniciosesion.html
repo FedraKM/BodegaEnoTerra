@@ -42,12 +42,20 @@
                 title="Debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número">
                 <span id="toggle-password" style="cursor: pointer;">👁️</span>
             </div>
-            <a href="#" class="link-olvido">¿Olvidaste la contraseña?</a>
+            <a href="#" class="link-olvido" id="link-olvido">¿Olvidaste la contraseña?</a>
             <button type="submit" id="btn-iniciar-sesion">INICIAR SESIÓN</button>
         </form>
 
         <p class="registro">¿No tienes cuenta? <a href="#" id="link-registro">Registro</a></p>
     </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-contenido">
+          <p>Se ha iniciado sesión correctamente.</p>
+          <button id="btn-cerrar">Aceptar</button>
+        </div>
+    </div>
+
     <script src="iniciosesion.js"></script>
 </body>
 </html>
