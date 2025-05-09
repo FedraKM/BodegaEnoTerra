@@ -12,106 +12,66 @@ document.getElementById('icon-usuario').onclick = () => window.location.href = '
 document.getElementById('iniciarSesion').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
 
 
-//Funcionamiento de carrito
 document.addEventListener('DOMContentLoaded', () => {
-    const carritoLateral = document.getElementById('carrito-lateral');
-    const listaCarrito = document.getElementById('lista-carrito');
-    const totalCarrito = document.getElementById('total-carrito');
-    const overlay = document.getElementById('overlay');
-    const cerrarCarrito = document.getElementById('cerrar-carrito');
-    const iconCarrito = document.getElementById('icon-carrito');
-    const btnSeguir = document.querySelector('.btn-seguir');
-    const btnComprar = document.querySelector('.btn-comprar');
-  
-    function actualizarTotal() {
-      let total = 0;
-      const productos = document.querySelectorAll('.item-carrito');
-      const mensajeVacio = document.getElementById('carrito-vacio');
-      const carritoFooter = document.querySelector('.carrito-footer');
-  
-      productos.forEach(producto => {
-        const precioTexto = producto.querySelector('.precio-item').textContent;
-        const precio = parseFloat(precioTexto.replace('$', '').replace(/\./g, ''));
-        total += precio;
-      });
-  
-      totalCarrito.textContent = `$${total.toLocaleString('es-AR')}`;
-  
-      if (productos.length === 0) {
-        mensajeVacio.style.display = 'block';
-        carritoFooter.style.display = 'none';
-        listaCarrito.style.display = 'none';
-      } else {
-        mensajeVacio.style.display = 'none';
-        carritoFooter.style.display = 'block';
-        listaCarrito.style.display = 'block';
-      }
-    }
-  
-    function abrirCarrito() {
-      overlay.style.display = 'block';
-      carritoLateral.classList.add('mostrar');
-    }
-  
-    function cerrarCarritoFunc() {
-      overlay.style.display = 'none';
-      carritoLateral.classList.remove('mostrar');
-    }
-  
-    // Esta función carga desde sessionStorage
-    function cargarCarritoDesdeStorage() {
-      const itemsGuardados = JSON.parse(sessionStorage.getItem('carrito')) || [];
-      listaCarrito.innerHTML = ''; // Limpia el carrito antes de rellenar
-  
-      itemsGuardados.forEach(({ nombre, imagen, cantidad, precio }) => {
-        const item = document.createElement('li');
-        item.classList.add('item-carrito');
-        item.innerHTML = `
-          <img src="${imagen}" alt="" class="img-carrito">
-          <div class="info-carrito">
-            <strong>${nombre}</strong>
-            <p class="detalle">Caja (6u)</p>
-            <div class="acciones-carrito">
-              <div class="control-cantidad">
-                <span class="cantidad">${cantidad}</span>
-              </div>
-              <div class="precio-y-eliminar">
-                <span class="precio-item">$${(precio * cantidad).toLocaleString('es-AR')}</span>
-              </div>
-            </div>
-          </div>
-        `;
-        listaCarrito.appendChild(item);
-      });
-  
-      actualizarTotal();
-    }
-  
-    iconCarrito.addEventListener('click', () => {
-      const estaVisible = carritoLateral.classList.contains('mostrar');
-      if (estaVisible) {
-        cerrarCarritoFunc();
-      } else {
-        cargarCarritoDesdeStorage(); // Carga los productos al abrir
-        abrirCarrito();
-      }
-    });
-  
-    overlay.addEventListener('click', cerrarCarritoFunc);
-    cerrarCarrito.addEventListener('click', cerrarCarritoFunc);
-    
-    if (btnSeguir) {
-      btnSeguir.addEventListener('click', () => {
-        window.location.href = '../Vinos/vinos.html'; 
-      });
-    }
-  
-    if (btnComprar) {
-      btnComprar.addEventListener('click', () => {
-        window.location.href = '../Detalle de producto/compra.html'; 
-      });
-    }
+  // Obtener carrito guardado
+  const carritoGuardado = sessionStorage.getItem('carrito');
+  const productosEnCarrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
+
+  const contenedorResumen = document.querySelector('.resumen');
+
+  let sumaSubtotal = 0;
+
+  // Limpiar productos previos si existen
+  contenedorResumen.querySelectorAll('.producto').forEach(producto => producto.remove());
+
+  // Agregar productos al resumen
+  productosEnCarrito.forEach(item => {
+    const cantidad = item.cantidad;
+    const precioUnitario = parseFloat(item.precio); // Asegurarse de que el precio sea un número
+    const totalProducto = cantidad * precioUnitario;
+
+    sumaSubtotal += totalProducto;
+
+    const productoHTML = document.createElement('div');
+    productoHTML.classList.add('producto');
+
+    productoHTML.innerHTML = 
+      `<div class="imagen-cantidad">
+        <img src="${item.imagen}" alt="${item.nombre}">
+        <span class="cantidad">${cantidad}</span>
+      </div>
+      <div>
+        <p><strong>${item.nombre}</strong></p>
+        <p>Caja (6u)</p>
+      </div>
+      <p class="precio">$${totalProducto.toLocaleString('es-AR', { minimumFractionDigits: 2 })}</p>`;
+
+    const lugarParaInsertar = contenedorResumen.querySelector('.codigo-descuento');
+    contenedorResumen.insertBefore(productoHTML, lugarParaInsertar);
   });
+
+  // Calcular impuestos (21% del subtotal)     
+  const impuestos = sumaSubtotal * 0.21;
+
+  // Actualizar los textos del resumen
+  const textoSubtotal = document.getElementById('subtotal-texto');
+  const textoTotal = document.getElementById('total-texto');
+
+  const textoImpuestos = contenedorResumen.querySelector('.impuestos');
+
+  if (textoSubtotal) {
+    textoSubtotal.textContent = `$${sumaSubtotal.toLocaleString('es-AR', { minimumFractionDigits: 2 })}`;
+  }
+
+  if (textoTotal) {
+    textoTotal.textContent = `$${(sumaSubtotal + impuestos).toLocaleString('es-AR', { minimumFractionDigits: 2 })}`; // Incluir impuestos en el total
+  }
+
+  if (textoImpuestos) {
+    textoImpuestos.textContent = `Incluye $${impuestos.toLocaleString('es-AR', { minimumFractionDigits: 2 })} de impuestos`;
+  }
+});
+
 
 //lleva a la pagina de commpra-realizada.html
 const botonPagar = document.querySelector('.pagar-ahora');
@@ -154,3 +114,5 @@ document.addEventListener("DOMContentLoaded", function () {
     event.stopPropagation();
   });
 });
+
+

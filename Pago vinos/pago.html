@@ -178,14 +178,21 @@
           </div>
       
           <div class="totales">
-            <div><p>Subtotal</p><p>$39.335,00</p></div>
-            <div><p>Envío</p><p class="direccion">Introducir la dirección de envío</p></div>
+            <div>
+              <p>Subtotal</p>
+              <p id="subtotal-texto">$39.335,00</p>
+            </div>
+            <div>
+              <p>Envío</p>
+              <p class="direccion">Introducir la dirección de envío</p>
+            </div>
             <div class="total">
               <p><strong>Total</strong></p>
-              <p><span>ARS</span> <strong>$39.335,00</strong></p>
+              <p><span>ARS</span> <strong id="total-texto">$39.335,00</strong></p>
             </div>
             <p class="impuestos">Incluye $ 6.826,74 de impuestos</p>
           </div>
+          
         </section>
       </main>
       <!-- Carrito lateral -->
@@ -213,8 +220,7 @@
       </div>
 
       <div id="overlay"></div>
-      
-      <script src="../Pago vinos/pago.js"></script>
+      <script src="pago.js"></script>
 
 </body>
 </html>
