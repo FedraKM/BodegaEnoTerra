@@ -30,7 +30,7 @@ document.getElementById('btn-cerrar').onclick = () => {
   document.getElementById('modal').style.display = 'none';
   
   // Redirige al home
-  window.location.href = '../Home/home.html';
+  window.location.href = '../InicioSesion/iniciosesion.html';
 };
 
 // Link "Iniciar sesión"

@@ -1,16 +1,42 @@
-// Funciones del menu
-document.getElementById('link-home').onclick = () => window.location.href = '../Home/home.html';
-document.getElementById('link-vinos').onclick = () => window.location.href = '../Vinos/vinos.html';
-document.getElementById('link-enoturismo').onclick = () => window.location.href = '../Enoturismo/enoturismo.html';
-document.getElementById('link-ubicacion').onclick = () => window.location.href = '../ubicacion/ubicacion.html';
-document.getElementById('link-contacto').onclick = () => window.location.href = '../Contacto/contacto.html';
+document.addEventListener("DOMContentLoaded", function () {
+  const btnBuscar = document.getElementById("icon-buscar");
+  const contenedorBusqueda = document.getElementById("barra-busqueda-container");
 
-// Íconos
-document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
-document.getElementById('icon-buscar').onclick = () => window.location.href = '../Busqueda/busqueda.html';
-document.getElementById('icon-carrito').onclick = () => window.location.href = '../Detalle de producto/compra.html';
+  btnBuscar.addEventListener("click", function (event) {
+    event.stopPropagation();
 
-// Botones principales
-document.getElementById('btn-enoturismo').onclick = () => window.location.href = '../Enoturismo/enoturismo.html';
-document.getElementById('btn-vinos').onclick = () => window.location.href = '../Vinos/vinos.html';
-document.getElementById('btn-experiencias').onclick = () => window.location.href = '../Restaurante/restaurante.html';
+    // Si ya existe, no la vuelve a crear
+    if (document.querySelector(".search-bar")) {
+      document.querySelector(".search-bar").style.display = "flex";
+      return;
+    }
+
+    // Cargar dinámicamente la barra de búsqueda desde HTML
+    fetch("../Busqueda/busqueda.html")
+      .then(response => response.text())
+      .then(data => {
+        contenedorBusqueda.innerHTML = data;
+
+        const searchBar = document.querySelector(".search-bar");
+        const closeBtn = document.querySelector(".close-btn");
+
+        searchBar.style.display = "flex";
+
+        // Cerrar con la X
+        closeBtn.addEventListener("click", () => {
+          searchBar.remove();
+        });
+
+        // Cerrar al hacer click fuera
+        document.addEventListener("click", function docClick(e) {
+          if (!searchBar.contains(e.target) && e.target !== btnBuscar) {
+            searchBar.remove();
+            document.removeEventListener("click", docClick);
+          }
+        });
+      })
+      .catch(error => {
+        console.error("Error al cargar la barra de búsqueda:", error);
+      });
+  });
+});

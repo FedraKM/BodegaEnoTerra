@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENOTURISMO - Bodega EnoTerra</title>
     <link rel="stylesheet" href="../Enoturismo/enoturismo.css">
+    <link rel="stylesheet" href="../Carrito/carrito.css">
+    <link rel="stylesheet" href="../Busqueda/busqueda.css">
     <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
 </head>
 
@@ -30,14 +32,7 @@
         </nav>
     </header>
 
-    
-    <!-- lupa -> barra de busqueda (AGREGADO)  -->
-    <div class="search-bar">
-      <img src="../Imagenes/lupa.png" alt="Buscar">
-      <input type="text" placeholder="Buscar...">
-      <button class="close-btn">&times;</button>
-    </div>
-
+    <div id="barra-busqueda-container"></div>
 
     <section class="banner">
         <h2>ENOTURISMO</h2>
@@ -79,32 +74,6 @@
             </div>
         </div>
     </section>
-     
-    <!-- Carrito lateral -->
-    <div id="carrito-lateral">
-      <div class="carrito-header">
-        <h2>MI CARRITO</h2>
-        <img id="cerrar-carrito" src="../Imagenes/multiple.png" alt="Cerrar">
-      </div>
-      <ul id="lista-carrito"></ul>
-      <div class="carrito-body">
-        <p id="carrito-vacio">El carrito está vacío</p>
-      </div>
-      <div class="carrito-footer">
-        <div class="total-carrito">
-          <span class="label-total">Total:</span>
-          <span id="total-carrito">$0</span>
-        </div>
-        <p class="nota-envio">Gastos de envío y descuentos calculado al momento de pagar</p>
-        <div class="botonesCarrito">
-          <button class="btn-comprar">COMPRAR</button>
-          <button class="btn-seguir">SEGUIR COMPRANDO</button>
-        </div>
-        <p class="envio-gratis">¡YA TENÉS ENVÍO GRATIS!</p>
-      </div>
-    </div>
-
-    <div id="overlay"></div>
 
     <!-- Formulario -->
     <div class="popup" id="popupFormulario">
@@ -128,10 +97,21 @@
             <option>5 o más</option>
           </select>
         </label>
-        <button type="submit">Enviar</button>
+        <button type="submit" id="btn-enviar-reserva">ENVIAR</button>
       </form>
     </div>
 
+    <div id="modal" class="modal">
+      <div class="modal-contenido">
+        <p>La reserva se ha guardado correctamente! A la brevedad te enviaremos la confirmación a tu correo. Asegurate de chequear que los datos sean los correctos.</p>
+        <button id="btn-cerrar">Aceptar</button>
+      </div>
+    </div>
+
+    <div id="contenedor-carrito"></div>
+
+    <script src="../Carrito/cargar-carrito.js"></script>
+    <script src="../Busqueda/busqueda.js"></script>
     <script src="enoturismo.js"></script>
 </body>
 </html>
