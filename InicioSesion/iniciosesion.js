@@ -8,28 +8,39 @@ document.getElementById('link-contacto').onclick = () => window.location.href = 
 // Íconos
 document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
 
-//Boton "Iniciar Sesión"
+// Botón "Iniciar Sesión"
 document.getElementById('btn-iniciar-sesion').onclick = (e) => {
-    e.preventDefault();
-    
-    const formulario = document.querySelector('form');
+  e.preventDefault();
 
-    if (formulario.checkValidity()) {
-        // Redirigir después del mensaje
-        window.location.href = '../Home/home.html'; 
+  const formulario = document.querySelector('form');
 
-        // Mostrar mensaje de sesión iniciada
-        alert("Se ha iniciado sesión correctamente");
-    } else {
-        // Mostrar validación nativa del navegador
-        formulario.reportValidity();
-    }
+  if (formulario.checkValidity()) {
+    // Mostrar modal personalizado
+    document.getElementById('modal').style.display = 'block';
+  } else {
+    formulario.reportValidity();
+  }
+};
+
+// Botón cerrar modal
+document.getElementById('btn-cerrar').onclick = () => {
+  // Oculta el modal
+  document.getElementById('modal').style.display = 'none';
+  
+  // Redirige al home
+  window.location.href = '../Home/home.html';
 };
 
 //Link Registro
 document.getElementById('link-registro').onclick = (e) => {
     e.preventDefault(); // Evita que el enlace haga scroll arriba
     window.location.href = '../Registro/registro.html'; 
+};
+
+//Link olvido
+document.getElementById('link-olvido').onclick = (e) => {
+  e.preventDefault(); // Evita que el enlace haga scroll arriba
+  window.location.href = '../Recuperar Contraseña/recuperarContrasena.html'; 
 };
 
 //Contrasena
