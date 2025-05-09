@@ -86,6 +86,20 @@ body {
   height: auto;
   border-radius: 8px;
 }
+/* agregado:*/
+.mapa-container .boton {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #8B0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
 
 /* Botón */
 #ubicacion button {
@@ -125,3 +139,7 @@ body {
   opacity: 0.9; /* Opacidad de la imagen de fondo */
   z-index: -1; /* Coloca la imagen de fondo detrás del contenido */
 }
+
+
+
+
