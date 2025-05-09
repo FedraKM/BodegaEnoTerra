@@ -1,11 +1,11 @@
-// Funciones del menu
+//funciones del menu
 document.getElementById('link-home').onclick = () => window.location.href = '../Home/home.html';
 document.getElementById('link-vinos').onclick = () => window.location.href = '../Vinos/vinos.html';
 document.getElementById('link-enoturismo').onclick = () => window.location.href = '../Enoturismo/enoturismo.html';
 document.getElementById('link-ubicacion').onclick = () => window.location.href = '../ubicacion/ubicacion.html';
 document.getElementById('link-contacto').onclick = () => window.location.href = '../Contacto/contacto.html';
 
-// Íconos
+//Iconos
 document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
 
 //Boton comprar
@@ -25,110 +25,96 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//Funcionamiento de carrito
+//funcionalidad del carrito
 document.addEventListener('DOMContentLoaded', () => {
-  const carritoLateral = document.getElementById('carrito-lateral');
-  const listaCarrito = document.getElementById('lista-carrito');
-  const totalCarrito = document.getElementById('total-carrito');
-  const overlay = document.getElementById('overlay');
-  const cerrarCarrito = document.getElementById('cerrar-carrito');
-  const iconCarrito = document.getElementById('icon-carrito');
-  const btnSeguir = document.querySelector('.btn-seguir');
-  const btnComprar = document.querySelector('.btn-comprar');
+  const tablaCarrito = document.querySelector('.tabla-carrito tbody');
+  const totalFinal = document.querySelector('.total-final span');
 
-  function actualizarTotal() {
+  function actualizarTotalCompra() {
     let total = 0;
-    const productos = document.querySelectorAll('.item-carrito');
-    const mensajeVacio = document.getElementById('carrito-vacio');
-    const carritoFooter = document.querySelector('.carrito-footer');
+    document.querySelectorAll('.tabla-carrito tbody tr').forEach(row => {
+      const precio = parseFloat(row.querySelector('.precio-descuento').textContent.replace('$', '').replace(/\./g, ''));
+      const cantidad = parseInt(row.querySelector('.cantidad').textContent);
+      total += precio * cantidad;
+      row.querySelector('td:last-child').textContent = `$${(precio * cantidad).toLocaleString('es-AR')}`;
+    });
+
+    totalFinal.textContent = `$${total.toLocaleString('es-AR')} ARS`;
+  }
+
+  function cargarProductosDesdeStorage() {
+    const carritoGuardado = sessionStorage.getItem('carrito');
+    if (!carritoGuardado) return;
+
+    const productos = JSON.parse(carritoGuardado);
+    tablaCarrito.innerHTML = ''; // Limpia cualquier contenido inicial
 
     productos.forEach(producto => {
-      const precioTexto = producto.querySelector('.precio-item').textContent;
-      const precio = parseFloat(precioTexto.replace('$', '').replace(/\./g, ''));
-      total += precio;
-    });
+      const precioTotal = producto.precio * producto.cantidad;
 
-    totalCarrito.textContent = `$${total.toLocaleString('es-AR')}`;
-
-    if (productos.length === 0) {
-      mensajeVacio.style.display = 'block';
-      carritoFooter.style.display = 'none';
-      listaCarrito.style.display = 'none';
-    } else {
-      mensajeVacio.style.display = 'none';
-      carritoFooter.style.display = 'block';
-      listaCarrito.style.display = 'block';
-    }
-  }
-
-  function abrirCarrito() {
-    overlay.style.display = 'block';
-    carritoLateral.classList.add('mostrar');
-  }
-
-  function cerrarCarritoFunc() {
-    overlay.style.display = 'none';
-    carritoLateral.classList.remove('mostrar');
-  }
-
-  // Esta función carga desde sessionStorage
-  function cargarCarritoDesdeStorage() {
-    const itemsGuardados = JSON.parse(sessionStorage.getItem('carrito')) || [];
-    listaCarrito.innerHTML = ''; // Limpia el carrito antes de rellenar
-
-    itemsGuardados.forEach(({ nombre, imagen, cantidad, precio }) => {
-      const item = document.createElement('li');
-      item.classList.add('item-carrito');
-      item.innerHTML = `
-        <img src="${imagen}" alt="" class="img-carrito">
-        <div class="info-carrito">
-          <strong>${nombre}</strong>
-          <p class="detalle">Caja (6u)</p>
-          <div class="acciones-carrito">
-            <div class="control-cantidad">
-              <span class="cantidad">${cantidad}</span>
-            </div>
-            <div class="precio-y-eliminar">
-              <span class="precio-item">$${(precio * cantidad).toLocaleString('es-AR')}</span>
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>
+          <div class="vino-info">
+            <img src="${producto.imagen}" alt="${producto.nombre}" class="vino-img">
+            <div class="vino-detalle">
+              <h3>${producto.nombre}</h3>
+              <p>Caja (6u)</p>
             </div>
           </div>
-        </div>
+        </td>
+        <td>
+          <p><s>$${(producto.precio * 1.43).toLocaleString('es-AR')}</s></p>
+          <p class="precio-descuento">$${producto.precio.toLocaleString('es-AR')}</p>
+        </td>
+        <td>
+          <button class="cantidad-btn btn-restar">-</button>
+          <span class="cantidad">${producto.cantidad}</span>
+          <button class="cantidad-btn btn-sumar">+</button>
+        </td>
+        <td>$${precioTotal.toLocaleString('es-AR')}</td>
       `;
-      listaCarrito.appendChild(item);
+
+      tablaCarrito.appendChild(row);
+
+      // Eventos de suma y resta
+      const btnSumar = row.querySelector('.btn-sumar');
+      const btnRestar = row.querySelector('.btn-restar');
+      const cantidadSpan = row.querySelector('.cantidad');
+
+      btnSumar.addEventListener('click', () => {
+        producto.cantidad++;
+        cantidadSpan.textContent = producto.cantidad;
+        guardarCambios(producto.nombre, producto.cantidad);
+        actualizarTotalCompra();
+      });
+
+      btnRestar.addEventListener('click', () => {
+        if (producto.cantidad > 1) {
+          producto.cantidad--;
+          cantidadSpan.textContent = producto.cantidad;
+          guardarCambios(producto.nombre, producto.cantidad);
+          actualizarTotalCompra();
+        }
+      });
     });
 
-    actualizarTotal();
+    actualizarTotalCompra();
   }
 
-  iconCarrito.addEventListener('click', () => {
-    const estaVisible = carritoLateral.classList.contains('mostrar');
-    if (estaVisible) {
-      cerrarCarritoFunc();
-    } else {
-      cargarCarritoDesdeStorage(); // Carga los productos al abrir
-      abrirCarrito();
-    }
-  });
-
-  overlay.addEventListener('click', cerrarCarritoFunc);
-  cerrarCarrito.addEventListener('click', cerrarCarritoFunc);
-  
-  if (btnSeguir) {
-    btnSeguir.addEventListener('click', () => {
-      window.location.href = '../Vinos/vinos.html'; 
+  function guardarCambios(nombre, nuevaCantidad) {
+    const carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+    const actualizado = carrito.map(p => {
+      if (p.nombre === nombre) p.cantidad = nuevaCantidad;
+      return p;
     });
+    sessionStorage.setItem('carrito', JSON.stringify(actualizado));
   }
 
-  if (btnComprar) {
-    btnComprar.addEventListener('click', () => {
-      window.location.href = '../Detalle de producto/compra.html'; 
-    });
-  }
+  cargarProductosDesdeStorage();
 });
-
-
- // --- BARRA DE BÚSQUEDA ---
- document.addEventListener("DOMContentLoaded", function () {
+// --- BARRA DE BÚSQUEDA ---       
+document.addEventListener("DOMContentLoaded", function () {
   const btnBuscar = document.getElementById("icon-buscar");
   const searchBar = document.querySelector(".search-bar");
   const closeBtn = document.querySelector(".close-btn");
