@@ -51,6 +51,9 @@ fetch('../Carrito/carrito.html')
       });
 
       sessionStorage.setItem('carrito', JSON.stringify(nuevosItems));
+
+      // Disparar evento global de carrito actualizado
+      window.dispatchEvent(new Event('carritoActualizado'));
     }
 
     function crearItemCarrito({ nombre, imagen, cantidad, precio }) {

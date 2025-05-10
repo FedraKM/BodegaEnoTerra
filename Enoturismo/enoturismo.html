@@ -83,13 +83,20 @@
     
       <form class="formulario">
         <h3>RESERVA</h3>
-        <label>Nombre <input type="text" /></label>
-        <label>Apellido <input type="text" /></label>
-        <label>Fecha de reserva <input type="date" /></label>
-        <label>Hora <input type="time" /></label>
+        <label>Nombre <input type="text" required/></label>
+        <label>Apellido <input type="text" required/></label>
+        <label>Fecha de reserva <input type="date" required/></label>
+        <label>Horario
+          <select required>
+            <option>Seleccione una hora</option>
+            <option>12:00</option>
+            <option>14:00</option>
+            <option>16:00</option>
+          </select>
+        </label>
         <label>Cantidad de comensales
-          <select>
-            <option>Seleccione</option>
+          <select required>
+            <option>Indique cantidad de personas</option>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -103,7 +110,9 @@
 
     <div id="modal" class="modal">
       <div class="modal-contenido">
-        <p>La reserva se ha guardado correctamente! A la brevedad te enviaremos la confirmación a tu correo. Asegurate de chequear que los datos sean los correctos.</p>
+        <h2>¡Reserva enviada con éxito! ✅</h2>
+        <p>Gracias por reservar con nosotros, te esperamos 🍷</p>
+        <p>A la brevedad te enviaremos la confirmación a tu correo. Asegurate de chequear que los datos sean los correctos.</p>
         <button id="btn-cerrar">Aceptar</button>
       </div>
     </div>

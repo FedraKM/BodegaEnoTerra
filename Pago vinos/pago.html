@@ -1,202 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pago - Bodega EnoTerra</title>
-    <link rel="stylesheet" href="../Pago vinos/pago.css">
-    <link rel="stylesheet" href="../Carrito/carrito.css">
-    <link rel="stylesheet" href="../Busqueda/busqueda.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pago - Bodega EnoTerra</title>
+  <link rel="stylesheet" href="../Pago vinos/pago.css">
+  <link rel="stylesheet" href="../Carrito/carrito.css">
+  <link rel="stylesheet" href="../Busqueda/busqueda.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-          <img src="../Imagenes/logoEnoTerra.png" alt="Enoterra">
-        </div>
-        <nav>
-          <ul>
-            <li><a id="link-home">HOME</a></li>
-            <li><a id="link-vinos">VINOS</a></li>
-            <li><a id="link-enoturismo">ENOTURISMO</a></li>
-            <li><a id="link-ubicacion">UBICACIÓN</a></li>
-            <li><a id="link-contacto">CONTACTO</a></li>
-          </ul>
-          <div class="iconos">
-            <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
-            <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
-            <img id="icon-carrito" src="../Imagenes/carrito-de-compras.png" alt="Carrito">
-          </div>
-        </nav>
-      </header>
-  
-      <div id="barra-busqueda-container"></div>
+  <header>
+    <div class="logo">
+      <img src="../Imagenes/logoEnoTerra.png" alt="Enoterra">
+    </div>
+    <nav>
+      <ul>
+        <li><a id="link-home">HOME</a></li>
+        <li><a id="link-vinos">VINOS</a></li>
+        <li><a id="link-enoturismo">ENOTURISMO</a></li>
+        <li><a id="link-ubicacion">UBICACIÓN</a></li>
+        <li><a id="link-contacto">CONTACTO</a></li>
+      </ul>
+      <div class="iconos">
+        <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
+        <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
+        <img id="icon-carrito" src="../Imagenes/carrito-de-compras.png" alt="Carrito">
+      </div>
+    </nav>
+  </header>
 
-      <main class="checkout">
-        <section class="formulario">
-          <h2>Contacto <a id="iniciarSesion">Iniciar sesión</a></h2>
-          
-          <div class="una-columna">
-            <input type="email" placeholder="Correo electrónico">
-          </div>
-      
-          <h2>Entrega</h2>
-          <select>
-            <option>País/Región</option>
-            <option selected>Argentina</option>
+  <div id="barra-busqueda-container"></div>
+
+  <main class="checkout">
+    <section class="formulario">
+      <h2>Contacto <a id="iniciarSesion">Iniciar sesión</a></h2>
+
+      <div class="una-columna">
+        <input type="email" id="correo" placeholder="Correo electrónico" required>
+      </div>
+
+      <h2>Entrega</h2>
+
+      <select id="pais" required>
+      <option value="">País/Región</option>
+      <option>Argentina</option>
+      <option>Bolivia</option>
+      <option>Brasil</option>
+      <option>Chile</option>
+      <option>Colombia</option>
+      <option>Ecuador</option>
+      <option>Paraguay</option>
+      <option>Uruguay</option>
+      <option>Otro</option>
+      </select>
+
+      <div class="dos-columnas">
+        <input type="text" placeholder="Nombre" required>
+        <input type="text" placeholder="Apellidos" required>
+      </div>
+
+
+      <div class="una-columna">
+        <input type="text" placeholder="DNI" required>
+        <input type="text" placeholder="Dirección" required>
+        <input type="text" placeholder="Casa, apartamento, etc. (opcional)">
+      </div>
+
+      <div class="tres-columnas">
+        <input type="text" placeholder="Código postal" required>
+        <input type="text" placeholder="Ciudad" required>
+        <input type="text" placeholder="Provincia/Estado" required>
+      </div>
+
+      <div class="una-columna">
+        <input type="text" placeholder="Teléfono" required>
+
+        <div class="checkbox">
+          <input type="checkbox" id="guardar-info">
+          <label for="guardar-info">
+            Guardar mi información y consultar más rápidamente la próxima vez.
+          </label>
+        </div>
+      </div>
+
+      <h2>Pago</h2>
+      <p>Todas las transacciones son seguras y están encriptadas.</p>
+
+      <div class="pago-header">
+        <div class="radio">
+          <input type="radio" id="pago-tarjeta" name="metodo-pago" checked>
+          <label for="pago-tarjeta">Pago con la tarjeta</label>
+        </div>
+        <div class="logos">
+          <img src="../Imagenes/Visa-Logo.png" alt="Visa">
+          <img src="../Imagenes/Naranja-X-logo.png" alt="NaranjaX">
+          <img src="../Imagenes/logo_mastercard.png" alt="MasterCard">
+        </div>
+      </div>
+
+      <!-- Opción 1: Tarjeta -->
+      <div class="pago-tarjeta">
+
+        <div class="una-columna">
+          <input type="text" placeholder="Número de tarjeta" required>
+        </div>
+
+        <div class="dos-columnas">
+          <input type="text" placeholder="Fecha de vencimiento (MM/AA)" required>
+          <input type="text" placeholder="Código de seguridad" required>
+        </div>
+
+        <div class="una-columna">
+          <input type="text" placeholder="Nombre del titular" required>
+        </div>
+
+        <div class="dos-columnas">
+          <select id="id" required>
+            <option value="">ID</option>
+            <option>DNI</option>
+            <option>CUIT</option>
+            <option>PASAPORTE</option>
           </select>
-      
-          <div class="dos-columnas">
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Apellidos">
-          </div>
-      
-          
-          <div class="una-columna">
-            <input type="text" placeholder="DNI">
-            <input type="text" placeholder="Dirección">
-            <input type="text" placeholder="Casa, apartamento, etc. (opcional)">
-          </div>
-      
-          <div class="tres-columnas">
-            <input type="text" placeholder="Código postal">
-            <input type="text" placeholder="Ciudad">
-            <input type="text" placeholder="Provincia/Estado" value="Mendoza">
-          </div>
-
-          <div class="una-columna">
-            <input type="text" placeholder="Teléfono">
-            
-            <div class="checkbox">
-                <input type="checkbox" id="guardar-info">
-                <label for="guardar-info">
-                  Guardar mi información y consultar más rápidamente la próxima vez.
-                </label>
-          </div>
-         </div>
-
-         <h2>Pago</h2>
-         <p>Todas las transacciones son seguras y están encriptadas.</p>
-
-         <div class="pago-header">
-            <div class="checkbox">
-                <input type="checkbox" id="pago-tarjeta" checked>
-            <label for="pago-tarjeta">Pago con la tarjeta</label>
-            </div>
-            <div class="logos">
-                <img src="../Imagenes/Visa-Logo.png" alt="Visa">
-                <img src="../Imagenes/Naranja-X-logo.png" alt="NaranjaX">
-                <img src="../Imagenes/logo_mastercard.png" alt="MasterCard">
-            </div>
-         </div>
-
-         <!-- Opción 1: Tarjeta -->
-         <div class="pago-tarjeta">
-
-            <div class="una-columna">
-                <input type="text" placeholder="Número de tarjeta">
-            </div>
-
-            <div class="dos-columnas">
-                <input type="text" placeholder="Fecha de vencimiento (MM/AA)">
-                <input type="text" placeholder="Código de seguridad">
-            </div>
-
-            <div class="una-columna">
-                <input type="text" placeholder="Nombre del titular">
-            </div>
-            
-            <div class="dos-columnas">
-                <select>
-                    <option selected>Documento</option>
-                    <option>DNI</option>
-                    <option>CUIT</option>
-                </select>
-                <input type="text" placeholder="Número de documento">
-            </div>
-
-            <select>
-                <option selected>Cuotas</option>
-                <option>Selecciona una opción</option>
-            </select>
-
-            <div class="checkbox">
-                <input type="checkbox" id="mismo-envio" checked>
-                <label for="mismo-envio">Usar la dirección de envío como dirección de facturación.</label>
-            </div>
-         </div>
-
-         <!-- Opción 2: Mercado Pago -->
-         <div class="pago-alternativo">
-            <div class="checkbox">
-                <input type="checkbox" id="mercado-pago">
-                <label for="mercado-pago">Mercado Pago</label>
-            </div>
-
-            <div class="logos">
-                <img src="../Imagenes/mercadoPago - logo.png" alt="MercadoPago">
-                <img src="../Imagenes/Visa-Logo.png" alt="Visa">
-                <img src="../Imagenes/logo_mastercard.png" alt="MasterCard">
-                <span>+2</span>
-            </div>
-
-            
-         </div>
-
-         <div class="pago-cuerpo">
-          <img src="../Imagenes/navegador.png" alt="Ventana navegador" class="navegador-icono">
-          <p>
-            Después de hacer clic en “Pagar ahora”, serás redirigido a Mercado Pago para completar tu compra de forma segura.
-          </p>
+          <input type="text" placeholder="Número de documento" required>
         </div>
 
-         <button class="pagar-ahora">PAGAR AHORA</button>
+        <label for="cuotas">Cuotas</label>
+        <select id="cuotas" required>
+          <option value="">Indique cantidad de cuotas</option>
+          <option>1 cuota</option>
+          <option>3 cuotas</option>
+          <option>6 cuotas</option>
+          <option>12 cuotas</option>
+        </select>
 
-        </section>
+        <div class="checkbox">
+          <input type="checkbox" id="mismo-envio" checked>
+          <label for="mismo-envio">Usar la dirección de envío como dirección de facturación.</label>
+        </div>
+      </div>
 
-      
-        <section class="resumen">
-          <div class="producto">
-            <div class="imagen-cantidad">
-              <img src="../Imagenes/Botella de Malbec Famiglia Enoterra.png" alt="vino">
-              <span class="cantidad">1</span>
-            </div>
-            <div>
-              <p><strong>Famiglia EnoTerra Malbec</strong></p>
-              <p>Caja (6u)</p>
-            </div>
-            <p class="precio">$39.335,00</p>
-          </div>
-      
-          <div class="codigo-descuento">
-            <input type="text" placeholder="Código de descuento o tarjeta de regalo">
-            <button>Aplicar</button>
-          </div>
-      
-          <div class="totales">
-            <div>
-              <p>Subtotal</p>
-              <p id="subtotal-texto">$39.335,00</p>
-            </div>
-            <div>
-              <p>Envío</p>
-              <p class="direccion">Introducir la dirección de envío</p>
-            </div>
-            <div class="total">
-              <p><strong>Total</strong></p>
-              <p><span>ARS</span> <strong id="total-texto">$39.335,00</strong></p>
-            </div>
-            <p class="impuestos">Incluye $ 6.826,74 de impuestos</p>
-          </div>
-          
-        </section>
-      </main>
-      
-      <div id="contenedor-carrito"></div>
-      
-      <script src="../Carrito/cargar-carrito.js"></script>
-      <script src="../Busqueda/busqueda.js"></script>
-      <script src="../Pago vinos/pago.js"></script>
+      <!-- Opción 2: Mercado Pago -->
+      <div class="pago-alternativo">
+        <div class="radio">
+          <input type="radio" id="mercado-pago" name="metodo-pago">
+          <label for="mercado-pago">Mercado Pago</label>
+        </div>
+
+        <div class="logos">
+          <img src="../Imagenes/mercadoPago - logo.png" alt="MercadoPago">
+          <img src="../Imagenes/Visa-Logo.png" alt="Visa">
+          <img src="../Imagenes/logo_mastercard.png" alt="MasterCard">
+          <span>+2</span>
+        </div>
+
+
+      </div>
+
+      <div class="pago-cuerpo">
+        <img src="../Imagenes/navegador.png" alt="Ventana navegador" class="navegador-icono">
+        <p>
+          Después de hacer clic en “Pagar ahora”, serás redirigido a Mercado Pago para completar tu compra de forma
+          segura.
+        </p>
+      </div>
+
+      <button class="pagar-ahora">PAGAR AHORA</button>
+
+    </section>
+
+    <!--RESUMEN DE COMPRA (parte derecha)-->
+    <section class="resumen">
+      <div class="producto">
+        <div class="imagen-cantidad">
+          <img src="../Imagenes/Botella de Malbec Famiglia Enoterra.png" alt="vino">
+          <span class="cantidad">1</span>
+        </div>
+        <div>
+          <p><strong>Famiglia EnoTerra Malbec</strong></p>
+          <p>Caja (6u)</p>
+        </div>
+        <p class="precio">$39.335,00</p>
+      </div>
+
+      <div class="codigo-descuento">
+        <input type="text" placeholder="Código de descuento o tarjeta de regalo">
+        <button>Aplicar</button>
+      </div>
+
+      <div class="totales">
+        <div>
+          <p>Subtotal</p>
+          <p id="subtotal-texto">$39.335,00</p>
+        </div>
+
+        <div class="direccion-envio">
+          <p>Envío</p>
+          <input type="text" placeholder="Introducir la direccion del envío">
+        </div>
+
+        <div class="total">
+          <p><strong>Total</strong></p>
+          <p><span>ARS</span> <strong id="total-texto">$39.335,00</strong></p>
+        </div>
+        
+        <p class="impuestos">Incluye $ 6.826,74 de impuestos</p>
+      </div>
+
+    </section>
+  </main>
+
+  <div id="contenedor-carrito"></div>
+
+  <script src="../Carrito/cargar-carrito.js"></script>
+  <script src="../Busqueda/busqueda.js"></script>
+  <script src="../Pago vinos/pago.js"></script>
 
 </body>
+
 </html>

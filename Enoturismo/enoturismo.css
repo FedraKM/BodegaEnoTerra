@@ -315,6 +315,12 @@
     color: #5b0d0d;
 }
 
+.modal-contenido h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #5b0d0d;
+}
+
 .modal-contenido button {
     background: white;
     color: #2b2b2b;

@@ -1,325 +1,396 @@
 * {
-    margin: 0;
-    padding: 0;  
-  }
-  
-  body {
-    font-family: 'Inria Serif', serif;
-    overflow-x: hidden;
-  }
-  
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 20px;
-    background-color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .logo img {
-    height: 110px;
-  }
-  
-  nav {
-    display: flex;
-    align-items: center;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #4A0606;
-    font-weight: bold;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-  
-  .iconos img {
-    width: 20px;
-    margin-left: 15px;
-    cursor: pointer;
-  }
+  margin: 0;
+  padding: 0;
+}
 
-  .checkout {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 1rem;
-    align-items: flex-start;
-    gap: 2rem;
-    
-  }
-  
-  .formulario {
-    flex: 1;
-    min-width: 300px;
-    padding-right: 2rem;
-  }
-  
-  .formulario h2 {
-    font-size: 1.2rem;
-    margin: 1rem 0 0.5rem;
-  }
-  
-  .formulario h2 a {
-    float: right;
-    font-size: 1rem;
-    color: #4A0606;
-    text-decoration: none;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
-  .formulario input,
-  .formulario select {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
+body {
+  font-family: 'Inria Serif', serif;
+  overflow-x: hidden;
+}
 
-  .una-columna {
-    max-width: calc(100% - 1.7rem); /* igual al ancho efectivo de los grupos */
-  }
-  
-  .una-columna input {
-    width: 100%;
-  }
-  
-  .dos-columnas,
-  .tres-columnas {
-    display: flex;
-    gap: 1rem;
-  }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  .dos-columnas select {
-    flex: 1;
-  }
-  
-  .dos-columnas input,
-  .tres-columnas input {
-    flex: 1;
-  }
+.logo img {
+  height: 110px;
+}
 
-  .checkbox {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .checkbox input[type="checkbox"] {
-    width: auto;
-    margin: 0;
-  }
-  
-  .checkbox span {
-    display: inline; /* Evita saltos de línea */
-  }
+nav {
+  display: flex;
+  align-items: center;
+}
 
-  .pago-tarjeta, .pago-alternativo {
-    background-color: #f2f2f2;
-    padding: 1rem;
-    border-left: 1px solid #999;
-    border-right: 1px solid #999;
-  }
-  
-  .pago-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1rem;
-    border-radius: 8px;
-    border: 1px solid #4A0606;
-    background-color: #4a060686;
-    padding: 1rem;
-  }
-  
-  .pago-header label {
-    font-weight: bold;
-    margin-left: 0.5rem;
-  }
-  
-  .pago-header .logos img,
-  .pago-alternativo .logos img {
-    height: 35px;
-    margin-left: 0.5rem;
-  }
-  
-  .pago-alternativo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 8px;
-    border: 1px solid #4A0606;
-    background-color: #ffff;
-  }
-  
-  .pago-alternativo .logos,
-  .pago-header .logos{
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin-right: 20px;
+}
 
-  .pago-cuerpo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background-color: #F4F4F4;
-    padding: 1rem;
+nav ul li a {
+  text-decoration: none;
+  color: #4A0606;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
 
-    /* Bordes izquierdo, derecho e inferior */
-    border-left: 1px solid #999;
-    border-right: 1px solid #999;
-    border-bottom: 1px solid #999;
+.iconos img {
+  width: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+}
 
-    /* Solo redondear las esquinas inferiores */
-    border-radius: 0 0 8px 8px;
+.checkout {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 1rem;
+  align-items: flex-start;
+  gap: 2rem;
 
-    /* Asegurarse de que no haya borde arriba */
-    border-top: none;
-  }
-  
-  .navegador-icono {
-    width: 40%;
-    height: auto;
-  }
-  
-  .pago-cuerpo p {
-    margin: 0;
-    font-size: 1.05rem;
-    color: #444;
-  }
+}
 
-  .pagar-ahora {
-    margin-top: 1.5rem;
-    width: 100%;
-    padding: 1rem;
-    background-color: #4A0606;
-    color: white;
-    border: none;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 2rem;
-  }
-  
-  .resumen {
-    flex: 1;
-    min-width: 300px;
-    background-color: #e0e0e0;
-    padding: 2rem;
-    border-left: 2px solid #4A0606;
-    position:sticky;
-    top: 6.5rem; /* espacio desde el top cuando hace sticky */
-    align-self: flex-start;
-    height: fit-content;
-    height: 600px;
-  }
-  
-  .producto {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    position: relative;
-  }
-  
-  .imagen-cantidad {
-    position: relative;
-  }
-  
-  .imagen-cantidad img {
-    width: 90px;
-    height: auto;
-    border: 2px solid #4A0606;
-    border-radius: 10px; 
-  }
-  
-  .cantidad {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: #4A0606;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .producto p {
-    margin: 0;
-  }
-  
-  .producto .precio {
-    margin-left: auto;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  
-  .codigo-descuento {
-    display: flex;
-    margin-bottom: 2rem;
-    gap: 1rem;
-  }
-  
-  .codigo-descuento input {
-    flex: 1;
-    padding: 0.6rem;
-    font-size: 1rem;
-    border: 1px solid #333;
-    border-radius: 5px;
-  }
-  
-  .codigo-descuento button {
-    padding: 0.6rem 1.2rem;
-    background-color: #ccc;
-    border: 1px solid #333;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .totales > div {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.8rem;
-    font-size: 1.1rem;
-  }
-  
-  .totales .direccion {
-    color: #444;
-    font-weight: normal;
-  }
-  
-  .totales .total {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-top: 1rem;
-  }
-  
-  .totales .total span {
-    font-size: 0.9rem;
-    margin-right: 4px;
-  }
-  
-  .impuestos {
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    color: #444;
-  }
+.formulario {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 2rem;
+}
+
+.formulario h2 {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.formulario h2 a {
+  float: right;
+  font-size: 1rem;
+  color: #4A0606;
+  text-decoration: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.formulario input,
+.formulario select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.una-columna {
+  max-width: calc(100% - 1.7rem);
+  /* igual al ancho efectivo de los grupos */
+}
+
+.una-columna input {
+  width: 100%;
+}
+
+.dos-columnas,
+.tres-columnas {
+  display: flex;
+  gap: 1rem;
+}
+
+.dos-columnas select {
+  flex: 1;
+}
+
+.dos-columnas input,
+.tres-columnas input {
+  flex: 1;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.checkbox input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.checkbox span {
+  display: inline;
+  /* Evita saltos de línea */
+}
+
+/*Radios*/
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #333;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: #670f0f;
+}
+
+.pago-tarjeta,
+.pago-alternativo {
+  background-color: #f2f2f2;
+  padding: 1rem;
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+}
+
+.pago-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  border-radius: 8px;
+  border: 1px solid #4A0606;
+  background-color: #4a060686;
+  padding: 1rem;
+}
+
+.pago-header label {
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.pago-header .logos img,
+.pago-alternativo .logos img {
+  height: 35px;
+  margin-left: 0.5rem;
+}
+
+.pago-alternativo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  border: 1px solid #4A0606;
+  background-color: #ffff;
+}
+
+.pago-alternativo .logos,
+.pago-header .logos {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pago-cuerpo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #F4F4F4;
+  padding: 1rem;
+
+  /* Bordes izquierdo, derecho e inferior */
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+
+  /* Solo redondear las esquinas inferiores */
+  border-radius: 0 0 8px 8px;
+
+  /* Asegurarse de que no haya borde arriba */
+  border-top: none;
+}
+
+.navegador-icono {
+  width: 40%;
+  height: auto;
+}
+
+.pago-cuerpo p {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.pagar-ahora {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: #4A0606;
+  color: white;
+  border: none;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+/*RESUMEN DE COMPRA*/
+.resumen {
+  flex: 1;
+  min-width: 300px;
+  background-color: #e0e0e0;
+  padding: 2rem;
+  border-left: 2px solid #4A0606;
+  position: sticky;
+  top: 6.5rem;
+  /* espacio desde el top cuando hace sticky */
+  align-self: flex-start;
+  height: fit-content;
+  height: 600px;
+  max-height: 600px; /*Si los productos ocupan más de 600px de alto, aparece una scrollbar vertical solo en ese contenedor para poder ver esa pantalla completa*/
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.resumen::-webkit-scrollbar {
+  width: 6px;
+}
+
+.resumen::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.resumen::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.producto {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.imagen-cantidad {
+  position: relative;
+}
+
+.imagen-cantidad img {
+  width: 90px;
+  height: auto;
+  border: 2px solid #4A0606;
+  border-radius: 10px;
+}
+
+.cantidad {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #4A0606;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.producto p {
+  margin: 0;
+}
+
+.producto .precio {
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.codigo-descuento {
+  display: flex;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.codigo-descuento input {
+  flex: 1;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+.codigo-descuento button {
+  padding: 0.6rem 1.2rem;
+  background-color: #ccc;
+  border: 1px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.direccion-envio {
+  display: flex;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+.direccion-envio input {
+  width: 250px;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+.totales>div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.totales .direccion {
+  color: #444;
+  font-weight: normal;
+}
+
+.totales .total {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.totales .total span {
+  font-size: 0.9rem;
+  margin-right: 4px;
+}
+
+.impuestos {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #444;
+}
+
+.carrito-lateral .cantidad {
+  display: inline-block;
+  font-size: 1rem;
+  color: #400000;
+  margin: 0 5px;
+}
