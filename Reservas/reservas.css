@@ -1,16 +1,16 @@
-/* General */
+/* GENERAL */
 body {
   margin: 0;
   color: white;
   overflow-x: hidden;
 }
 
-/* Header */
+/* HEADER */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 20px;
+  padding: 0 20px;
   background-color: white;
   position: sticky;
   top: 0;
@@ -48,7 +48,7 @@ nav ul li a {
   cursor: pointer;
 }
 
-/* Hero */
+/* HERO */
 .hero {
   font-family: Georgia, serif;
   position: relative;
@@ -83,26 +83,24 @@ nav ul li a {
   line-height: 1.6;
 }
 
-/* Reservas */
+/* RESERVAS */
 .reservas {
   display: flex;
   flex-wrap: wrap;
-  width: 100vw;       
-  margin: 0;          
+  width: 100vw;
+  margin: 0;
 }
 
 .box {
   flex: 0 0 50vw;
-  min-height: 400px; 
+  min-height: 400px;
   padding: 3rem;
   text-align: center;
   box-sizing: border-box;
-  
-  /* Centrado del contenido */
   display: flex;
-  flex-direction: column; /* Acomoda el contenido en columna */
-  align-items: center;    /* Centra horizontalmente */
-  justify-content: center; /* Centra verticalmente */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .degustaciones {
@@ -135,11 +133,11 @@ nav ul li a {
   margin-bottom: 1.5rem;
 }
 
-/* Botón */
-.btn {
+/* BOTÓN */
+.btn, button {
   background-color: #5c0000;
   color: white;
-  padding: 0.6rem 1.8rem;  /* Aumenta el espacio interior */
+  padding: 0.6rem 1.8rem;
   font-size: 1rem;
   border: none;
   border-radius: 6px;
@@ -149,29 +147,12 @@ nav ul li a {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover, button:hover {
   background-color: #7a0000;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .box {
-    flex: 1 1 100%;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-  }
-}
-
 /*FORMULARIO RESERVA*/
-.popup {
+.popup-reserva {
   display: none; /* Oculto por defecto */
   position: fixed;  /*Fijado en toda la pantalla */
   top: 50%;
@@ -192,7 +173,10 @@ nav ul li a {
 
 .formulario label {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
+  margin-top: 0.5rem;
+  color: #141414; /* << Aseguramos color visible */
+  font-size: 1.1rem;
 }
 
 .formulario input,
@@ -215,7 +199,7 @@ nav ul li a {
   width: 100%;
   border-radius: 5px;
 }
-.cerrar-popup {
+.cerrar-popup-reserva {
   position: absolute;
   top: 15px;          /* Un poco más separada del borde superior */
   right: 15px;        /* Pegada al borde derecho */
@@ -226,18 +210,37 @@ nav ul li a {
   z-index: 101;
 }
 
-.cerrar-popup img {
+.cerrar-popup-reserva img {
   width: 30px;        /* Tamaño más chico */
   height: 30px;
   transition: opacity 0.2s ease;
 }
 
-.cerrar-popup img:hover {
+.cerrar-popup-reserva img:hover {
   opacity: 1;         /* Se vuelve más visible al pasar el mouse */
 }
 
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .box {
+    flex: 1 1 100%;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+/* CARRO DE COMPRAS */
 #carrito-lateral {
-  color: #000; /* Color visible sobre fondo oscuro/transparente */
+  color: #000;
   background-color: #fff;
   overflow-y: auto;
 }
@@ -246,4 +249,56 @@ nav ul li a {
 #carrito-lateral .info-carrito p,
 #carrito-lateral .precio-item {
   color: #000;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 200px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido {
+    background-color: #fff;
+    margin: auto;
+    padding: 2rem;
+    border: 1px solid #5b0d0d;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-contenido h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #5b0d0d;
+}
+
+.modal-contenido p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #5b0d0d;
+}
+
+.modal-contenido button {
+    background: white;
+    color: #2b2b2b;
+    border: 1px solid #5b0d0d;
+    padding: 0.7rem 1.2rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.modal-contenido button:hover {
+    background: #5b0d0d;
+    color: white;
+    transform: scale(1.03);
 }

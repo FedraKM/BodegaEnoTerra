@@ -2,13 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Reservas - Enoterra</title>
-  <link rel="stylesheet" href="reservas.css" />
-  <link rel="stylesheet" href="../Carrito/carrito.css">
-  <link rel="stylesheet" href="../Busqueda/busqueda.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="reservas.css"/>
+  <link rel="stylesheet" href="../Carrito/carrito.css"/>
+  <link rel="stylesheet" href="../Busqueda/busqueda.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet"/>
 </head>
+
 <body>
   <header>
     <div class="logo">
@@ -29,93 +31,57 @@
       </div>
     </nav>
   </header>
-  
+
+  <!-- Barra de búsqueda -->
   <div id="barra-busqueda-container"></div>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="banner">
       <h4>ENOTERRA</h4>
       <h1>RESTAURANTE</h1>
-      <p>
-        Disfruta de una exclusiva degustación de vinos, guiada por expertos, o haz una reserva para almorzar en nuestro restaurante. Dos experiencias únicas, diseñadas para que vivas momentos inolvidables.
-      </p>
+      <p>Disfruta de una exclusiva degustación de vinos, guiada por expertos, o haz una reserva para almorzar en nuestro restaurante. Dos experiencias únicas, diseñadas para que vivas momentos inolvidables.</p>
     </div>
   </section>
 
+  <!-- Reservas -->
   <section class="reservas">
     <div class="box degustaciones">
-      <img src="../Imagenes/telefonoIcono.png" alt="Teléfono" class="res-icon" />
+      <img src="../Imagenes/telefonoIcono.png" alt="Teléfono" class="res-icon"/>
       <h5>DEGUSTACIONES</h5>
       <h2>Hacer reserva</h2>
-      <p>Para degustaciones, el horario es de mañana (10:30 hs.) o (11:30 hs).</p>
-      <a id="link-degustaciones" class="btn">RESERVAR</a>
+      <p>Horario de degustaciones - 10:30 hs o 11:30 hs -</p>
+      <button id="btnDegustacion">RESERVAR</button>
     </div>
 
     <div class="box almuerzo">
-      <img src="../Imagenes/comidaIcono.png" alt="Cubiertos" class="res-icon" />
+      <img src="../Imagenes/comidaIcono.png" alt="Cubiertos" class="res-icon"/>
       <h5>ALMUERZO</h5>
       <h2>Hacer reserva</h2>
-      <p>Horario de almuerzo de 12:30 hs a 14:30 hs.</p>
-      <a id="link-almuerzos" class="btn">RESERVAR</a>
+      <p>Horario de almuerzo - 12:30 hs a 14:30 hs -</p>
+      <button id="btnAlmuerzo" class="btn">RESERVAR</button>
     </div>
   </section>
 
-  <!-- Formulario almuerzo -->
-  <div class="popup" id="formularioAlmuerzo">
-    <button class="cerrar-popup">
-      <img src="../Imagenes/multiple.png" alt="Cerrar" />
-    </button>
-  
-    <form class="formulario">
-      <h3>RESERVA PARA ALMUERZOS</h3>
-      <label>Nombre <input type="text" /></label>
-      <label>Apellido <input type="text" /></label>
-      <label>Fecha de reserva <input type="date" /></label>
-      <label>Hora <input type="time" /></label>
-      <label>Cantidad de comensales
-        <select>
-          <option>Seleccione</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5 o más</option>
-        </select>
-      </label>
-      <button type="submit">Enviar</button>
-    </form>
+  <!-- Formulario dinámico -->
+  <div id="contenedorFormulario"></div>
+
+  <!--Ventana de confirmacion-->
+  <div id="modal" class="modal">
+    <div class="modal-contenido">
+      <h2>¡Reserva enviada con éxito! ✅</h2>
+      <p>Gracias por reservar con nosotros, te esperamos 🍷</p>
+      <p>A la brevedad te enviaremos la confirmación a tu correo. Asegurate de chequear que los datos sean los correctos.</p>
+      <button id="btn-cerrar">Aceptar</button>
+    </div>
   </div>
 
-  <!-- Formulario DEGUSTACIONES -->
-  <div class="popup" id="formularioDegustacion">
-    <button class="cerrar-popup">
-      <img src="../Imagenes/multiple.png" alt="Cerrar" />
-    </button>
-  
-    <form class="formulario">
-      <h3>RESERVA PARA DEGUSTACIONES</h3>
-      <label>Nombre <input type="text" /></label>
-      <label>Apellido <input type="text" /></label>
-      <label>Fecha de reserva <input type="date" /></label>
-      <label>Hora <input type="time" /></label>
-      <label>Cantidad de comensales
-        <select>
-          <option>Seleccione</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5 o más</option>
-        </select>
-      </label>
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
-
+  <!-- Carrito -->
   <div id="contenedor-carrito"></div>
+
+  <!-- Scripts -->
   <script src="../Busqueda/busqueda.js"></script>
   <script src="../Carrito/cargar-carrito.js"></script>
-
   <script src="reservas.js"></script>
 </body>
 </html>

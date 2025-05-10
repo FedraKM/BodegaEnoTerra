@@ -1,0 +1,33 @@
+<div class="popup-reserva">
+  <button class="cerrar-popup-reserva">
+    <img src="../Imagenes/multiple.png" alt="Cerrar" />
+  </button>
+
+  <form class="formulario">
+    <h3 id="titulo-formulario">Reserva</h3>
+
+    <label for="nombre">Nombre</label>
+    <input id="nombre" type="text" required />
+
+    <label for="apellido">Apellido</label>
+    <input id="apellido" type="text" required />
+
+    <label for="fecha">Fecha de reserva</label>
+    <input id="fecha" type="date" required />
+
+    <label for="hora">Horario</label>
+    <select id="hora" required></select>
+
+    <label for="comensales">Cantidad de comensales</label>
+    <select id="comensales" required>
+      <option value="">Indique cantidad de personas</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5 o más</option>
+    </select>
+
+    <button type="submit" id="btn-enviar-reserva">ENVIAR</button>
+  </form>
+</div>
