@@ -1,127 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENOTURISMO - Bodega EnoTerra</title>
-    <link rel="stylesheet" href="../Enoturismo/enoturismo.css">
-    <link rel="stylesheet" href="../Carrito/carrito.css">
-    <link rel="stylesheet" href="../Busqueda/busqueda.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENOTURISMO - Bodega EnoTerra</title>
+  <link rel="stylesheet" href="../Enoturismo/enoturismo.css">
+  <link rel="stylesheet" href="../Carrito/carrito.css">
+  <link rel="stylesheet" href="../Busqueda/busqueda.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">
-          <img src="../Imagenes/logoEnoTerra.png" alt="Enoterra">
-        </div>
-        <nav>
+  <header>
+    <div class="logo">
+      <img src="../Imagenes/logoEnoTerra.png" alt="Enoterra">
+    </div>
+    <nav>
+      <ul>
+        <li><a id="link-home">HOME</a></li>
+        <li><a id="link-enoturismo">ENOTURISMO</a></li>
+        <li><a id="link-vinos">VINOS</a></li>
+        <li><a id="link-gastronomia">RESTAURANTE</a></li>
+        <li><a id="link-ubicacion">UBICACIÓN</a></li>
+        <li><a id="link-contacto">CONTACTO</a></li>
+      </ul>
+      <div class="iconos">
+        <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
+        <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
+        <img id="icon-carrito" src="../Imagenes/carrito-de-compras.png" alt="Carrito">
+      </div>
+    </nav>
+  </header>
+
+  <div id="barra-busqueda-container"></div>
+
+  <section class="banner">
+    <h2>ENOTURISMO</h2>
+  </section>
+
+  <div class="servicios">
+    <h3>Servicios</h3>
+    <ul>
+      <li><img src="../Imagenes/cubiertos - logos.png" alt="Restaurante"> Restaurante</li>
+      <li><img src="../Imagenes/wine - logo.png" alt="Degustaciones"> Degustaciones</li>
+      <li><img src="../Imagenes/letra e - logo.png" alt="Estacionamiento"> Estacionamiento</li>
+      <li><img src="../Imagenes/wi-fi - logo.png" alt="Wifi"> Wifi</li>
+    </ul>
+  </div>
+
+
+  <section class="ExperienciasEnoturisticas">
+    <h2>¡Descubre nuestras experiencias y reserva en 3 simples pasos!</h2>
+
+    <div class="Experiencias">
+
+      <!-- Enoturismo 1 -->
+      <div class="experiencia">
+        <img src="../Imagenes/platoComida - Experiencia.png" alt="Mesa del Sommelier">
+        <div class="info">
+          <p><strong>EXPERIENCIA</strong></p>
+          <h2>MESA DEL SOMMELIER ZERO ALCOHOL</h2>
+          <p class="descripcion">La Mesa del Sommelier Zero Alcohol es nuestra propuesta de alta gama, con maridaje de
+            mocktails.<br>Menú 5 tiempos estacional, concepto Cocina de Autor, con atención dedicada de nuestros Chefs y
+            Sommeliers.Esta experiencia es ideal para menores de 18 años, conductores designados y todos los<br> que
+            desean una experiencia gastronómica sin vinos. La mesa cuenta con 10 lugares donde podrá compartir un
+            momento ameno, agradable y divertido junto a otros Clientes.</pclass>
           <ul>
-            <li><a id="link-home">HOME</a></li>
-            <li><a id="link-vinos">VINOS</a></li>
-            <li><a id="link-enoturismo">ENOTURISMO</a></li>
-            <li><a id="link-gastronomia">GASTRONOMIA</a></li>
-            <li><a id="link-ubicacion">UBICACIÓN</a></li>
-            <li><a id="link-contacto">CONTACTO</a></li>
+            <li><img src="../Imagenes/reloj - icono.png" alt="icono-reloj">02:00:00 hs</li>
           </ul>
-          <div class="iconos">
-            <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
-            <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
-            <img id="icon-carrito" src="../Imagenes/carrito-de-compras.png" alt="Carrito">
-          </div>
-        </nav>
-    </header>
-
-    <div id="barra-busqueda-container"></div>
-
-    <section class="banner">
-        <h2>ENOTURISMO</h2>
-    </section>
-    
-    <div class="servicios">
-        <h3>Servicios</h3>
-        <ul>
-            <li><img src="../Imagenes/cubiertos - logos.png" alt="Restaurante"> Restaurante</li>
-            <li><img src="../Imagenes/wine - logo.png" alt="Degustaciones"> Degustaciones</li>
-            <li><img src="../Imagenes/letra e - logo.png" alt="Estacionamiento"> Estacionamiento</li>
-            <li><img src="../Imagenes/wi-fi - logo.png" alt="Wifi"> Wifi</li>
-        </ul>
-    </div>
-        
-
-      <section class="ExperienciasEnoturisticas">
-        <h2>¡Descubre nuestras experiencias y reserva en 3 simples pasos!</h2>
-
-        <div class="Experiencias">
-
-            <!-- Enoturismo 1 -->
-            <div class="experiencia">
-                <img src="../Imagenes/platoComida - Experiencia.png" alt="Mesa del Sommelier">
-                <div class="info">
-                <p><strong>EXPERIENCIA</strong></p>
-                <h2>MESA DEL SOMMELIER ZERO ALCOHOL</h2>
-                <p class="descripcion">La Mesa del Sommelier Zero Alcohol es nuestra propuesta de alta gama, con maridaje de mocktails.<br>Menú 5 tiempos estacional, concepto Cocina de Autor, con atención dedicada de nuestros Chefs y Sommeliers.Esta experiencia es ideal para menores de 18 años, conductores designados y todos los<br> que desean una experiencia gastronómica sin vinos. La mesa cuenta con 10 lugares donde podrá compartir un momento ameno, agradable y divertido junto a otros Clientes.</pclass>
-                <ul>
-                    <li><img src="../Imagenes/reloj - icono.png" alt="icono-reloj">02:00:00 hs</li>
-                </ul>
-                </div>
-                <div class="precio">
-                <p>Desde</p>
-                <p><strong>$149000</strong></p>
-                <p>ARS /por persona</p>
-                <button class="reservar-btn">RESERVAR</button>
-                </div>
-            </div>
         </div>
-    </section>
-
-    <!-- Formulario -->
-    <div class="popup" id="popupFormulario">
-      <button class="cerrar-popup">
-        <img src="../Imagenes/multiple.png" alt="Cerrar" />
-      </button>
-    
-      <form class="formulario">
-        <h3>RESERVA</h3>
-        <label>Nombre <input type="text" required/></label>
-        <label>Apellido <input type="text" required/></label>
-        <label>Fecha de reserva <input type="date" required/></label>
-        <label>Horario
-          <select required>
-            <option>Seleccione una hora</option>
-            <option>12:00</option>
-            <option>14:00</option>
-            <option>16:00</option>
-          </select>
-        </label>
-        <label>Cantidad de comensales
-          <select required>
-            <option>Indique cantidad de personas</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5 o más</option>
-          </select>
-        </label>
-        <button type="submit" id="btn-enviar-reserva">ENVIAR</button>
-      </form>
-    </div>
-
-    <div id="modal" class="modal">
-      <div class="modal-contenido">
-        <h2>¡Reserva enviada con éxito! ✅</h2>
-        <p>Gracias por reservar con nosotros, te esperamos 🍷</p>
-        <p>A la brevedad te enviaremos la confirmación a tu correo. Asegurate de chequear que los datos sean los correctos.</p>
-        <button id="btn-cerrar">Aceptar</button>
+        <div class="precio">
+          <p>Desde</p>
+          <p><strong>$149000</strong></p>
+          <p>ARS /por persona</p>
+          <button class="reservar-btn">RESERVAR</button>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div id="contenedor-carrito"></div>
+  <!-- Formulario -->
+  <div class="popup" id="popupFormulario">
+    <button class="cerrar-popup">
+      <img src="../Imagenes/multiple.png" alt="Cerrar" />
+    </button>
 
-    <script src="../Carrito/cargar-carrito.js"></script>
-    <script src="../Busqueda/busqueda.js"></script>
-    <script src="enoturismo.js"></script>
+    <form class="formulario">
+      <h3>RESERVA</h3>
+      <label>Nombre <input type="text" required /></label>
+      <label>Apellido <input type="text" required /></label>
+      <label>Fecha de reserva <input type="date" required /></label>
+      <label>Horario
+        <select required>
+          <option>Seleccione una hora</option>
+          <option>12:00</option>
+          <option>14:00</option>
+          <option>16:00</option>
+        </select>
+      </label>
+      <label>Cantidad de comensales
+        <select required>
+          <option>Indique cantidad de personas</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5 o más</option>
+        </select>
+      </label>
+      <button type="submit" id="btn-enviar-reserva">ENVIAR</button>
+    </form>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-contenido">
+      <h2>¡Reserva enviada con éxito! ✅</h2>
+      <p>Gracias por reservar con nosotros, te esperamos 🍷</p>
+      <p>A la brevedad te enviaremos la confirmación a tu correo. Asegurate de chequear que los datos sean los
+        correctos.</p>
+      <button id="btn-cerrar">Aceptar</button>
+    </div>
+  </div>
+
+  <div id="contenedor-carrito"></div>
+
+  <script src="../Carrito/cargar-carrito.js"></script>
+  <script src="../Busqueda/busqueda.js"></script>
+  <script src="enoturismo.js"></script>
 </body>
+
 </html>
