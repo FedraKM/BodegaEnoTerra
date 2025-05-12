@@ -177,6 +177,26 @@ input[type="radio"]:checked::before {
   padding: 1rem;
 }
 
+.metodo-activo {
+  background-color: #4a060686!important;
+}
+
+.metodo-activo label {
+  font-weight: bold !important;
+}
+
+.metodo-inactivo {
+  background-color: #fff !important;
+}
+
+.metodo-inactivo label {
+  font-weight: normal !important;
+}
+
+.pago-alternativo label{
+  margin-left: 0.5rem;
+}
+
 .pago-header label {
   font-weight: bold;
   margin-left: 0.5rem;

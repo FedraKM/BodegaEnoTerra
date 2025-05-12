@@ -71,22 +71,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const metodoSeleccionado = document.querySelector('input[name="metodo-pago"]:checked');
     if (!metodoSeleccionado) return;
 
+    const headerTarjeta = document.getElementById('header-tarjeta');
+    const headerMercado = document.getElementById('header-mercado');
+
     if (metodoSeleccionado.id === 'pago-tarjeta') {
-      inputsTarjeta.forEach(input => {
-        input.disabled = false;
-        input.required = true;
-      });
-      pagoTarjetaDiv.style.display = 'block';
-      pagoCuerpoDiv.style.display = 'none';
-    } else if (metodoSeleccionado.id === 'mercado-pago') {
-      inputsTarjeta.forEach(input => {
-        input.disabled = true;
-        input.required = false;
-        input.value = '';
-      });
-      pagoTarjetaDiv.style.display = 'none';
-      pagoCuerpoDiv.style.display = 'block';
-    }
+        // Activar inputs de tarjeta
+        inputsTarjeta.forEach(input => {
+          input.disabled = false;
+          input.required = true;
+        });
+        pagoTarjetaDiv.style.display = 'block';
+        pagoCuerpoDiv.style.display = 'none';
+
+        // Estilos visuales
+        headerTarjeta.classList.add('metodo-activo');
+        headerTarjeta.classList.remove('metodo-inactivo');
+        headerMercado.classList.add('metodo-inactivo');
+        headerMercado.classList.remove('metodo-activo');
+
+      } else if (metodoSeleccionado.id === 'mercado-pago') {
+        // Desactivar inputs de tarjeta
+        inputsTarjeta.forEach(input => {
+          input.disabled = true;
+          input.required = false;
+          input.value = '';
+        });
+        pagoTarjetaDiv.style.display = 'none';
+        pagoCuerpoDiv.style.display = 'block';
+
+        // Estilos visuales
+        headerMercado.classList.add('metodo-activo');
+        headerMercado.classList.remove('metodo-inactivo');
+        headerTarjeta.classList.add('metodo-inactivo');
+        headerTarjeta.classList.remove('metodo-activo');
+      }
   }
 
   pagoTarjetaCheckbox?.addEventListener('change', actualizarEstadoInputs);
