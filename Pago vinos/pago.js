@@ -1,4 +1,4 @@
-// 📌 Navegación de menú
+// Navegación de menú
 document.getElementById('link-home').onclick = () => window.location.href = '../Home/home.html';
 document.getElementById('link-vinos').onclick = () => window.location.href = '../Vinos/vinos.html';
 document.getElementById('link-enoturismo').onclick = () => window.location.href = '../Enoturismo/enoturismo.html';
@@ -6,11 +6,11 @@ document.getElementById('link-gastronomia').onclick = () => window.location.href
 document.getElementById('link-ubicacion').onclick = () => window.location.href = '../ubicacion/ubicacion.html';
 document.getElementById('link-contacto').onclick = () => window.location.href = '../Contacto/contacto.html';
 
-// 📌 Íconos
+// Íconos
 document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
 document.getElementById('iniciarSesion').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
 
-// 📌 Función para actualizar el resumen de compra
+// Función para actualizar el resumen de compra
 function actualizarResumenCompra() {
   const carritoGuardado = sessionStorage.getItem('carrito');
   const productosEnCarrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
@@ -56,11 +56,11 @@ function actualizarResumenCompra() {
   if (impuestosElement) impuestosElement.textContent = `Incluye $${impuestos.toLocaleString('es-AR', { minimumFractionDigits: 2 })} de impuestos`;
 }
 
-// 📌 Inicialización al cargar documento
+// Inicialización al cargar documento
 document.addEventListener('DOMContentLoaded', () => {
   actualizarResumenCompra();
 
-  // 📌 Gestión de métodos de pago
+  // Gestión de métodos de pago
   const pagoTarjetaCheckbox = document.getElementById('pago-tarjeta');
   const mercadoPagoCheckbox = document.getElementById('mercado-pago');
   const inputsTarjeta = document.querySelectorAll('.pago-tarjeta input, .pago-tarjeta select');
@@ -93,21 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
   mercadoPagoCheckbox?.addEventListener('change', actualizarEstadoInputs);
   actualizarEstadoInputs();
 
-  // 📌 Sincronizar con cambios en el carrito lateral
-  window.addEventListener('carritoActualizado', () => {
-    actualizarResumenCompra();
-  });
 });
 
-// 📌 Acción del botón pagar con validación de carrito y formulario
+// Acción del botón pagar con validación de carrito y formulario
 document.querySelector('.pagar-ahora')?.addEventListener('click', () => {
   const carritoGuardado = sessionStorage.getItem('carrito');
   const productosEnCarrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
-
-  if (productosEnCarrito.length === 0) {
-    alert('Tu carrito está vacío. Agregá productos antes de continuar con el pago.');
-    return;
-  }
 
   const camposObligatorios = document.querySelectorAll('.formulario input[required], .formulario select[required]');
   const formularioCompleto = Array.from(camposObligatorios).every(campo => campo.value.trim() !== '');
