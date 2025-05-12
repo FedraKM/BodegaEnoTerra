@@ -93,12 +93,21 @@ document.addEventListener('DOMContentLoaded', () => {
   mercadoPagoCheckbox?.addEventListener('change', actualizarEstadoInputs);
   actualizarEstadoInputs();
 
+  // Sincronizar con cambios en el carrito lateral
+  window.addEventListener('carritoActualizado', () => {
+    actualizarResumenCompra();
+  });
 });
 
 // Acción del botón pagar con validación de carrito y formulario
 document.querySelector('.pagar-ahora')?.addEventListener('click', () => {
   const carritoGuardado = sessionStorage.getItem('carrito');
   const productosEnCarrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
+
+  if (productosEnCarrito.length === 0) {
+    alert('Tu carrito está vacío. Agregá productos antes de continuar con el pago.');
+    return;
+  }
 
   const camposObligatorios = document.querySelectorAll('.formulario input[required], .formulario select[required]');
   const formularioCompleto = Array.from(camposObligatorios).every(campo => campo.value.trim() !== '');
