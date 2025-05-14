@@ -7,7 +7,7 @@ document.getElementById('link-ubicacion').onclick = () => window.location.href =
 document.getElementById('link-contacto').onclick = () => window.location.href = '../Contacto/contacto.html';
 
 // Iconos
-document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
+document.getElementById('icon-usuario').onclick = () => window.location.href = '../Usuario/seleccion.html';
 
 // Botón "Recuperar Contraseña"
 document.getElementById('btn-recuperar-contrasena').onclick = (e) => {

@@ -7,7 +7,7 @@ document.getElementById('link-ubicacion').onclick = () => window.location.href =
 document.getElementById('link-contacto').onclick = () => window.location.href = '../Contacto/contacto.html';
 
 // Íconos
-document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
+document.getElementById('icon-usuario').onclick = () => window.location.href = '../Usuario/seleccion.html';
 
 //Boton reservar
 document.getElementById('btn-reservar').addEventListener('click', function(e) {

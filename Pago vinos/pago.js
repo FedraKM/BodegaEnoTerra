@@ -7,8 +7,7 @@ document.getElementById('link-ubicacion').onclick = () => window.location.href =
 document.getElementById('link-contacto').onclick = () => window.location.href = '../Contacto/contacto.html';
 
 // Íconos
-document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
-document.getElementById('iniciarSesion').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
+document.getElementById('icon-usuario').onclick = () => window.location.href = '../Usuario/seleccion.html';
 
 // Función para actualizar el resumen de compra
 function actualizarResumenCompra() {
@@ -111,13 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
   mercadoPagoCheckbox?.addEventListener('change', actualizarEstadoInputs);
   actualizarEstadoInputs();
 
-  // Sincronizar con cambios en el carrito lateral
-  window.addEventListener('carritoActualizado', () => {
-    actualizarResumenCompra();
-  });
 });
 
-// Acción del botón pagar con validación de carrito y formulario
+// Botón pagar con validación de carrito y formulario
 document.querySelector('.pagar-ahora')?.addEventListener('click', () => {
   const carritoGuardado = sessionStorage.getItem('carrito');
   const productosEnCarrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
@@ -137,7 +132,7 @@ document.querySelector('.pagar-ahora')?.addEventListener('click', () => {
 
   if (!confirm('¿Confirmás tu compra?')) return;
 
-  // 📌 Limpiar carrito, actualizar otras vistas y redirigir
+  // Limpiar carrito, actualizar otras vistas y redirigir
   sessionStorage.removeItem('carrito');
 
   // Disparar evento para actualizar carrito lateral (si está abierto)
@@ -145,6 +140,25 @@ document.querySelector('.pagar-ahora')?.addEventListener('click', () => {
 
   window.location.href = '../compra-realizada/compra-realizada.html';
 });
+
+// Botón 'Cancelar compra'
+document.querySelector('.cancelar-compra')?.addEventListener('click', () => {
+  if (!confirm('¿Deseas cancelar la compra?')) return;
+
+  // Limpiar carrito
+  sessionStorage.removeItem('carrito');
+
+  // Mostrar modal con mensaje personalizado
+  document.getElementById('mensaje-modal').textContent = 'La compra ha sido cancelada con éxito.';
+  document.getElementById('modal').style.display = 'flex';
+});
+
+// Botón 'Aceptar' en el modal
+document.getElementById('btn-cerrar-success')?.addEventListener('click', () => {
+  // Redirigir al home
+  window.location.href = '../Home/home.html';
+});
+
 
 // Exponer función global para otros scripts
 window.actualizarResumenCompra = actualizarResumenCompra;

@@ -7,7 +7,7 @@ document.getElementById('link-ubicacion').onclick = () => window.location.href =
 document.getElementById('link-contacto').onclick = () => window.location.href = '../Contacto/contacto.html';
 
 //Iconos
-document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
+document.getElementById('icon-usuario').onclick = () => window.location.href = '../Usuario/seleccion.html';
 
 // Botón "Registrarse"
 document.getElementById('btn-registrarse').onclick = (e) => {
@@ -48,7 +48,7 @@ document.getElementById('btn-cerrar-error').onclick = () => {
 //Link Iniciar Sesión
 document.getElementById('link-iniciar-sesion').onclick = (e) => {
   e.preventDefault(); // Evita que el enlace haga scroll arriba
-  window.location.href = '../InicioSesion/iniciosesion.html'; 
+  window.location.href = '../Usuario/seleccion.html'; 
 };
 
 // Mostrar/Ocultar contraseña principal
