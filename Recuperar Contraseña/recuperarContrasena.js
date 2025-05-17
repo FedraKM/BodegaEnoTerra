@@ -7,7 +7,7 @@ document.getElementById('link-ubicacion').onclick = () => window.location.href =
 document.getElementById('link-contacto').onclick = () => window.location.href = '../Contacto/contacto.html';
 
 // Iconos
-document.getElementById('icon-usuario').onclick = () => window.location.href = '../Usuario/seleccion.html';
+document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
 
 // Botón "Recuperar Contraseña"
 document.getElementById('btn-recuperar-contrasena').onclick = (e) => {
@@ -28,7 +28,7 @@ document.getElementById('btn-cerrar').onclick = () => {
   // Oculta el modal
   document.getElementById('modal').style.display = 'none';
   
-  // Redirige al home
+  // Redirige
   window.location.href = '../InicioSesion/iniciosesion.html';
 };
 
