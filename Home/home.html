@@ -9,12 +9,24 @@
   <link rel="stylesheet" href="../Busqueda/busqueda.css">
   <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
 </head>
-<body>
 
+<body>
   <header>
     <div class="logo">
       <img src="../Imagenes/logoEnoTerra.png" alt="Enoterra">
     </div>
+
+    <div class="menu-top-movil">
+      <div class="iconos-movil">
+        <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
+        <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
+        <img id="icon-carrito" src="../Imagenes/carrito-de-compras.png" alt="Carrito">
+      </div>
+      <div class="menu-celular" id="menu-toggle">
+        ☰
+      </div>
+    </div>
+    
     <nav>
       <ul>
         <li><a id="link-home">HOME</a></li>
@@ -31,6 +43,17 @@
       </div>
     </nav>
   </header>
+
+  <div class="menu-movil" id="menu">
+      <ul>
+        <li><a id="movil-home">HOME</a></li>
+        <li><a id="movil-enoturismo">ENOTURISMO</a></li>
+        <li><a id="movil-vinos">VINOS</a></li>
+        <li><a id="movil-gastronomia">RESTAURANTE</a></li>
+        <li><a id="movil-ubicacion">UBICACIÓN</a></li>
+        <li><a id="movil-contacto">CONTACTO</a></li>
+      </ul>
+    </div>
 
   <div id="barra-busqueda-container"></div>
 

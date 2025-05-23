@@ -50,7 +50,7 @@
   }
   
   .seccion {
-    height: 300px;
+    height: 25vw;
     position: relative;
     overflow: hidden;
     margin: 20px 0;
@@ -84,3 +84,136 @@
     z-index: 1;
     cursor: pointer;
   }
+
+  /*Celular*/
+
+  .menu-top-movil {
+    display: none;
+    display: flex;
+    align-items: center;
+    padding: 0 3%;
+    gap: 10%; /* Espacio entre iconos y menú */
+    justify-content: flex-start; /* Todo alineado a la izquierda */
+    align-items: center;
+}
+
+.menu-celular {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #4A0606;
+}
+
+.iconos-movil {
+  display: none;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.iconos-movil img {
+  display: none;
+  width: 24px;
+  cursor: pointer;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.menu-movil {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: calc(100vh - 100px); /* usa toda la pantalla restante */
+  background-color: white;
+  z-index: 1000;
+  padding: 0; /* quitamos el padding para evitar espacios */
+  overflow-y: auto; /* por si hay muchos ítems */
+}
+
+
+.menu-movil ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-movil ul li {
+  width: 100%;
+  border-bottom: 1px solid #4A0606;
+}
+
+.menu-movil ul li:last-child {
+  border-bottom: none; /* evitar línea extra abajo */
+}
+
+.menu-movil ul li a {
+  display: block;
+  width: 100%;
+  padding: 45px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #4A0606;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+
+
+/* Mostrar el menú hamburguesa en pantallas pequeñas */
+@media (max-width: 930px) {
+  nav {
+    display: none;
+  }
+
+  .menu-top-movil {
+    display: flex;
+  }
+
+  .iconos-movil img{
+    display: block;
+  }
+
+  .menu-celular {
+    display: block;
+  }
+
+  .menu-movil.active {
+    display: block;
+  }
+
+  .seccion {
+    height: 100vw; /* proporcional al ancho de pantalla */
+    margin: 5vw 0;
+  }
+
+  .boton {
+  display: flex;
+  align-items: center;     /* centra verticalmente */
+  justify-content: center; /* centra horizontalmente */
+  text-shadow: 1px 1px 2px #000;
+  background-color: #4a060691;
+  color: white;
+  width: 80%;
+  max-width: 90%;
+  height: 12vw;
+  max-height: 55px;
+  font-weight: lighter;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 5vw;
+
+  border-radius: 4px;
+  z-index: 1;
+  cursor: pointer;
+}
+  
+
+}
