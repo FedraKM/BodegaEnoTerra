@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega EnoTerra | Administrar Productos</title>
+    <link rel="stylesheet" href="editar_productos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img id="icon-usuario" src="../Imagenes/usuario.png" alt="Usuario">
+            <h2>Administrador</h2>
+        </div>
+
+        <nav>
+
+            <a href="#" id="link-dashboard">Dashboard</a>
+            <a href="#" class="activo" id="link-productos">Productos</a>
+            <a href="#" id="link-experiencias">Experiencias</a>
+            <a href="#" id="link-reservas">Reservas</a>
+            <a href="#" id="link-reportes">Reportes</a>
+            <a href="#" id="link-configuracion">Configuración</a>
+            <a href="#" id="link-salir">Cerrar sesión</a>
+
+        </nav>
+    </aside>
+
+    <div class="contenedor">
+        <section class="banner">
+            <h1>Administrar productos</h1>
+        </section>
+
+        <div class="contenedor-productos">
+            <section class="productos" id="producto-admin">
+                <!-- Ventanita para agregar producto +-->
+                <div class="producto-admin formulario-producto-admin" id="ventana-agregar-producto">
+
+                    <span class="descuento">% OFF</span>
+
+                    <input type="file" id="imagen-producto" style="display: none;">
+                    <label for="imagen-producto">
+                        <img src="../../Imagenes/uploadImage.png" alt="Subir Imagen" class="boton-imagen">
+                    </label>
+                    <label>Nombre:</label>
+                    <input type="text" id="nombre-producto">
+                    <label>Precio Original:</label>
+                    <input type="text" id="precio-producto">
+                    <label>Descuento (%)</label>
+                    <input type="text" id="descuento-producto">
+                    <label>Precio con descuento:</label>
+                    <input type="text" id="precio-descuento-producto">
+                    <label>Detalle:</label>
+                    <input type="text" id="detalle-producto">
+                    <button id="guardar-producto">AGREGAR</button>
+                </div>
+
+                <!-- Producto editable 1-->
+                <div class="producto-admin">
+                    <span class="descuento">30% OFF</span>
+                    <img src="../../Imagenes/Botella de Malbec Famiglia Enoterra.png" alt="Malbec">
+
+                    <label>Nombre:</label>
+                    <input type="text" value="Famiglia EnoTerra Malbec" class="nombre-producto">
+
+                    <label>Precio original:</label>
+                    <input type="text" value="$56.195" class="precio-original">
+
+                    <label>Precio con descuento:</label>
+                    <input type="text" value="$39.335" class="precio-descuento">
+
+                    <label>Detalle:</label>
+                    <textarea class="detalle-producto">Precio sin Impuestos Nacionales:$46.442
+Precio por caja x6 botellas
+Precio por botella $6.556</textarea>
+
+                    <div class="botones-admin">
+                        <button class="btn-guardar">GUARDAR</button>
+                        <button class="btn-eliminar">ELIMINAR</button>
+                    </div>
+                </div>
+
+                <!-- Repetir estructura para más productos -->
+                <!-- Producto editable 2-->
+                <div class="producto-admin">
+                    <span class="descuento">20% OFF</span>
+                    <img src="../../Imagenes/Botella de Vino Oasis.png" alt="Malbec">
+
+                    <label>Nombre:</label>
+                    <input type="text" value="Oasis Sur Cabernet Sauvignon" class="nombre-producto">
+
+                    <label>Precio original:</label>
+                    <input type="text" value="$40.775" class="precio-original">
+
+                    <label>Precio con descuento:</label>
+                    <input type="text" value="$32.605" class="precio-descuento">
+
+                    <label>Detalle:</label>
+                    <textarea class="detalle-producto">Precio sin Impuestos Nacionales:$33.682
+Precio por caja x6 botellas
+Precio por botella $5.434</textarea>
+
+                    <div class="botones-admin">
+                        <button class="btn-guardar">GUARDAR</button>
+                        <button class="btn-eliminar">ELIMINAR</button>
+                    </div>
+                </div>
+
+                <!-- Producto editable 3-->
+                <div class="producto-admin">
+                    <span class="descuento">25% OFF</span>
+                    <img src="../../Imagenes/Botella de Malbec Gran Famiglia.png" alt="Malbec">
+
+                    <label>Nombre:</label>
+                    <input type="text" value="Gran Famiglia EnoTerra Malbec" class="nombre-producto">
+
+                    <label>Precio original:</label>
+                    <input type="text" value="$108.535" class="precio-original">
+
+                    <label>Precio con descuento:</label>
+                    <input type="text" value="$81.400" class="precio-descuento">
+
+                    <label>Detalle:</label>
+                    <textarea class="detalle-producto">Precio sin Impuestos Nacionales:$89.698
+Precio por caja x6 botellas
+Precio por botella $13.567</textarea>
+
+                    <div class="botones-admin">
+                        <button class="btn-guardar">GUARDAR</button>
+                        <button class="btn-eliminar">ELIMINAR</button>
+                    </div>
+                </div>
+
+                <!-- Producto editable 4-->
+                <div class="producto-admin">
+                    <span class="descuento">35% OFF</span>
+                    <img src="../../Imagenes/Coleccion de Malbec Gran Famiglia.png" alt="Malbec">
+
+                    <label>Nombre:</label>
+                    <input type="text" value="Seleccion Gran Famiglia" class="nombre-producto">
+
+                    <label>Precio original:</label>
+                    <input type="text" value="$118.190" class="precio-original">
+
+                    <label>Precio con descuento:</label>
+                    <input type="text" value="$76.825" class="precio-descuento">
+
+                    <label>Detalle:</label>
+                    <textarea class="detalle-producto">Precio sin Impuestos Nacionales:$97.678
+Precio por caja x6 botellas
+Precio por botella $12.804</textarea>
+
+                    <div class="botones-admin">
+                        <button class="btn-guardar">GUARDAR</button>
+                        <button class="btn-eliminar">ELIMINAR</button>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </div>
+
+
+    <script src="editar_productos.js"></script>
+
+</body>
+
+</html>

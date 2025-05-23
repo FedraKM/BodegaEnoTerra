@@ -1,0 +1,214 @@
+body {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+/* Barra lateral */
+.sidebar {
+   background-color: #600000;
+  color: white;
+  width: 220px; 
+  padding: 20px;
+  height: 110vh;
+  box-sizing: border-box;
+  position: fixed;
+  overflow-y: auto;      /* opcional si tenés mucho contenido en la sidebar */
+  border-right: 1px solid #ccc;  /* opcional, para separarla visualmente */
+}
+
+.sidebar h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.activo {
+  background-color: #4a0000;
+}
+
+/* Contenido principal */
+.contenedor {
+  flex: 1;
+  padding: 20px;
+  margin-left: 220px;
+  max-width: calc(100vw - 220px); /* limita el ancho para que no se superponga a la sidebar */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Banner */
+.banner {
+  flex: 1;
+  padding: 20px;
+}
+
+.banner h1 {
+    font-size: 30px;
+  margin-top: 0;
+  color: #333;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-left: -15px;
+}
+
+.sidebar-header img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.sidebar-header h2 {
+  color: white;
+  font-size: 1.5rem;
+  padding-right: 10px;
+}
+
+.contenedor-productos{
+    overflow-x: auto;
+  padding: 20px;
+}
+
+.productos {
+  display: flex;
+  gap: 30px;
+  padding: 20px 60px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 60px; /* para respetar margen al scrollear */
+  justify-content: flex-start; /* <- forzamos que se alinee a la izquierda */
+}
+
+.producto-admin {
+    position: relative; /*importante para ubicar el span */
+  flex: 0 0 auto;
+  width: 250px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  background: #fff;
+  scroll-snap-align: start;
+}
+
+.producto-admin img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.producto-admin button {
+  margin: 5px;
+}
+
+.formulario-producto-admin input {
+  display: block;
+  width: 90%;
+  margin: 5px auto;
+  padding: 5px;
+}
+
+.formulario-producto-admin h3 {
+  margin-bottom: 10px;
+}
+
+.descuento {
+  background-color: #111;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+input[type="text"],
+textarea {
+  width: 90%;
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #999;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+textarea {
+  height: 70px;
+  resize: vertical;
+}
+
+.botones-admin {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn-guardar,
+.btn-eliminar {
+  background-color: white;
+  color: #800000;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-guardar{
+    background-color: #800000;
+    color: white;
+    border: #400000;
+}
+
+.btn-guardar:hover{
+    background-color: #a00000;
+  transform: scale(1.05);
+}
+
+.boton-imagen {
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.boton-imagen:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+#guardar-producto {
+  background-color: #800000;
+    color: white;
+    border: #400000;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#guardar-producto:hover {
+  background-color: #a00000;
+  transform: scale(1.05);
+}

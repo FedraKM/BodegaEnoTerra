@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega EnoTerra | Perfil</title>
+    <link rel="stylesheet" href="perfilAdmin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img id="icon-usuario" src="../Imagenes/usuario.png" alt="Usuario">
+            <h2>Administrador</h2>
+        </div>
+
+        <nav>
+
+            <a href="#" id="link-dashboard">Dashboard</a>
+            <a href="#" id="link-productos">Productos</a>
+            <a href="#" id="link-experiencias">Experiencias</a>
+            <a href="#" id="link-reservas">Reservas</a>
+            <a href="#" id="link-reportes">Reportes</a>
+            <a href="#" id="link-configuracion">Configuración</a>
+            <a href="#" id="link-salir">Cerrar sesión</a>
+
+        </nav>
+    </aside>
+
+    <main>
+        <div class="perfil-card">
+            <h1>Mi Perfil</h1>
+            <input type="file" id="foto-perfil" style="display: none;">
+            <label for="foto-perfil">
+                <img src="../Imagenes/usuario.png" alt="Foto de Perfil" class="boton-foto">
+            </label>
+            <h3>ADMINISTRADOR</h3>
+            <h2 id="nombre-usuario"></h2>
+            <p><strong>Email:</strong> <span id="email-usuario"></span></p>
+            <p><strong>Teléfono:</strong> <span id="telefono-usuario"></span></p>
+            <button id="cerrar-sesion">Cerrar Sesión</button>
+        </div>
+    </main>
+
+
+
+    <script src="perfilAdmin.js"></script>
+</body>
+
+</html>

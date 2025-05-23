@@ -1,0 +1,180 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Oswald', sans-serif;
+}
+
+body {
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+/* Barra lateral */
+.sidebar {
+  background-color: #600000;
+  color: white;
+  width: 220px;
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.activo {
+  background-color: #4a0000;
+}
+
+/* Contenido principal */
+/* Área principal */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tarjeta de perfil */
+.perfil-card {
+  background-color: #fff;
+  color: #600000;
+  border-radius: 15px;
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.perfil-card h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.perfil-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #600000;
+  margin-bottom: 20px;
+}
+
+.boton-foto {
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.boton-foto:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.perfil-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.perfil-card p {
+  font-size: 16px;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.perfil-card strong {
+  color: #800000;
+}
+
+h3{
+    color: #333;
+}
+
+#cerrar-sesion {
+  background-color: #800000;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#cerrar-sesion:hover {
+  background-color: #a00000;
+  transform: scale(1.05);
+}
+
+
+
+/* Panel de resumen */
+.panel {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #600000;
+}
+
+.card p {
+  font-size: 1.5rem;
+  margin: 10px 0 0;
+  color: #333;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-left: -15px;
+}
+
+.sidebar-header img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.sidebar-header h2 {
+  color: white;
+  font-size: 1.5rem;
+  padding-right: 10px;
+}
