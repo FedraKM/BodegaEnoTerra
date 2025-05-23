@@ -1,0 +1,360 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inria Serif', serif;
+  background-color: #4A0606;
+}
+
+h3 {
+  text-align: center;
+  color: #4A0606;
+  background-color: white;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 110px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #4A0606;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+.iconos img {
+  width: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/*Reseñas*/
+.reseñas {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.titulo-reseñas {
+  text-align: center;
+  font-size: 32px;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  font-family: 'Inria Serif', serif;
+}
+
+.formulario-reseña {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #4A0606;
+}
+
+textarea {
+  padding: 10px;
+  padding-bottom: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  border: 2px solid #4A0606;
+
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  align-self: flex-end;
+  background-color: #4A0606;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #671414;
+}
+
+.estrellas {
+  display: flex;
+  gap: 5px;
+  margin-left: 10px;
+  font-size: 35px;
+  color: #4A0606;
+  cursor: pointer;
+}
+
+.estrella {
+  color: transparent;
+  -webkit-text-stroke: 1px #4A0606;
+  transition: all 0.3s ease;
+}
+
+/* Hover: solo para las que tienen la clase hover */
+.estrella.hover {
+  color: #CD853F;
+  -webkit-text-stroke: 0;
+}
+
+/* Estrellas seleccionadas fijas */
+.estrella.seleccionada {
+  color: #CD853F;
+  -webkit-text-stroke: 0;
+}
+
+.contador {
+  text-align: right;
+  font-size: 14px;
+  color: #4A0606;
+}
+
+.lista-reseñas {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.item-reseña {
+  background-color: #fff4f4;
+  color: #333;
+  border: 1px solid #d4baba;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Inria Serif', serif;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Todo alineado a la izquierda excepto estrellas */
+}
+
+.item-reseña strong,
+.item-reseña p,
+.item-reseña img.imagen-reseña {
+  width: 100%;
+  text-align: left;
+}
+
+.item-reseña strong {
+  margin-bottom: 5px;
+  color: #4A0606;
+  font-size: 18px;
+}
+
+.item-reseña p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.item-reseña img.imagen-reseña {
+  max-width: 150px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.item-reseña .valoracion {
+  width: 100%;
+  text-align: center;
+  /* estrellas centradas */
+  margin-top: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.item-reseña.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.item-reseña em {
+  color: #555;
+  font-size: 0.9em;
+  margin-left: 0px;
+  display: inline-block;
+}
+
+
+/*Subir imagen (icono)*/
+.icono-subir {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #4A0606;
+  background: #f0f0f0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+  width: fit-content;
+}
+
+.icono-subir:hover {
+  background: #ddd;
+}
+
+.icono-subir i {
+  font-size: 20px;
+}
+
+.btn-eliminar {
+  padding: 6px 12px;
+  background-color: #671414;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.btn-eliminar:hover {
+  background-color: #4A0606;
+}
+
+/*Footer*/
+footer {
+  background-color: white;
+  color: #4A0606;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+footer .columna {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer a {
+  color: #4A0606;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+footer p {
+  font-weight: bold;
+}
+
+footer p.copy {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer img.mapita {
+  width: 220px;
+  border-radius: 8px;
+}
+
+footer img.mapita:hover {
+  opacity: 0.7;
+}
+
+footer .fa-whatsapp {
+  color: #4A0606;
+  margin-right: 8px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+footer i {
+  margin-right: 8px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+footer a {
+  display: block;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: #4A0606;
+  font-size: 16px;
+}
+
+/*Imagen de mapa (link google maps)*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 180px;
+  background-color: rgba(128, 0, 32, 0.9);
+  /* color bordo con transparencia */
+  color: #fff;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 6px;
+
+  /* Posicionarlo abajo y encima de la imagen */
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

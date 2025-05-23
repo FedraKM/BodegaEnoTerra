@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega EnoTerra | Reseñas</title>
+    <link rel="stylesheet" href="../Reseñas/reseñas.css">
+    <link rel="stylesheet" href="../Carrito/carrito.css">
+    <link rel="stylesheet" href="../Busqueda/busqueda.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="../Imagenes/logoEnoTerra.png" alt="Enoterra">
+        </div>
+        <nav>
+            <ul>
+                <li><a id="link-home">HOME</a></li>
+                <li><a id="link-enoturismo">ENOTURISMO</a></li>
+                <li><a id="link-vinos">VINOS</a></li>
+                <li><a id="link-gastronomia">RESTAURANTE</a></li>
+                <li><a id="link-ubicacion">UBICACIÓN</a></li>
+                <li><a id="link-contacto">CONTACTO</a></li>
+            </ul>
+            <div class="iconos">
+                <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
+                <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
+                <img id="icon-carrito" src="../Imagenes/carrito-de-compras.png" alt="Carrito">
+            </div>
+        </nav>
+    </header>
+
+    <div id="barra-busqueda-container"></div>
+
+    <main>
+        <h1 class="titulo-reseñas">R E S E Ñ A S</h1>
+        <h3>Dejanos un comentario sobre tu experiencia en EnoTerra!</h3>
+        <section class="reseñas">
+
+            <div class="formulario-reseña">
+                <input type="text" id="nombre" placeholder="Nombre y Apellido">
+
+                <textarea id="comentario" maxlength="300" placeholder="Contános tu experiencia..."></textarea>
+                <div class="contador"><span id="contador">0</span>/300 caracteres</div>
+
+                <!-- Ícono de subir imagen -->
+                <label for="foto" class="icono-subir">
+                    <i class="fa-solid fa-image"></i> +
+                </label>
+
+                <input type="file" id="foto" accept="image/*" style="display: none;">
+
+                <div id="preview"></div>
+
+                <div class="estrellas">
+                    <span class="estrella" data-valor="1">★</span>
+                    <span class="estrella" data-valor="2">★</span>
+                    <span class="estrella" data-valor="3">★</span>
+                    <span class="estrella" data-valor="4">★</span>
+                    <span class="estrella" data-valor="5">★</span>
+                </div>
+
+                <button onclick="agregarReseña()">Enviar</button>
+            </div>
+
+            <div id="lista-reseñas" class="lista-reseñas"></div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div class="columna">
+            <p>Nuestro Contacto</p>
+            <a href="#"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+            <a href="#"><i class="fas fa-envelope"></i> Mail</a>
+        </div>
+
+        <div class="columna">
+            <p>Seguinos en redes</p>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        </div>
+
+        <div class="columna">
+            <p>Nuestra Ubicación</p>
+            <a href="#"><i class="fas fa-map-marker-alt"></i>Ruta Provincial 94, Km 18, Los Chacayes, Tunuyán, Mendoza,
+                Argentina.</a>
+            <div class="mapa-contenedor">
+                <a href="https://maps.app.goo.gl/wsoSndnaa73CpsGc8?g_st=com.google.maps.preview.copy" target="_blank"
+                    class="tooltip">
+                    <img src="../Imagenes/imagen ubicacion.png" alt="Mapa de ubicación" class="mapita">
+                    <span class="tooltiptext">Ver en Google Maps</span>
+                </a>
+            </div>
+
+        </div>
+
+        <p class="copy">&copy; 2025 EnoTerra</p>
+    </footer>
+
+
+    <div id="contenedor-carrito"></div>
+
+    <script src="../Carrito/cargar-carrito.js"></script>
+    <script src="../Busqueda/busqueda.js"></script>
+    <script src="reseñas.js"></script>
+</body>
+
+</html>
