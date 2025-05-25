@@ -2,6 +2,15 @@
     margin: 0;
     padding: 0;  
   }
+
+  html, body {
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
   
   header {
     display: flex;
@@ -128,7 +137,7 @@ body {
 #ubicacion {
   position: relative;
   padding: 20px;
-  min-height: 700px;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -145,6 +154,72 @@ body {
   background-size: cover; /* Ajusta la imagen para que cubra todo el área del contenedor */
   opacity: 0.9; /* Opacidad de la imagen de fondo */
   z-index: -1; /* Coloca la imagen de fondo detrás del contenido */
+}
+
+/* PANTALLAS*/
+@media (max-width: 768px) {
+  #ubicacion {
+    padding: 30px 10px;
+    min-height: auto;
+  }
+
+  #ubicacion h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  #ubicacion p {
+    font-size: 1.1rem;
+    padding: 0 10px;
+    line-height: 1.4;
+  }
+
+  .mapa-container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .mapa-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .mapa-container .boton {
+    font-size: 0.95rem;
+    padding: 0.7rem;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-left: 0;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .iconos {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .logo img {
+    height: 80px;
+  }
 }
 
 

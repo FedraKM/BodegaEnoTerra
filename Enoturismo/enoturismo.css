@@ -335,3 +335,109 @@
     color: white;
     transform: scale(1.03);
 }
+
+/* --------- PANTALLAS --------- */
+@media (max-width: 1024px) {
+  .experiencia {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .precio {
+    margin-top: 1rem;
+  }
+
+  .servicios {
+    top: auto;
+    right: auto;
+    position: static;
+    margin: 2rem auto;
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .iconos {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .banner {
+    padding: 80px 0;
+  }
+
+  .banner h2 {
+    font-size: 24px;
+  }
+
+  .experiencia img {
+    width: 100%;
+    height: auto;
+  }
+
+  .formulario,
+  .popup {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .info h2 {
+    font-size: 1.4rem;
+  }
+
+  .descripcion {
+    font-size: 1rem;
+  }
+
+  .precio p:first-child {
+    font-size: 1.2rem;
+  }
+
+  .precio p strong {
+    font-size: 2rem;
+  }
+
+  .precio p:last-child {
+    font-size: 1rem;
+  }
+
+  .reservar-btn {
+    width: 100%;
+  }
+
+  .modal-contenido {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  .servicios ul li {
+    font-size: 0.9rem;
+  }
+
+  .servicios h3 {
+    font-size: 1.2rem;
+  }
+}

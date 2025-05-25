@@ -242,3 +242,144 @@
 #carrito-lateral .precio-item {
     color: #000;
 }
+
+/* --------- RESPONSIVE DESIGN --------- */
+@media (max-width: 1024px) {
+  #carrito-lateral {
+    width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  #carrito-lateral {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 114px;
+    height: calc(100vh - 114px);
+    padding: 20px 15px;
+    box-sizing: border-box;
+    border-left: none;
+    border-top: 2px solid #ccc;
+  }
+
+  .no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .item-carrito {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .img-carrito {
+    width: 100%;
+    max-width: 260px;
+    margin-bottom: 10px;
+  }
+
+  .info-carrito {
+    width: 100%;
+  }
+
+  .acciones-carrito {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .control-cantidad {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .control-cantidad img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .control-cantidad .cantidad {
+    font-size: 1.2rem;
+    width: 30px;
+  }
+
+  .precio-y-eliminar {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .precio-item {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  .btn-eliminar {
+    width: 24px;
+    height: 24px;
+  }
+
+  .botonesCarrito {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .botonesCarrito button {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .carrito-footer {
+    text-align: center;
+    padding: 20px 10px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+  }
+
+  .envio-gratis {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .carrito-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .precio-item {
+    font-size: 1rem;
+  }
+
+  .total-carrito {
+    font-size: 1rem;
+  }
+
+  .nota-envio {
+    font-size: 12px;
+  }
+
+  .btn-comprar,
+  .btn-seguir {
+    font-size: 0.95rem;
+  }
+
+  .carrito-body {
+    font-size: 1rem;
+  }
+}

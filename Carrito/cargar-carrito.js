@@ -116,11 +116,17 @@ fetch('../Carrito/carrito.html')
     function abrirCarrito() {
       overlay.style.display = 'block';
       carritoLateral.classList.add('mostrar');
+
+      // Solo bloquear scroll si es pantalla chica (menos de 768px)
+      if (window.innerWidth < 768) {
+        document.body.classList.add('no-scroll');
+      }
     }
 
     function cerrarCarritoFunc() {
       overlay.style.display = 'none';
       carritoLateral.classList.remove('mostrar');
+      document.body.classList.remove('no-scroll');
     }
 
     // Mostrar el carrito al hacer clic en el ícono

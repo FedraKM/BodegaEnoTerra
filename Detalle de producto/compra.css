@@ -226,3 +226,103 @@
     margin-top: 1.5em;
     border-radius: 6px;
 }
+
+/* ----------- PANTALLAS ----------- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0;
+  }
+
+  .iconos {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .titulo-carrito {
+    font-size: 1.5em;
+    padding: 0.8em 0;
+  }
+
+  .carrito-container {
+    padding: 1em;
+  }
+
+  .tabla-carrito {
+    font-size: 0.9em;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .tabla-carrito table {
+    width: 100%;
+    min-width: 600px; /* para evitar que se rompa la estructura */
+  }
+
+  .vino-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .vino-img {
+    max-width: 100px;
+    height: auto;
+  }
+
+  .vino-detalle h3 {
+    font-size: 1.1em;
+  }
+
+  .cantidad-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .cantidad {
+    font-size: 1.2em;
+  }
+
+   .totales-carrito {
+    width: 99%;                /* ancho máximo más chico que 100% */
+    max-width: 99vw;           /* evita desborde horizontal */
+    font-size: 0.95em;
+    margin: 2em auto 1em;
+    padding: 1em;              /* padding uniforme */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;    /* para que padding no sume al ancho */
+  }
+
+  .totales-carrito p {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .total-final {
+    font-size: 1.2em;
+    text-align: center;
+    width: 100%;
+  }
+
+  .comprar-btn {
+    font-size: 1em;
+    padding: 1em;
+    width: 100%;
+  }
+
+}
