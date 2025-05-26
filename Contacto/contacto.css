@@ -114,3 +114,61 @@ nav ul li a {
     background-color: #551d1c;
     color: white;
   }
+
+  /* Estilos para el botón hamburguesa */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 26px;
+  color: #4A0606;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /*transparente */
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1001;
+  }
+
+  nav ul.mostrar {
+    display: flex;
+  }
+
+  nav ul li a {
+    color: #fff; /* letras blancas */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  nav ul li a:hover {
+    color: #ddd; 
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .iconos {
+    display: flex;
+    align-items: center;
+  }
+
+  .iconos img {
+    margin-left: 10px;
+  }
+}

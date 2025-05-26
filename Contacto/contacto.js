@@ -7,3 +7,11 @@ document.getElementById('link-ubicacion').onclick = () => window.location.href =
 document.getElementById('link-contacto').onclick = () => window.location.href = '../Contacto/contacto.html';
 // Íconos
 document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
+
+//Abrir y cerrar menú en el celular
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('mostrar');
+});
