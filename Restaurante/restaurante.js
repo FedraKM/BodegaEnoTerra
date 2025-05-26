@@ -14,3 +14,11 @@ document.getElementById('btn-reservar').addEventListener('click', function(e) {
   e.preventDefault(); // Evita el comportamiento por defecto del <a>
   window.location.href = '../Reservas/reservas.html'; // Redirige
 });
+
+//Abrir y cerrar menú en el celular
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('mostrar');
+});

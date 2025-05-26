@@ -96,3 +96,11 @@ document.getElementById("btnAlmuerzo").addEventListener("click", () => cargarFor
 document.getElementById("btn-cerrar").onclick = () => {
   document.getElementById("modal").style.display = "none";
 };
+
+//Abrir y cerrar menú en el celular
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('mostrar');
+});

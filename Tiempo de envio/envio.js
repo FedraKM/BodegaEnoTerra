@@ -12,10 +12,18 @@ document.getElementById('icon-usuario').onclick = () => window.location.href = '
 //Acordeon funcionamiento
 const botones = document.querySelectorAll(".acordeon-btn");
 
-  botones.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.classList.toggle("active");
-      const respuesta = btn.nextElementSibling;
-      respuesta.style.display = (respuesta.style.display === "block") ? "none" : "block";
-    });
+botones.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("active");
+    const respuesta = btn.nextElementSibling;
+    respuesta.style.display = (respuesta.style.display === "block") ? "none" : "block";
   });
+});
+
+//Abrir y cerrar menú en el celular
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('mostrar');
+});

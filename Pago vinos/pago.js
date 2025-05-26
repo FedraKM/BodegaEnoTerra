@@ -162,3 +162,11 @@ document.getElementById('btn-cerrar-success')?.addEventListener('click', () => {
 
 // Exponer función global para otros scripts
 window.actualizarResumenCompra = actualizarResumenCompra;
+
+//Abrir y cerrar menú en el celular
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('mostrar');
+});
