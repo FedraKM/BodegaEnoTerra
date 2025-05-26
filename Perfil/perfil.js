@@ -12,7 +12,7 @@ const usuario = JSON.parse(localStorage.getItem("usuarioActual"));
 
 if (!usuario) {
   // Si no hay usuario, volver a inicio de sesión
-  window.location.href = "../InicioSesion/iniciosesion.html";
+  /*window.location.href = "../InicioSesion/iniciosesion.html";*/
 } else {
   datosDiv.innerHTML = `
     <img src="${usuario.fotoPerfil || '../Imagenes/usuario-logueado.png'}" style="width:100px; border-radius:50%;">
@@ -27,3 +27,10 @@ document.getElementById('cerrar-sesion').onclick = () => {
   window.location.href = "../Home/index.html";
 };
 
+//Abrir y cerrar menú en el celular
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('mostrar');
+});

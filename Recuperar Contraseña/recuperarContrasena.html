@@ -4,20 +4,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recuperar Contraseña - Enoterra</title>
+    <title>Recuperar Contraseña | Enoterra</title>
     <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="recuperarContrasena.css">
     <link rel="stylesheet" href="../Carrito/carrito.css">
     <link rel="stylesheet" href="../Busqueda/busqueda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-    <header class="encabezado">
+    <header>
         <div class="logo">
             <img src="../Imagenes/logoEnoTerra.png" alt="Enoterra" class="logo" />
         </div>
+
         <nav>
-            <ul class="menu">
+            <ul>
                 <li><a id="link-home">HOME</a></li>
                 <li><a id="link-enoturismo">ENOTURISMO</a></li>
                 <li><a id="link-vinos">VINOS</a></li>
@@ -32,6 +35,11 @@
                 <img src="../Imagenes/carrito-de-compras.png" alt="Carrito" id="icon-carrito" />
             </div>
         </nav>
+
+        <!--menú responsive para celular-->
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
 
     <div id="barra-busqueda-container"></div>

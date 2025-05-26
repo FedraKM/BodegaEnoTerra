@@ -37,3 +37,11 @@ document.getElementById('link-iniciar-sesion').onclick = (e) => {
   e.preventDefault();
   window.location.href = '../InicioSesion/iniciosesion.html';
 };
+
+//Abrir y cerrar menú en el celular
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('mostrar');
+});

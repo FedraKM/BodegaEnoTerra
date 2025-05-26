@@ -6,7 +6,7 @@ body {
     color: #333;
 }
 
-.encabezado {
+header {
     border-bottom: 1px solid #33333374;
     padding: 1rem 2rem;
     flex-wrap: wrap;
@@ -31,20 +31,19 @@ nav {
     flex-wrap: wrap;
 }
 
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin-right: 20px;
 }
 
-.menu li a {
-    text-decoration: none;
-    color: #4A0606;
-    font-weight: bold;
-    font-size: 1.2rem;
-    cursor: pointer;
+nav ul li a {
+  text-decoration: none;
+  color: #4A0606;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .iconos img {
@@ -195,14 +194,6 @@ button:hover {
     transform: scale(1.03);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .contenedor {
-        padding: 1rem;
-        margin: 2rem auto;
-    }
-}
-
 /* Estilos para el botón hamburguesa */
 .menu-toggle {
     display: none;
@@ -257,5 +248,10 @@ button:hover {
 
     .iconos img {
         margin-left: 10px;
+    }
+
+    .contenedor {
+        padding: 1rem;
+        margin: 2rem auto;
     }
 }

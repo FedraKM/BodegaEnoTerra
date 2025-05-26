@@ -77,3 +77,11 @@ function mostrarModal(mensaje) {
   document.getElementById("mensaje-modal").textContent = mensaje;
   document.getElementById("modal-error").style.display = "block";
 }
+
+//Abrir y cerrar menú en el celular
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('mostrar');
+});

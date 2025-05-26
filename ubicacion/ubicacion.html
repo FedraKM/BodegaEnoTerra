@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bodega EnoTerra</title>
-    <link rel="stylesheet" href="ubicacion.css">
-    <link rel="stylesheet" href="../Carrito/carrito.css">
-    <link rel="stylesheet" href="../Busqueda/busqueda.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ubicación | EnoTerra</title>
+  <link rel="stylesheet" href="ubicacion.css">
+  <link rel="stylesheet" href="../Carrito/carrito.css">
+  <link rel="stylesheet" href="../Busqueda/busqueda.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
   <header>
@@ -30,10 +34,15 @@
         <img id="icon-carrito" src="../Imagenes/carrito-de-compras.png" alt="Carrito">
       </div>
     </nav>
+
+    <!--menú responsive para celular-->
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
   </header>
 
   <div id="barra-busqueda-container"></div>
-  
+
   <main>
     <section id="ubicacion">
       <h2>-UBICACIÓN-</h2>
@@ -42,7 +51,8 @@
       </p>
       <div class="mapa-container">
         <img src="../Imagenes/imagen ubicacion.png" alt="Mapa de ubicación">
-        <a href="https://maps.app.goo.gl/wsoSndnaa73CpsGc8?g_st=com.google.maps.preview.copy" class="boton" target="_blank">
+        <a href="https://maps.app.goo.gl/wsoSndnaa73CpsGc8?g_st=com.google.maps.preview.copy" class="boton"
+          target="_blank">
           VER UBICACIÓN EN MAPS
         </a>
       </div>
@@ -55,7 +65,8 @@
   <script src="../Busqueda/busqueda.js"></script>
   <script src="ubicacion.js"></script>
 
-  
-      
+
+
 </body>
+
 </html>
