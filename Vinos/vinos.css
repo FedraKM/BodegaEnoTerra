@@ -184,9 +184,6 @@ nav ul li a {
   /*Oculto al inicio*/
   position: fixed;
   right: 0;
-  top: 90px;
-  /* Empieza justo debajo del header */
-  width: 400px;
   height: calc(100vh - 90px);
   /* Para que no se desborde más allá del viewport */
   background-color: #fff;
@@ -474,5 +471,55 @@ nav ul li a {
 
   .iconos img {
     margin-left: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  #carrito-lateral {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    border-left: none;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 9999;
+  }
+
+  #carrito-lateral.mostrar {
+    transform: translateX(0);
+  }
+
+  .carrito-header {
+    padding-top: 10px;
+  }
+
+  .img-carrito {
+    width: 60px;
+  }
+
+  .control-cantidad img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .precio-item {
+    font-size: 16px;
+  }
+
+  .btn-eliminar {
+    width: 18px;
+    height: 18px;
+  }
+
+  .btn-comprar, .btn-seguir {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .carrito-footer p, .nota-envio {
+    font-size: 12px;
   }
 }
