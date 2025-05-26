@@ -130,34 +130,6 @@ nav ul li a {
   /* Evita saltos de línea */
 }
 
-/*Radios*/
-input[type="radio"] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 14px;
-  height: 14px;
-  border: 2px solid #333;
-  border-radius: 2px;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  vertical-align: middle;
-}
-
-input[type="radio"]:checked::before {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 8px;
-  height: 8px;
-  background-color: #670f0f;
-}
-
 .pago-tarjeta,
 .pago-alternativo {
   background-color: #f2f2f2;

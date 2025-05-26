@@ -52,16 +52,16 @@
       <h2>Entrega</h2>
 
       <select id="pais" required>
-      <option value="">País/Región</option>
-      <option>Argentina</option>
-      <option>Bolivia</option>
-      <option>Brasil</option>
-      <option>Chile</option>
-      <option>Colombia</option>
-      <option>Ecuador</option>
-      <option>Paraguay</option>
-      <option>Uruguay</option>
-      <option>Otro</option>
+        <option value="">País/Región</option>
+        <option>Argentina</option>
+        <option>Bolivia</option>
+        <option>Brasil</option>
+        <option>Chile</option>
+        <option>Colombia</option>
+        <option>Ecuador</option>
+        <option>Paraguay</option>
+        <option>Uruguay</option>
+        <option>Otro</option>
       </select>
 
       <div class="dos-columnas">
@@ -96,73 +96,19 @@
       <h2>Pago</h2>
       <p>Todas las transacciones son seguras y están encriptadas.</p>
 
-      <div class="pago-header" id="header-tarjeta">
-        <div class="radio">
-          <input type="radio" id="pago-tarjeta" name="metodo-pago" checked>
-          <label for="pago-tarjeta">Pago con la tarjeta</label>
-        </div>
-        <div class="logos">
-          <img src="../Imagenes/Visa-Logo.png" alt="Visa">
-          <img src="../Imagenes/Naranja-X-logo.png" alt="NaranjaX">
-          <img src="../Imagenes/logo_mastercard.png" alt="MasterCard">
-        </div>
-      </div>
-
-      <!-- Opción 1: Tarjeta -->
-      <div class="pago-tarjeta">
-
-        <div class="una-columna">
-          <input type="text" placeholder="Número de tarjeta" required>
-        </div>
-
-        <div class="dos-columnas">
-          <input type="text" placeholder="Fecha de vencimiento (MM/AA)" required>
-          <input type="text" placeholder="Código de seguridad" required>
-        </div>
-
-        <div class="una-columna">
-          <input type="text" placeholder="Nombre del titular" required>
-        </div>
-
-        <div class="dos-columnas">
-          <select id="id" required>
-            <option value="">ID</option>
-            <option>DNI</option>
-            <option>CUIT</option>
-            <option>PASAPORTE</option>
-          </select>
-          <input type="text" placeholder="Número de documento" required>
-        </div>
-
-        <label for="cuotas">Cuotas</label>
-        <select id="cuotas" required>
-          <option value="">Indique cantidad de cuotas</option>
-          <option>1 cuota</option>
-          <option>3 cuotas</option>
-          <option>6 cuotas</option>
-          <option>12 cuotas</option>
-        </select>
-
-        <div class="checkbox">
-          <input type="checkbox" id="mismo-envio" checked>
-          <label for="mismo-envio">Usar la dirección de envío como dirección de facturación.</label>
-        </div>
-      </div>
-
-      <!-- Opción 2: Mercado Pago -->
+      <!-- Opción Unica: Mercado Pago -->
       <div class="pago-alternativo" id="header-mercado">
-        <div class="radio">
-          <input type="radio" id="mercado-pago" name="metodo-pago">
+
+        <label id="mercado-pago" name="metodo-pago">
           <label for="mercado-pago">Mercado Pago</label>
-        </div>
 
-        <div class="logos">
-          <img src="../Imagenes/mercadoPago - logo.png" alt="MercadoPago">
-          <img src="../Imagenes/Visa-Logo.png" alt="Visa">
-          <img src="../Imagenes/logo_mastercard.png" alt="MasterCard">
-          <span>+2</span>
-        </div>
-
+          <div class="logos">
+            <img src="../Imagenes/mercadoPago - logo.png" alt="MercadoPago">
+            <img src="../Imagenes/Visa-Logo.png" alt="Visa">
+            <img src="../Imagenes/logo_mastercard.png" alt="MasterCard">
+            <span>+2</span>
+          </div>
+        </label>
 
       </div>
 
@@ -179,7 +125,7 @@
       <div id="wallet_container"></div>
 
       <script src="https://sdk.mercadopago.com/js/v2"></script>
-      
+
       <button class="cancelar-compra">CANCELAR COMPRA</button>
 
       <div id="modal" class="modal">
@@ -225,7 +171,7 @@
           <p><strong>Total</strong></p>
           <p><span>ARS</span> <strong id="total-texto">$39.335,00</strong></p>
         </div>
-        
+
         <p class="impuestos">Incluye $ 6.826,74 de impuestos</p>
       </div>
 
