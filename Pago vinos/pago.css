@@ -268,16 +268,16 @@ input[type="radio"]:checked::before {
 }
 
 .cancelar-compra{
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   width: 100%;
   padding: 1rem;
   background-color: white;
   color: #4A0606;
-  border: none;
+  border: 2px solid #4A0606;
   font-size: 1.1rem;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /*RESUMEN DE COMPRA*/
@@ -472,4 +472,29 @@ input[type="radio"]:checked::before {
   background: #5b0d0d;
   color: white;
   transform: scale(1.03);
+}
+
+/*Celulares*/
+
+@media (max-width: 768px) {
+  .checkout {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .checkout .formulario{
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .resumen {
+    position: static;
+    max-height: none;
+    height: auto;
+    border-left: none;
+    border-top: 2px solid #4A0606;
+    width: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
 }

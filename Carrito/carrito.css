@@ -273,60 +273,67 @@
   }
 
   .item-carrito {
-    flex-direction: column;
+    display: flex;
     align-items: center;
-    text-align: center;
-    width: 100%;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
   }
 
   .img-carrito {
-    width: 100%;
-    max-width: 260px;
-    margin-bottom: 10px;
+    width: 80px;
+    margin-right: 10px;
+    margin-bottom: 0;
   }
 
   .info-carrito {
-    width: 100%;
+    flex: 1;
   }
 
   .acciones-carrito {
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    width: 100%;
+    margin-top: 5px;
   }
 
   .control-cantidad {
-    justify-content: center;
-    gap: 6px;
+    display: flex;
+    align-items: center;
+    width: auto;
+    gap: 4px;
   }
 
   .control-cantidad img {
     width: 20px;
     height: 20px;
+    cursor: pointer;
   }
 
   .control-cantidad .cantidad {
-    font-size: 1.2rem;
-    width: 30px;
+    font-weight: bold;
+    width: 20px;
+    text-align: center;
+    margin: 0 10px;
+    font-size: 16px;
   }
 
   .precio-y-eliminar {
-    flex-direction: row;
-    justify-content: center;
+    display: flex;
     align-items: center;
-    gap: 10px;
-    width: 100%;
+    gap: 8px;
   }
 
   .precio-item {
-    font-size: 1.6rem;
-    font-weight: bold;
+    white-space: nowrap;
+    font-size: 18px;
   }
 
   .btn-eliminar {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    cursor: pointer;
   }
 
   .botonesCarrito {

@@ -223,18 +223,71 @@ nav ul li a {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .hero {
+    height: auto;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  .banner {
+    max-width: 100%;
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .banner h1 {
+    font-size: 2rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+
+  .reservas {
+    flex-direction: column;
+    width: 100%;
+  }
+
   .box {
     flex: 1 1 100%;
+    padding: 2rem 1rem;
   }
 
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+  .formulario {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner h1 {
+    font-size: 1.6rem;
   }
 
-  nav ul {
-    flex-direction: column;
+  .banner p {
+    font-size: 0.95rem;
+  }
+
+  .box h2 {
+    font-size: 1.3rem;
+  }
+
+  .box p {
+    font-size: 0.85rem;
+  }
+
+  .btn,
+  button {
+    font-size: 0.95rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .popup-reserva {
+    width: 90%;
+    padding: 1.5rem;
   }
 }
 
