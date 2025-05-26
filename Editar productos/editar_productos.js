@@ -5,7 +5,7 @@ document.getElementById('link-experiencias').onclick = () => window.location.hre
 document.getElementById('link-reservas').onclick = () => window.location.href = '';
 document.getElementById('link-reportes').onclick = () => window.location.href = '';
 document.getElementById('link-configuracion').onclick = () => window.location.href = '';
-document.getElementById('link-salir').onclick = () => window.location.href = '../Home/index.html';
+document.getElementById('link-salir').onclick = () => window.location.href = 'index.html';
 
 // Ícono USUARIO
 document.getElementById('icon-usuario').onclick = () => window.location.href = '../Perfil%20Administrador/perfilAdmin.html';
