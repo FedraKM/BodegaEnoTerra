@@ -1,219 +1,429 @@
-* {
-    margin: 0;
-    padding: 0;  
-  }
-  
-  body {
-    font-family: 'Inria Serif', serif;
-  }
-  
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 20px;
-    background-color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .logo img {
-    height: 110px;
-  }
-  
-  nav {
-    display: flex;
-    align-items: center;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #4A0606;
-    font-weight: bold;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
-
-  
-  .iconos img {
-    width: 20px;
-    margin-left: 15px;
-    cursor: pointer;
-  }
-  
-  .seccion {
-    height: 25vw;
-    position: relative;
-    overflow: hidden;
-    margin: 20px 0;
-  }
-  
-  .fondo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* mantiene la imagen nítida y recorta solo lo necesario */
-    z-index: 0;
-  }
-  
-  .boton {
-    text-shadow: 1px 1px 2px #000;
-    background-color: #4a060691;
-    color: white;
-    width: 450px;
-    height: 55px;
-    font-weight: lighter;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    line-height: 55px;
-    border-radius: 4px;
-    font-size: 24px;
-    z-index: 1;
-    cursor: pointer;
-  }
-
-  /*Celular*/
-
-  .menu-top-movil {
-    display: none;
-    display: flex;
-    align-items: center;
-    padding: 0 3%;
-    gap: 10%; /* Espacio entre iconos y menú */
-    justify-content: flex-start; /* Todo alineado a la izquierda */
-    align-items: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.menu-celular {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #4A0606;
+body {
+  font-family: 'Inria Serif', serif;
 }
 
-.iconos-movil {
-  display: none;
+header {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 110px;
+}
+
+nav {
+  display: flex;
   align-items: center;
 }
 
-.iconos-movil img {
-  display: none;
-  width: 24px;
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #4A0606;
+  font-weight: bold;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
-body.no-scroll {
+
+.iconos img {
+  width: 20px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.seccion {
+  height: 300px;
+  position: relative;
   overflow: hidden;
+  margin: 20px 0;
 }
 
-.menu-movil {
-  position: fixed;
-  display: none;
+.fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: calc(100vh - 100px); /* usa toda la pantalla restante */
-  background-color: white;
-  z-index: 1000;
-  padding: 0; /* quitamos el padding para evitar espacios */
-  overflow-y: auto; /* por si hay muchos ítems */
+  height: 100%;
+  object-fit: cover;
+  /* mantiene la imagen nítida y recorta solo lo necesario */
+  z-index: 0;
 }
 
-
-.menu-movil ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+#enoturismo {
+  object-position: center 50%;
 }
 
-.menu-movil ul li {
-  width: 100%;
-  border-bottom: 1px solid #4A0606;
-}
-
-.menu-movil ul li:last-child {
-  border-bottom: none; /* evitar línea extra abajo */
-}
-
-.menu-movil ul li a {
-  display: block;
-  width: 100%;
-  padding: 45px 20px;
-  text-align: center;
-  text-decoration: none;
-  color: #4A0606;
-  font-size: 1.8rem;
-  font-weight: bold;
-  box-sizing: border-box;
-}
-
-
-
-/* Mostrar el menú hamburguesa en pantallas pequeñas */
-@media (max-width: 930px) {
-  nav {
-    display: none;
-  }
-
-  .menu-top-movil {
-    display: flex;
-  }
-
-  .iconos-movil img{
-    display: block;
-  }
-
-  .menu-celular {
-    display: block;
-  }
-
-  .menu-movil.active {
-    display: block;
-  }
-
-  .seccion {
-    height: 100vw; /* proporcional al ancho de pantalla */
-    margin: 5vw 0;
-  }
-
-  .boton {
-  display: flex;
-  align-items: center;     /* centra verticalmente */
-  justify-content: center; /* centra horizontalmente */
+.boton {
   text-shadow: 1px 1px 2px #000;
   background-color: #4a060691;
   color: white;
-  width: 80%;
-  max-width: 90%;
-  height: 12vw;
-  max-height: 55px;
+  width: 450px;
+  height: 55px;
   font-weight: lighter;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 5vw;
-
+  line-height: 55px;
   border-radius: 4px;
+  font-size: 24px;
   z-index: 1;
   cursor: pointer;
 }
-  
 
+/*Footer*/
+footer {
+  background-color: #5b0d0d;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+footer .columna {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: none;
+}
+
+footer p{
+  font-weight: bold;
+}
+
+footer p.copy {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer img.mapita {
+  width: 220px;
+  border-radius: 8px;
+}
+
+footer img.mapita:hover{
+  opacity: 0.7;
+}
+
+footer .fa-whatsapp {
+  color: white;
+  margin-right: 8px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+footer i {
+  margin-right: 8px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+footer a {
+  display: block;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+/*Imagen de mapa (link google maps)*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 180px;
+  background-color: rgba(128, 0, 32, 0.9); /* color bordo con transparencia */
+  color: #fff;
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 6px;
+
+  /* Posicionarlo abajo y encima de la imagen */
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*Carrusesl Galería*/
+.galeria-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 50px auto; /* esto la centra horizontalmente */
+  justify-content: center; /* centra el contenido interno horizontalmente */
+  cursor: pointer;
+}
+
+.galeria-contenedor:hover {
+  opacity: 0.95;
+  box-shadow: 0 0 15px rgba(128, 0, 32, 0.4);
+  transform: scale(1.01);
+}
+
+.titulo-galeria {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 28px;
+  color: #4A0606;
+  font-family: 'Inria Serif', serif;
+  margin: 0;
+}
+
+.slider {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.activo {
+  opacity: 1;
+  z-index: 2;
+}
+
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+}
+
+.dot {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.activo {
+  background-color: rgba(128, 0, 32, 0.9);
+}
+
+/*Carrusel reseñas*/
+.slider-reseñas {
+  max-width: 800px;
+  margin: 50px auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  user-select: none;
+  padding: 0 20px;
+  transform: translateX(40px);
+}
+
+.slider-reseñas:hover {
+  opacity: 0.7;
+  
+}
+
+.slider-contenido {
+ flex: 1;
+  height: 280px;
+  overflow-y: auto;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: #fff4f4;
+  border: 1px solid #d4baba;
+  font-family: 'Inria Serif', serif;
+  color: #333;
+  text-align: left;
+  box-sizing: border-box;
+  transition: opacity 0.8s ease; /* <--- animación */
+  opacity: 1;
+}
+
+.slider-contenido.oculto {
+  opacity: 0;
+}
+
+.slider-contenido strong {
+  color: #4A0606;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.slider-contenido .valoracion {
+  color: #4A0606;
+  margin-top: 15px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.slider-contenido p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.slider-contenido img.imagen-reseña {
+  max-width: 150px;
+  border-radius: 8px;
+  display: block;
+  margin-top: 10px;
+}
+
+.titulo-reseñas {
+  writing-mode: vertical-rl;
+  transform: rotate(360deg);
+  font-size: 28px;
+  color: #4A0606;
+  font-family: 'Inria Serif', serif;
+  margin: 0;
+  font-weight: bold;
+}
+
+#slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+#slider-dots .dot {
+  width: 12px;
+  height: 12px;
+  background-color: #c0c0c0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#slider-dots .dot.activo {
+  background-color: #a11212;
+  transform: scale(1.2);
+}
+
+/* Estilos para el botón hamburguesa */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 26px;
+  color: #4A0606;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5); /*transparente */
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1001;
+  }
+
+  nav ul.mostrar {
+    display: flex;
+  }
+
+  nav ul li a {
+    color: #fff; /* letras blancas */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  nav ul li a:hover {
+    color: #ddd; 
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .iconos {
+    display: flex;
+    align-items: center;
+  }
+
+  .iconos img {
+    margin-left: 10px;
+  }
 }

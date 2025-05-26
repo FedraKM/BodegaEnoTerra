@@ -1,93 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bodega EnoTerra</title>
-    <link rel="stylesheet" href="compra.css">
-    <link rel="stylesheet" href="../Carrito/carrito.css">
-    <link rel="stylesheet" href="../Busqueda/busqueda.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bodega EnoTerra | Detalles de la compra</title>
+  <link rel="stylesheet" href="compra.css">
+  <link rel="stylesheet" href="../Carrito/carrito.css">
+  <link rel="stylesheet" href="../Busqueda/busqueda.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-    <header>
-        <div class="logo">
-          <img src="../Imagenes/logoEnoTerra.png" alt="Enoterra">
-        </div>
-        <nav>
-          <ul>
-            <li><a id="link-home">HOME</a></li>
-            <li><a id="link-enoturismo">ENOTURISMO</a></li>
-            <li><a id="link-vinos">VINOS</a></li>
-            <li><a id="link-gastronomia">RESTAURANTE</a></li>
-            <li><a id="link-ubicacion">UBICACIÓN</a></li>
-            <li><a id="link-contacto">CONTACTO</a></li>
-          </ul>
-          <div class="iconos">
-            <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
-            <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
-          </div>
-        </nav>
-      </header>
-
-      
-      <div id="barra-busqueda-container"></div>
-        
-  </main>
-      <h2 class="titulo-carrito">MI CARRITO</h2>
-    <div class="carrito-container">
-      <table class="tabla-carrito">
-        <thead>
-          <tr>
-            <th>PRODUCTO</th>
-            <th>PRECIO</th>
-            <th>CANTIDAD</th>
-            <th>TOTAL</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-                <div class="vino-info">
-                  <img src="../Imagenes/Botella de Malbec Famiglia Enoterra.png" alt="Famiglia EnoTerra Malbec" class="vino-img">
-                  <div class="vino-detalle">
-                    <h3>Famiglia EnoTerra Malbec</h3>
-                    <p>Caja (6u)</p>
-                  </div>
-                </div>
-              </td>
-              
-            <td>
-              <p><s>$56.195</s></p>
-              <p class="precio-descuento">$39.335</p>
-            </td>
-            <td>
-              <button class="cantidad-btn">-</button>
-              <span class="cantidad">1</span>
-              <button class="cantidad-btn">+</button>
-            </td>
-            <td>$39.335</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="totales-carrito">
-        <h3>TOTALES DEL CARRITO</h3>
-        <p>Tu pedido cumple los requisitos de envío gratuito.</p>
-        <p>
-            Consulta el tiempo de envío de tus productos.
-            <button class="ver-tiempos">Ver tiempos de envío</button>
-        </p>
-        <p class="total-final">
-            TOTAL: <span>$39.335 ARS</span>
-        </p>
-        <p style="font-size: 0.95em;">Impuesto incluido y los gastos de envío se calculan en la pantalla de pago</p>
-        <button class="comprar-btn">COMPRAR</button>
+  <header>
+    <div class="logo">
+      <img src="../Imagenes/logoEnoTerra.png" alt="Enoterra">
     </div>
+
+    <nav>
+      <ul>
+        <li><a id="link-home">HOME</a></li>
+        <li><a id="link-enoturismo">ENOTURISMO</a></li>
+        <li><a id="link-vinos">VINOS</a></li>
+        <li><a id="link-gastronomia">RESTAURANTE</a></li>
+        <li><a id="link-ubicacion">UBICACIÓN</a></li>
+        <li><a id="link-contacto">CONTACTO</a></li>
+      </ul>
+    </nav>
+
+    <div class="acciones">
+      <div class="iconos">
+        <img id="icon-usuario" src="../Imagenes/agregar-usuario.png" alt="Usuario">
+        <img id="icon-buscar" src="../Imagenes/lupa.png" alt="Buscar">
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
     </div>
+  </header>
+
+  <div id="barra-busqueda-container"></div>
+
   </main>
-  
+  <h2 class="titulo-carrito">MI CARRITO</h2>
+  <div class="carrito-container">
+    <table class="tabla-carrito">
+      <thead>
+        <tr>
+          <th>PRODUCTO</th>
+          <th>PRECIO</th>
+          <th>CANTIDAD</th>
+          <th>TOTAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="vino-info">
+              <img src="../Imagenes/Botella de Malbec Famiglia Enoterra.png" alt="Famiglia EnoTerra Malbec"
+                class="vino-img">
+              <div class="vino-detalle">
+                <h3>Famiglia EnoTerra Malbec</h3>
+                <p>Caja (6u)</p>
+              </div>
+            </div>
+          </td>
+
+          <td>
+            <p><s>$56.195</s></p>
+            <p class="precio-descuento">$39.335</p>
+          </td>
+          <td>
+            <button class="cantidad-btn">-</button>
+            <span class="cantidad">1</span>
+            <button class="cantidad-btn">+</button>
+          </td>
+          <td>$39.335</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="totales-carrito">
+      <h3>TOTALES DEL CARRITO</h3>
+      <p>Tu pedido cumple los requisitos de envío gratuito.</p>
+      <p>
+        Consulta el tiempo de envío de tus productos.
+        <button class="ver-tiempos">Ver tiempos de envío</button>
+      </p>
+      <p class="total-final">
+        TOTAL: <span>$39.335 ARS</span>
+      </p>
+      <p style="font-size: 0.95em;">Impuesto incluido y los gastos de envío se calculan en la pantalla de pago</p>
+      <button class="comprar-btn">COMPRAR</button>
+    </div>
+  </div>
+  </main>
+
   <div id="contenedor-carrito"></div>
 
   <script src="../Carrito/carrito-comprar.js"></script>
@@ -95,4 +107,5 @@
   <script src="../Busqueda/busqueda.js"></script>
   <script src="compra.js"></script>
 </body>
-</html>   
+
+</html>

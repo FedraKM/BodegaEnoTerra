@@ -1,253 +1,312 @@
 * {
-    margin: 0;
-    padding: 0;  
-  }
-  
-  body {
-    font-family: 'Inria Serif', serif;
-  }
-  
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 20px;
-    background-color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .logo img {
-    height: 110px;
-  }
-  
-  nav {
-    display: flex;
-    align-items: center;
-  }
-  
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inria Serif', serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 110px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #4A0606;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.iconos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.iconos img {
+  width: 20px;
+  cursor: pointer;
+}
+
+/* Estilos para el botón hamburguesa */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 26px;
+  color: #4A0606;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
   nav ul {
+    display: none;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1001;
+  }
+
+  nav ul.mostrar {
     display: flex;
-    list-style: none;
-    gap: 20px;
-    margin-right: 20px;
   }
-  
+
   nav ul li a {
+    color: #fff;
     text-decoration: none;
-    color: #4A0606;
-    font-weight: bold;
-    font-size: 1.2rem;
-    cursor: pointer;
+    font-size: 18px;
+    font-weight: normal;
   }
-  
+
+  nav ul li a:hover {
+    color: #ddd;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .iconos {
+    display: flex;
+    align-items: center;
+  }
+
   .iconos img {
-    width: 20px;
-    margin-left: 15px;
-    cursor: pointer;
+    margin-left: 10px;
   }
+}
 
 /* === TÍTULO PRINCIPAL === */
 .titulo-carrito {
-    color: #4A0606;
-    font-size: 2em;
-    font-weight: bold;
-    margin-top: 0em;
-    text-align: center;
-    width: 100%;
-    background-color: #e1e1e1;
-    padding: 1em 0;
+  color: #4A0606;
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 0em;
+  text-align: center;
+  width: 100%;
+  background-color: #e1e1e1;
+  padding: 1em 0;
 }
 
 .vino-info {
-    display: flex;
-    align-items: center; /*nombre del vino centrado de acuerdo a su imagen*/
-    gap: 0.5em;
+  display: flex;
+  align-items: center;
+  /*nombre del vino centrado de acuerdo a su imagen*/
+  gap: 0.5em;
 }
 
 .vino-img {
-    height: 210px;
-    width: auto;
-    max-width: 160px;
-    object-fit: contain;
+  height: 210px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
 }
 
 .vino-detalle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .vino-detalle h3 {
-    font-size: 1.3em;
-    margin: 0;
-    color: #4A0606;
-    line-height: 1.2;
-    margin-left: auto;
-    margin-right: auto;
+  font-size: 1.3em;
+  margin: 0;
+  color: #4A0606;
+  line-height: 1.2;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .vino-detalle p {
-    margin: 0.2em 0 0;
-    font-size: 1.1em;
-    color: #4A0606;
-    line-height: 1.2;
+  margin: 0.2em 0 0;
+  font-size: 1.1em;
+  color: #4A0606;
+  line-height: 1.2;
 }
+
 /* === CARRITO === */
 .carrito-container {
-    background-color: #e1e1e1;
-    padding: 2em;
+  background-color: #e1e1e1;
+  padding: 2em;
 }
 
 /* === TABLA DEL CARRITO === */
 .tabla-carrito {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    margin-top: 1em;
-    border: 2px solid #4A0606;
-    border-radius: 8px;
-    background-color: #fdfdfd;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin-top: 1em;
+  border: 2px solid #4A0606;
+  border-radius: 8px;
+  background-color: #fdfdfd;
 }
 
 .tabla-carrito th,
 .tabla-carrito td {
-    padding: 1em;
-    vertical-align: middle;
-    text-align: center;
+  padding: 1em;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .tabla-carrito th {
-    border-bottom: 2px solid #4A0606;
-    font-size: 1.1em;
-    color: #4A0606;
-    font-weight: bold;
+  border-bottom: 2px solid #4A0606;
+  font-size: 1.1em;
+  color: #4A0606;
+  font-weight: bold;
 }
 
 .precio-descuento {
-    font-weight: bold;
-    color: #4A0606;
-    font-size: 1.3em;
+  font-weight: bold;
+  color: #4A0606;
+  font-size: 1.3em;
 }
 
 .tabla-carrito td:last-child {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #4A0606;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #4A0606;
 }
 
-.cantidad-btn {/*botones de + y -*/
-    background-color: #4A0606;
-    color: white;
-    border: none;
-    border-radius: 50%; 
-    width: 38px;
-    height: 38px;
-    font-size: 18px;
-    margin: 0 0.5em;
-    cursor: pointer;
+.cantidad-btn {
+  /*botones de + y -*/
+  background-color: #4A0606;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 18px;
+  margin: 0 0.5em;
+  cursor: pointer;
 }
 
-.cantidad {/*el 1 entre el signo + y -*/
-    font-size: 1.4em;
-    font-weight: bold;  
-    color: #4A0606;
+.cantidad {
+  /*el 1 entre el signo + y -*/
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #4A0606;
 }
 
-.totales-carrito {/* panel de totales carrito*/
-    background-color: white;
-    padding: 1.5em;
-    margin-top: 2em;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: 0;
-    border: 1px solid #999;
-    border-radius: 6px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
-    color: #4A0606;
-    font-size: 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.totales-carrito {
+  /* panel de totales carrito*/
+  background-color: white;
+  padding: 1.5em;
+  margin-top: 2em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: 0;
+  border: 1px solid #999;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  color: #4A0606;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.totales-carrito h3 {/*titulo totales carrito*/
-    font-size: 1.2em;
-    font-weight: bold;
-    width: 100%;
-    text-align: center;
-    margin: 2em 0;
-    border-bottom: 2px solid #4A0606; 
-    padding-bottom: 0.5em;
+.totales-carrito h3 {
+  /*titulo totales carrito*/
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  margin: 2em 0;
+  border-bottom: 2px solid #4A0606;
+  padding-bottom: 0.5em;
 }
 
-.totales-carrito p { /*oraciones */
-    margin: 0.5em 0;
-    font-size: 1.1em;
-    width: 100%;
-    text-align: right; 
-    display: flex;
-    justify-content: flex-end; /* Alinea el contenido dentro del p a la derecha */
-    align-items: center;
-    gap: 0.5em;
+.totales-carrito p {
+  /*oraciones */
+  margin: 0.5em 0;
+  font-size: 1.1em;
+  width: 100%;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  /* Alinea el contenido dentro del p a la derecha */
+  align-items: center;
+  gap: 0.5em;
 }
 
-.total-final { /*precio final*/
-    font-size: 1.4em;
-    font-weight: bold;
-    margin-top: 1em;
-    color: #4A0606;
-    width: 100%;
-    text-align: right;
+.total-final {
+  /*precio final*/
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-top: 1em;
+  color: #4A0606;
+  width: 100%;
+  text-align: right;
 }
 
-.ver-tiempos { /*boton de ver tiempos de envío*/
-    background-color: #4A0606;
-    color: white;
-    border: none;
-    padding: 0.3em 0.8em;
-    font-weight: bold;
-    font-size: 0.95em;
-    border-radius: 4px;
-    cursor: pointer;
-    white-space: nowrap;
+.ver-tiempos {
+  /*boton de ver tiempos de envío*/
+  background-color: #4A0606;
+  color: white;
+  border: none;
+  padding: 0.3em 0.8em;
+  font-weight: bold;
+  font-size: 0.95em;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
-.comprar-btn { /*boton de comprar*/
-    background-color: #4A0606;
-    color: white;
-    border: none;
-    padding: 1em;
-    font-weight: bold;
-    font-size: 1em;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 1.5em;
-    border-radius: 6px;
+.comprar-btn {
+  /*boton de comprar*/
+  background-color: #4A0606;
+  color: white;
+  border: none;
+  padding: 1em;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1.5em;
+  border-radius: 6px;
 }
 
 /* ----------- PANTALLAS ----------- */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    padding-left: 0;
-  }
-
-  .iconos {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
   .titulo-carrito {
     font-size: 1.5em;
     padding: 0.8em 0;
@@ -266,7 +325,8 @@
 
   .tabla-carrito table {
     width: 100%;
-    min-width: 600px; /* para evitar que se rompa la estructura */
+    min-width: 600px;
+    /* para evitar que se rompa la estructura */
   }
 
   .vino-info {
@@ -294,17 +354,21 @@
     font-size: 1.2em;
   }
 
-   .totales-carrito {
-    width: 99%;                /* ancho máximo más chico que 100% */
-    max-width: 99vw;           /* evita desborde horizontal */
+  .totales-carrito {
+    width: 99%;
+    /* ancho máximo más chico que 100% */
+    max-width: 99vw;
+    /* evita desborde horizontal */
     font-size: 0.95em;
     margin: 2em auto 1em;
-    padding: 1em;              /* padding uniforme */
+    padding: 1em;
+    /* padding uniforme */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    box-sizing: border-box;    /* para que padding no sume al ancho */
+    box-sizing: border-box;
+    /* para que padding no sume al ancho */
   }
 
   .totales-carrito p {

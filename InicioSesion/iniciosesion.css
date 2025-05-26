@@ -148,7 +148,7 @@ button:hover {
     color: #5b0d0d;
     text-decoration: underline;
 }
-  
+
 /* Modal */
 .modal {
     display: none;
@@ -197,28 +197,65 @@ button:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .iconos {
-        margin-top: 1rem;
-    }
-
     .contenedor {
         padding: 1rem;
         margin: 2rem auto;
+    }
+}
+
+/* Estilos para el botón hamburguesa */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 26px;
+    color: #4A0606;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 80px;
+        /* ajusta según la altura de tu header */
+        right: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        /*transparente */
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        gap: 10px;
+        width: 200px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+    }
+
+    nav ul.mostrar {
+        display: flex;
+    }
+
+    nav ul li a {
+        color: #fff;
+        /* letras blancas */
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: normal;
+    }
+
+    nav ul li a:hover {
+        color: #ddd;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .iconos {
+        display: flex;
+        align-items: center;
+    }
+
+    .iconos img {
+        margin-left: 10px;
     }
 }

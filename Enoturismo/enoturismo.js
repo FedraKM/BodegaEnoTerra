@@ -32,25 +32,32 @@ document.getElementById('btn-cerrar').onclick = () => {
   document.getElementById('modal').style.display = 'none';
 };
 
-  //Funcionamiento formulario
-  document.addEventListener('DOMContentLoaded', () => {
-    const botonReservar = document.querySelector('.reservar-btn');
-    const popup = document.getElementById('popupFormulario');
-    const cerrarBtn = document.querySelector('.cerrar-popup');
+//Funcionamiento formulario
+document.addEventListener('DOMContentLoaded', () => {
+  const botonReservar = document.querySelector('.reservar-btn');
+  const popup = document.getElementById('popupFormulario');
+  const cerrarBtn = document.querySelector('.cerrar-popup');
 
-    botonReservar.addEventListener('click', () => {
-      popup.style.display = 'block';
-    });
-
-    cerrarBtn.addEventListener('click', () => {
-      popup.style.display = 'none';
-    });
-
-    // Cierra el popup si se hace clic fuera del formulario
-    window.addEventListener('click', (e) => {
-      if (e.target === popup) {
-        popup.style.display = 'none';
-      }
-    });
+  botonReservar.addEventListener('click', () => {
+    popup.style.display = 'block';
   });
-  
+
+  cerrarBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  // Cierra el popup si se hace clic fuera del formulario
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.style.display = 'none';
+    }
+  });
+});
+
+//Abrir y cerrar menú en el celular
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('nav ul');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('mostrar');
+});
