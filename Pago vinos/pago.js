@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Botón pagar con validación de carrito y formulario
+/* Botón pagar con validación de carrito y formulario
 document.querySelector('.pagar-ahora')?.addEventListener('click', () => {
   const carritoGuardado = sessionStorage.getItem('carrito');
   const productosEnCarrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
@@ -139,7 +139,7 @@ document.querySelector('.pagar-ahora')?.addEventListener('click', () => {
   window.dispatchEvent(new Event('carritoActualizado'));
 
   window.location.href = '../compra-realizada/compra-realizada.html';
-});
+});*/
 
 // Botón 'Cancelar compra'
 document.querySelector('.cancelar-compra')?.addEventListener('click', () => {
@@ -169,4 +169,56 @@ const navMenu = document.querySelector('nav ul');
 
 menuToggle.addEventListener('click', () => {
   navMenu.classList.toggle('mostrar');
+});
+
+//API DE MERCADO PAGO
+document.querySelector('.pagar-ahora').addEventListener('click', async () => {
+  const carritoGuardado = sessionStorage.getItem('carrito');
+  const productosEnCarrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
+
+  if (productosEnCarrito.length === 0) {
+    alert('Tu carrito está vacío. Agregá productos antes de continuar con el pago.');
+    return;
+  }
+
+  const camposObligatorios = document.querySelectorAll('.formulario input[required], .formulario select[required]');
+  const formularioCompleto = Array.from(camposObligatorios).every(campo => campo.value.trim() !== '');
+
+  if (!formularioCompleto) {
+    alert('Por favor, completá todos los campos obligatorios antes de continuar.');
+    return;
+  }
+
+  if (!confirm('¿Confirmás tu compra?')) return;
+
+  // Datos de ejemplo (puede adaptarse si agregás varios productos al carrito)
+  const producto = {
+    descripcion: "Famiglia EnoTerra Malbec (Caja 6u)",
+    precio: 39335,
+    cantidad: 1
+  };
+
+  try {
+    const response = await fetch('http://localhost:3000/crear-preferencia', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(producto)
+    });
+
+    const data = await response.json();
+    console.log("Respuesta del servidor:", data);
+
+    if (data.init_point) {
+      sessionStorage.removeItem('carrito');
+      window.dispatchEvent(new Event('carritoActualizado'));
+      window.location.href = data.init_point; // Redirige al checkout de Mercado Pago
+    } else {
+      alert('No se pudo generar el link de pago.');
+    }
+  } catch (error) {
+    console.error('Error al iniciar el pago:', error);
+    alert('Hubo un problema al iniciar el pago. Intente más tarde.');
+  }
 });
