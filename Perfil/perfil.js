@@ -1,5 +1,5 @@
 // Funciones del menu
-document.getElementById('link-home').onclick = () => window.location.href = 'index.html';
+document.getElementById('link-home').onclick = () => window.location.href = '/index.html';
 document.getElementById('link-vinos').onclick = () => window.location.href = '../Vinos/vinos.html';
 document.getElementById('link-enoturismo').onclick = () => window.location.href = '../Enoturismo/enoturismo.html';
 document.getElementById('link-gastronomia').onclick = () => window.location.href = '../Restaurante/restaurante.html';
@@ -24,7 +24,7 @@ if (!usuario) {
 
 document.getElementById('cerrar-sesion').onclick = () => {
   localStorage.removeItem("usuarioActual");
-  window.location.href = "index.html";
+  window.location.href = "/index.html";
 };
 
 //Abrir y cerrar menú en el celular

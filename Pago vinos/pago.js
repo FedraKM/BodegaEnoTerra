@@ -1,5 +1,5 @@
 // Navegación de menú
-document.getElementById('link-home').onclick = () => window.location.href = 'index.html';
+document.getElementById('link-home').onclick = () => window.location.href = '/index.html';
 document.getElementById('link-vinos').onclick = () => window.location.href = '../Vinos/vinos.html';
 document.getElementById('link-enoturismo').onclick = () => window.location.href = '../Enoturismo/enoturismo.html';
 document.getElementById('link-gastronomia').onclick = () => window.location.href = '../Restaurante/restaurante.html';
@@ -156,7 +156,7 @@ document.querySelector('.cancelar-compra')?.addEventListener('click', () => {
 // Botón 'Aceptar' en el modal
 document.getElementById('btn-cerrar-success')?.addEventListener('click', () => {
   // Redirigir al home
-  window.location.href = 'index.html';
+  window.location.href = '/index.html';
 });
 
 
