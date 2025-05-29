@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bodega EnoTerra | Configuración</title>
+  <link rel="stylesheet" href="configuracion_admin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img id="icon-usuario" src="../Imagenes/usuario.png" alt="Usuario" />
+      <h2>Administrador</h2>
+    </div>
+
+    <nav>
+      <a href="#" id="link-dashboard">Dashboard</a>
+      <a href="#" id="link-productos">Productos</a>
+      <a href="#" id="link-experiencias">Experiencias</a>
+      <a href="#" id="link-reservas">Reservas</a>
+      <a href="#" id="link-reseñas">Reseñas</a>
+      <a href="#" class="activo" id="link-configuracion">Configuración</a>
+      <a href="#" id="link-salir">Cerrar sesión</a>
+    </nav>
+  </aside>
+
+  <div class="contenedor">
+    <section class="banner">
+      <h1>Configuración</h1>
+    </section>
+
+    <section class="contenedor-configuracion">
+      <h2>Datos del Administrador</h2>
+      <label>Nombre de usuario:</label>
+      <input type="text" id="admin-nombre" value="Administrador" />
+
+      <label>Email de contacto:</label>
+      <input type="email" id="admin-email" value="admin@enoterra.com" />
+
+      <label>Contraseña:</label>
+      <input type="password" id="admin-pass" value="********" />
+
+      <h2>Preferencias del Sitio</h2>
+      <label>Logo de la bodega:</label>
+      <input type="file" id="logo-bodega" />
+
+      <label>Imagen de fondo:</label>
+      <input type="file" id="fondo-bodega" />
+
+      <label>Horario de atención:</label>
+      <input type="text" id="horario-atencion" value="10:00 a 18:00 hs" />
+
+      <h2>Opciones de Reservas</h2>
+      <label>Límite máximo de reservas por horario:</label>
+      <input type="number" id="limite-reservas" value="10" />
+
+      <label>
+        <input type="checkbox" id="activar-reservas" checked />
+        Habilitar reservas online
+      </label>
+
+      <h2>Reseñas</h2>
+      <label>
+        <input type="checkbox" id="auto-publicar-reseñas" />
+        Publicar reseñas automáticamente
+      </label>
+
+      <h2>Reportes</h2>
+      <label>Frecuencia de envío:</label>
+      <select id="frecuencia-reportes">
+        <option value="diario">Diario</option>
+        <option value="semanal" selected>Semanal</option>
+        <option value="mensual">Mensual</option>
+      </select>
+
+      <button onclick="guardarConfiguracion()">Guardar Cambios</button>
+    </section>
+  </div>
+
+  <script src="configuracion_admin.js"></script>
+</body>
+
+</html>

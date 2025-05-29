@@ -59,7 +59,7 @@ body {
 }
 
 .banner h1 {
-    font-size: 30px;
+  font-size: 30px;
   margin-top: 0;
   color: #333;
 }
@@ -85,7 +85,7 @@ body {
 }
 
 .contenedor-productos{
-    overflow-x: auto;
+  overflow-x: auto;
   padding: 20px;
 }
 
@@ -100,7 +100,7 @@ body {
 }
 
 .producto-admin {
-    position: relative; /*importante para ubicar el span */
+  position: relative; /*importante para ubicar el span */
   flex: 0 0 auto;
   width: 250px;
   border: 1px solid #ccc;
@@ -134,13 +134,13 @@ body {
 
 .descuento {
   background-color: #111;
-    color: white;
-    font-size: 12px;
-    border-radius: 50%;
-    padding: 10px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 input[type="text"],

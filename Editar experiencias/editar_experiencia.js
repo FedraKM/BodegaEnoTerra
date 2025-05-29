@@ -9,3 +9,4 @@ document.getElementById('link-salir').onclick = () => window.location.href = '/i
 
 // Ícono USUARIO
 document.getElementById('icon-usuario').onclick = () => window.location.href = '../Perfil%20Administrador/perfilAdmin.html';
+

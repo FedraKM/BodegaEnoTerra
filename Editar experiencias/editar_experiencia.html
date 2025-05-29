@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega EnoTerra | Administrar Productos</title>
+    <link rel="stylesheet" href="editar_experiencia.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img id="icon-usuario" src="../Imagenes/usuario.png" alt="Usuario">
+            <h2>Administrador</h2>
+        </div>
+
+        <nav>
+
+            <a href="#" id="link-dashboard">Dashboard</a>
+            <a href="#" id="link-productos">Productos</a>
+            <a href="#" class="activo" id="link-experiencias">Experiencias</a>
+            <a href="#" id="link-reservas">Reservas</a>
+            <a href="#" id="link-reseñas">reseñas</a>
+            <a href="#" id="link-configuracion">Configuración</a>
+            <a href="#" id="link-salir">Cerrar sesión</a>
+
+        </nav>
+    </aside>
+
+    <div class="contenedor">
+        <section class="banner">
+            <h1>Administrar experiencias</h1>
+        </section>
+
+        <div class="contenedor-experiencia">
+
+            <section class="experiencia" id="experiencia-admin">
+
+                <!-- Reservas -->
+                <section class="reservas">
+                    <!-- Box Nueva Experiencia -->
+                    <div class="box nueva-experiencia">
+                        <div class="icon-container">
+                            <label for="imagen-exp">
+                                <img src="../Imagenes/mas copy.png" alt="Subir Imagen" id="subir" class="res-icon">
+                            </label>
+                            <input type="file" id="imagen-exp" style="display: none;">
+                        </div>
+
+                        <label>Experiencia:</label>
+                        <input type="text" value="" class="nombre-experiencia">
+
+                        <h2>Hacer reserva</h2>
+
+                        <label>Horarios:</label>
+                        <input type="text" value="" class="horario">
+
+                        <button class="btn-reservar">RESERVAR</button>
+
+                        <div class="botones-admin">
+                            <button class="btn-guardar">GUARDAR</button>
+                            <button class="btn-eliminar">ELIMINAR</button>
+                        </div>
+                    </div>
+
+                    <!-- Box Nueva Experiencia -->
+                    <div class="box nueva-experiencia">
+                        <div class="icon-container">
+                            <label for="imagen-exp">
+                                <img src="../Imagenes/mas copy.png" alt="Subir Imagen" id="subir" class="res-icon">
+                            </label>
+                            <input type="file" id="imagen-exp" style="display: none;">
+                        </div>
+
+                        <label>Experiencia:</label>
+                        <input type="text" value="" class="nombre-experiencia">
+
+                        <h2>Hacer reserva</h2>
+
+                        <label>Horarios:</label>
+                        <input type="text" value="" class="horario">
+
+                        <button class="btn-reservar">RESERVAR</button>
+
+                        <div class="botones-admin">
+                            <button class="btn-guardar">GUARDAR</button>
+                            <button class="btn-eliminar">ELIMINAR</button>
+                        </div>
+                    </div>
+
+                    <!-- Box Degustaciones -->
+                    <div class="box degustaciones">
+                        <div class="icon-container">
+                            <img src="../Imagenes/telefonoIcono.png" alt="Teléfono" class="res-icon" />
+                        </div>
+
+                        <label>Experiencia:</label>
+                        <input type="text" value="DEGUSTACIONES" class="nombre-experiencia">
+
+                        <h2>Hacer reserva</h2>
+
+                        <label>Horarios:</label>
+                        <input type="text" value="10:30 hs o 11:30 hs" class="horario">
+
+                        <button class="btn-reservar">RESERVAR</button>
+
+                        <div class="botones-admin">
+                            <button class="btn-guardar">GUARDAR</button>
+                            <button class="btn-eliminar">ELIMINAR</button>
+                        </div>
+                    </div>
+
+                    <!--Almuerzo-->
+                    <div class="box almuerzos">
+                        <div class="icon-container">
+                            <img src="../Imagenes/cubiertos - logos.png" alt="Cubiertos" class="res-icon" />
+                        </div>
+
+                        <label>Experiencia:</label>
+                        <input type="text" value="ALMUERZO" class="nombre-experiencia">
+
+                        <h2>Hacer reserva</h2>
+
+                        <label>Horarios:</label>
+                        <input type="text" value="12:30 hs o 14:30 hs" class="horario">
+
+                        <button class="btn-reservar">RESERVAR</button>
+
+                        <div class="botones-admin">
+                            <button class="btn-guardar">GUARDAR</button>
+                            <button class="btn-eliminar">ELIMINAR</button>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="editar_experiencia.js"></script>
+
+</body>
+
+</html>

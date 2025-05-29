@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+/* Barra lateral */
+.sidebar {
+  background-color: #600000;
+  color: white;
+  width: 220px;
+  padding: 20px;
+  height: 110vh;
+  box-sizing: border-box;
+  position: fixed;
+  overflow-y: auto;
+  /* opcional si tenés mucho contenido en la sidebar */
+  border-right: 1px solid #ccc;
+  /* opcional, para separarla visualmente */
+}
+
+.sidebar h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.sidebar nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.activo {
+  background-color: #4a0000;
+}
+
+/* Contenido principal */
+.contenedor {
+  flex: 1;
+  padding: 20px;
+  margin-left: 220px;
+  max-width: calc(100vw - 220px);
+  /* limita el ancho para que no se superponga a la sidebar */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Banner */
+.banner {
+  flex: 1;
+  padding: 20px;
+}
+
+.banner h1 {
+  font-size: 30px;
+  margin-top: 0;
+  color: #333;
+  margin-bottom: 10px; /* reduce margen inferior */
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-left: -15px;
+}
+
+.sidebar-header img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.sidebar-header h2 {
+  color: white;
+  font-size: 1.5rem;
+  padding-right: 10px;
+}
+
+.contenedor-reseñas {
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.tabla-reseñas {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Oswald', sans-serif;
+}
+
+.tabla-reseñas th,
+.tabla-reseñas td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  font-weight: 400;
+  vertical-align: top;
+}
+
+.tabla-reseñas th {
+  background-color: #f4f4f4;
+  font-weight: 700;
+}
+
+.tabla-reseñas tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+button {
+  padding: 5px 10px;
+  font-family: 'Oswald', sans-serif;
+  cursor: pointer;
+  border: none;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+.filtros {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-family: 'Oswald', sans-serif;
+}
+
+.filtros label {
+  font-weight: 700;
+}
+
+.filtros input, .filtros select, .filtros button {
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-family: 'Oswald', sans-serif;
+}

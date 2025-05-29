@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bodega EnoTerra | Administrar Reservas</title>
+    <link rel="stylesheet" href="editar_reserva.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img id="icon-usuario" src="../Imagenes/usuario.png" alt="Usuario" />
+            <h2>Administrador</h2>
+        </div>
+
+        <nav>
+            <a href="#" id="link-dashboard">Dashboard</a>
+            <a href="#" id="link-productos">Productos</a>
+            <a href="#" id="link-experiencias">Experiencias</a>
+            <a href="#" class="activo" id="link-reservas">Reservas</a>
+            <a href="#" id="link-reseñas">reseñas</a>
+            <a href="#" id="link-configuracion">Configuración</a>
+            <a href="#" id="link-salir">Cerrar sesión</a>
+        </nav>
+    </aside>
+
+    <div class="contenedor">
+        <section class="banner">
+            <h1>Administrar reservas</h1>
+        </section>
+
+        <section class="contenedor-reservas">
+            <table class="tabla-reservas">
+                <thead>
+                    <tr>
+                        <th>Nombre Cliente</th>
+                        <th>Experiencia</th>
+                        <th>Fecha y Hora</th>
+                        <th>Cantidad</th>
+                        <th>Estado</th>
+                        <th>Contacto</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="lista-reservas">
+                    <!-- Se cargan reservas aquí -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="editar_reserva.js"></script>
+</body>
+
+</html>
