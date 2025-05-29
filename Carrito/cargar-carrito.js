@@ -3,7 +3,6 @@ fetch('../Carrito/carrito.html')
   .then(html => {
     document.getElementById('contenedor-carrito').innerHTML = html;
 
-    // ELEMENTOS DEL CARRITO
     const carritoLateral = document.getElementById('carrito-lateral');
     const listaCarrito = document.getElementById('lista-carrito');
     const totalCarrito = document.getElementById('total-carrito');
@@ -52,13 +51,16 @@ fetch('../Carrito/carrito.html')
 
       sessionStorage.setItem('carrito', JSON.stringify(nuevosItems));
 
-      // Disparar evento global de carrito actualizado
+      // Evento global de carrito actualizado
       window.dispatchEvent(new Event('carritoActualizado'));
     }
 
     function crearItemCarrito({ nombre, imagen, cantidad, precio }) {
       const item = document.createElement('li');
       item.classList.add('item-carrito');
+
+      const precioTotal = precio * cantidad;
+
       item.innerHTML = `
         <img src="${imagen}" alt="" class="img-carrito">
         <div class="info-carrito">
@@ -71,14 +73,16 @@ fetch('../Carrito/carrito.html')
               <img src="../Imagenes/mas.png" class="btn-mas">
             </div>
             <div class="precio-y-eliminar">
-              <span class="precio-item">$${(precio * cantidad).toLocaleString('es-AR')}</span>
+              <span class="precio-item">$${precioTotal.toLocaleString('es-AR')}</span>
               <img src="../Imagenes/multiple.png" class="btn-eliminar">
             </div>
           </div>
         </div>
       `;
 
-      // Eventos individuales
+      listaCarrito.appendChild(item);
+
+      // Eventos sumar, restar y eliminar
       item.querySelector('.btn-mas').addEventListener('click', () => {
         cantidad++;
         item.querySelector('.cantidad').textContent = cantidad;
@@ -103,40 +107,38 @@ fetch('../Carrito/carrito.html')
         guardarCarritoEnStorage();
       });
 
-      listaCarrito.appendChild(item);
+      actualizarTotal();
+      guardarCarritoEnStorage();
     }
 
     function restaurarCarritoDesdeStorage() {
-      const items = JSON.parse(sessionStorage.getItem('carrito')) || [];
-      listaCarrito.innerHTML = '';
-      items.forEach(crearItemCarrito);
-      actualizarTotal();
+      const carritoGuardado = sessionStorage.getItem('carrito');
+      if (carritoGuardado) {
+        const items = JSON.parse(carritoGuardado);
+        items.forEach(producto => {
+          crearItemCarrito(producto);
+        });
+      }
     }
 
     function abrirCarrito() {
       overlay.style.display = 'block';
       carritoLateral.classList.add('mostrar');
-
-      // Solo bloquear scroll si es pantalla chica (menos de 768px)
-      if (window.innerWidth < 768) {
-        document.body.classList.add('no-scroll');
-      }
     }
 
     function cerrarCarritoFunc() {
       overlay.style.display = 'none';
       carritoLateral.classList.remove('mostrar');
-      document.body.classList.remove('no-scroll');
     }
 
-    // Mostrar el carrito al hacer clic en el ícono
+    // Ícono carrito
     iconCarrito.addEventListener('click', () => {
       const estaVisible = carritoLateral.classList.contains('mostrar');
       if (estaVisible) {
         cerrarCarritoFunc();
       } else {
-        restaurarCarritoDesdeStorage();
         abrirCarrito();
+        actualizarTotal();
       }
     });
 
@@ -151,7 +153,21 @@ fetch('../Carrito/carrito.html')
       });
     }
 
-    // Restaurar al cargar
+    // Nueva: Enganchar todos los botones "Agregar al carrito" que haya en la página
+    const botonesAgregar = document.querySelectorAll('.agregar-carrito');
+    botonesAgregar.forEach(boton => {
+      boton.addEventListener('click', () => {
+        const producto = boton.closest('.producto');
+        const nombre = producto.querySelector('h3').innerHTML;
+        const precioTexto = producto.querySelector('.precio-descuento').textContent;
+        const imagen = producto.querySelector('img').src;
+        const precioUnitario = parseFloat(precioTexto.replace('$', '').replace(/\./g, ''));
+
+        crearItemCarrito({ nombre, imagen, cantidad: 1, precio: precioUnitario });
+        abrirCarrito();
+      });
+    });
+
+    // Restaurar carrito al cargar
     restaurarCarritoDesdeStorage();
-  })
-  .catch(error => console.error('Error al cargar el carrito:', error));
+  });
