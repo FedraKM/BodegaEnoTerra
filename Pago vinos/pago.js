@@ -10,6 +10,9 @@ document.getElementById('link-contacto').onclick = () => window.location.href = 
 // Íconos
 document.getElementById('icon-usuario').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
 
+//Link de 'Iniciar Sesión'
+document.getElementById('iniciarSesion').onclick = () => window.location.href = '../InicioSesion/iniciosesion.html';
+
 // Función para actualizar el resumen de compra
 function actualizarResumenCompra() {
   const carritoGuardado = sessionStorage.getItem('carrito');
