@@ -142,23 +142,15 @@ document.querySelector('.pagar-ahora')?.addEventListener('click', () => {
 });*/
 
 // Botón 'Cancelar compra'
-document.querySelector('.cancelar-compra')?.addEventListener('click', () => {
-  if (!confirm('¿Deseas cancelar la compra?')) return;
+document.querySelector('.cancelar-compra')?.addEventListener('click', async () => {
+  const confirmar = await mostrarConfirmacion('¿Deseás cancelar la compra?');
+  if (!confirmar) return;
 
-  // Limpiar carrito
   sessionStorage.removeItem('carrito');
 
-  // Mostrar modal con mensaje personalizado
-  document.getElementById('mensaje-modal').textContent = 'La compra ha sido cancelada con éxito.';
-  document.getElementById('modal').style.display = 'flex';
+  await mostrarAlerta('La compra ha sido cancelada con éxito.');
+  window.location.href = '/index.html'; // redirigir al home
 });
-
-// Botón 'Aceptar' en el modal
-document.getElementById('btn-cerrar-success')?.addEventListener('click', () => {
-  // Redirigir al home
-  window.location.href = '/index.html';
-});
-
 
 // Exponer función global para otros scripts
 window.actualizarResumenCompra = actualizarResumenCompra;
@@ -177,7 +169,7 @@ document.querySelector('.pagar-ahora').addEventListener('click', async () => {
   const productosEnCarrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
 
   if (productosEnCarrito.length === 0) {
-    alert('Tu carrito está vacío. Agregá productos antes de continuar con el pago.');
+    await mostrarAlerta('Tu carrito está vacío. Agregá productos antes de continuar con el pago.');
     return;
   }
 
@@ -185,18 +177,27 @@ document.querySelector('.pagar-ahora').addEventListener('click', async () => {
   const formularioCompleto = Array.from(camposObligatorios).every(campo => campo.value.trim() !== '');
 
   if (!formularioCompleto) {
-    alert('Por favor, completá todos los campos obligatorios antes de continuar.');
+    await mostrarAlerta('Por favor, completá todos los campos obligatorios antes de continuar.');
     return;
   }
 
-  if (!confirm('¿Confirmás tu compra?')) return;
+  const confirmar = await mostrarConfirmacion('¿Confirmás tu compra?');
+  if (!confirmar) return;
 
-  // Datos de ejemplo (puede adaptarse si agregás varios productos al carrito)
-  const producto = {
-    descripcion: "Famiglia EnoTerra Malbec (Caja 6u)",
-    precio: 39335,
-    cantidad: 1
-  };
+  // Construir los productos a enviar
+  const productos = [];
+
+  productosEnCarrito.forEach(item => {
+    const precioUnitario = Number(item.precio.toString().replace(/[^\d.-]/g, ''));
+    for (let i = 1; i <= item.cantidad; i++) {
+      productos.push({
+        title: `${item.nombre} ${i}`,
+        unit_price: precioUnitario,
+        quantity: 1,
+        currency_id: "ARS"
+      });
+    }
+  });
 
   try {
     const response = await fetch('http://localhost:3000/crear-preferencia', {
@@ -204,7 +205,7 @@ document.querySelector('.pagar-ahora').addEventListener('click', async () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(producto)
+      body: JSON.stringify({ items: productos })
     });
 
     const data = await response.json();
@@ -213,12 +214,65 @@ document.querySelector('.pagar-ahora').addEventListener('click', async () => {
     if (data.init_point) {
       sessionStorage.removeItem('carrito');
       window.dispatchEvent(new Event('carritoActualizado'));
-      window.location.href = data.init_point; // Redirige al checkout de Mercado Pago
+      window.location.href = data.init_point;
     } else {
-      alert('No se pudo generar el link de pago.');
+      await mostrarAlerta('No se pudo generar el link de pago.');
     }
   } catch (error) {
     console.error('Error al iniciar el pago:', error);
-    alert('Hubo un problema al iniciar el pago. Intente más tarde.');
+    await mostrarAlerta('Hubo un problema al iniciar el pago. Intente más tarde.');
   }
 });
+
+function mostrarConfirmacion(mensaje) {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('modal-flotante');
+    const mensajeElemento = document.getElementById('mensaje-modal-flotante');
+    const btnAceptar = document.getElementById('btn-confirmar');
+    const btnCancelar = document.getElementById('btn-cancelar');
+
+    mensajeElemento.textContent = mensaje;
+    modal.classList.remove('oculto');
+
+    function limpiar() {
+      modal.classList.add('oculto');
+      btnAceptar.removeEventListener('click', confirmar);
+      btnCancelar.removeEventListener('click', cancelar);
+    }
+
+    function confirmar() {
+      limpiar();
+      resolve(true);
+    }
+
+    function cancelar() {
+      limpiar();
+      resolve(false);
+    }
+
+    btnAceptar.addEventListener('click', confirmar);
+    btnCancelar.addEventListener('click', cancelar);
+  });
+}
+
+function mostrarAlerta(mensaje) {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('modal-flotante');
+    const mensajeElemento = document.getElementById('mensaje-modal-flotante');
+    const btnAceptar = document.getElementById('btn-confirmar');
+    const btnCancelar = document.getElementById('btn-cancelar');
+
+    mensajeElemento.textContent = mensaje;
+    modal.classList.remove('oculto');
+    btnCancelar.style.display = 'none';
+
+    function cerrar() {
+      modal.classList.add('oculto');
+      btnAceptar.removeEventListener('click', cerrar);
+      btnCancelar.style.display = 'inline-block';
+      resolve();
+    }
+
+    btnAceptar.addEventListener('click', cerrar);
+  });
+}

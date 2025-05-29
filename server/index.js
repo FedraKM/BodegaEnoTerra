@@ -16,37 +16,27 @@ const mercadopago = new MercadoPagoConfig({
 
 app.post('/crear-preferencia', async (req, res) => {
   try {
-    const { descripcion, precio, cantidad } = req.body;
+    const { items } = req.body;
 
     const preference = new Preference(mercadopago);
 
     const preferenceData = {
-      items: [
-        {
-          title: descripcion,
-          unit_price: Number(precio),
-          quantity: Number(cantidad),
-          currency_id: 'ARS'
-        }
-      ],
+      items: items,
       back_urls: {
-        success: "https://www.tusitio.com/pago-exitoso",
-        failure: "https://www.tusitio.com/pago-fallido",
-        pending: "https://www.tusitio.com/pago-pendiente"
+        success: "http://localhost:5500/compra-realizada.html",
+        failure: "http://localhost:5500/pago.html",
+        pending: "http://localhost:5500/pago.html"
       },
       auto_return: "approved"
     };
 
-    // (opcional) Ver lo que se está enviando:
     console.log("Enviando preferencia a Mercado Pago:", preferenceData);
 
     const response = await preference.create({ body: preferenceData });
 
     res.json({ init_point: response.init_point });
-
   } catch (error) {
-    console.error('Error al crear preferencia (detalle):', error.message);
-    console.error('Error completo:', error);
+    console.error('Error al crear preferencia:', error);
     res.status(500).json({ error: 'No se pudo crear la preferencia' });
   }
 });

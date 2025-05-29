@@ -447,6 +447,75 @@ nav ul li a {
   transform: scale(1.03);
 }
 
+/*modal mensajes*/
+.modal-flotante {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.modal-contenido {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  font-family: 'Inria Serif', serif;
+}
+
+.botones-modal {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column; /* Columnas en celular */
+  gap: 0.8rem;
+}
+
+.botones-modal button {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+}
+
+#btn-confirmar {
+  background-color: #5b0d0d;;
+  color: white;
+}
+
+#btn-cancelar {
+  background-color: #ccc;
+}
+
+.oculto {
+  display: none;
+}
+
+/* Solo para pantallas grandes (opcional) */
+@media (min-width: 600px) {
+  .botones-modal {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .botones-modal button {
+    width: auto;
+    min-width: 120px;
+  }
+}
+
 /*Celulares*/
 /* Estilos para el botón hamburguesa */
 .menu-toggle {
