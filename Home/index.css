@@ -89,6 +89,11 @@ nav ul li a {
   cursor: pointer;
 }
 
+h2{
+  text-align: center;
+  color: #4A0606;
+}
+
 /*Footer*/
 footer {
   background-color: #5b0d0d;

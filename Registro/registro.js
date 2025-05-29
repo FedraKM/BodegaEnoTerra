@@ -1,5 +1,6 @@
 //Funciones del menu
 document.getElementById('link-home').onclick = () => window.location.href = '/index.html';
+document.getElementById('link-nosotros').onclick = () => window.location.href = '../Nosotros/nosotros.html'
 document.getElementById('link-vinos').onclick = () => window.location.href = '../Vinos/vinos.html';
 document.getElementById('link-enoturismo').onclick = () => window.location.href = '../Enoturismo/enoturismo.html';
 document.getElementById('link-gastronomia').onclick = () => window.location.href = '../Restaurante/restaurante.html';
