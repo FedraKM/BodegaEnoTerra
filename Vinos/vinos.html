@@ -7,9 +7,9 @@
   <title>Vinos | EnoTerra</title>
   <link rel="stylesheet" href="../Vinos/vinos.css">
   <link rel="stylesheet" href="../Busqueda/busqueda.css">
+  <link rel="stylesheet" href="../Carrito/carrito.css">
   <link href="https://fonts.googleapis.com/css2?family=Inria+Serif&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -100,33 +100,10 @@
     </div>
   </section>
 
-  <!-- Carrito lateral -->
-  <div id="carrito-lateral">
-    <div class="carrito-header">
-      <h2>MI CARRITO</h2>
-      <img id="cerrar-carrito" src="../Imagenes/multiple.png" alt="Cerrar">
-    </div>
-    <ul id="lista-carrito"></ul>
-    <div class="carrito-body">
-      <p id="carrito-vacio">El carrito está vacío</p>
-    </div>
-    <div class="carrito-footer">
-      <div class="total-carrito">
-        <span class="label-total">Total:</span>
-        <span id="total-carrito">$0</span>
-      </div>
-      <p class="nota-envio">Gastos de envío y descuentos calculado al momento de pagar</p>
-      <div class="botonesCarrito">
-        <button class="btn-comprar">COMPRAR</button>
-        <button class="btn-seguir">SEGUIR COMPRANDO</button>
-      </div>
-      <p class="envio-gratis">¡YA TENÉS ENVÍO GRATIS!</p>
-    </div>
-  </div>
-
-  <div id="overlay"></div>
+  <div id="contenedor-carrito"></div>
 
   <script src="vinos.js"></script>
+  <script src="../Carrito/cargar-carrito.js"></script>
   <script src="../Busqueda/busqueda.js"></script>
 
 </body>
