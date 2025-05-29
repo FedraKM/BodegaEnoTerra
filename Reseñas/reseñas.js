@@ -123,7 +123,7 @@ function mostrarReseñas() {
             <p>${reseña.comentario}</p>
             ${reseña.imagen ? `<img src="${reseña.imagen}" class="imagen-reseña">` : ''}
             <div class="valoracion">${"★".repeat(reseña.valoracion)}${"☆".repeat(5 - reseña.valoracion)}</div>
-            <button class="btn-eliminar" data-index="${index}">X</button>
+            <!-- <button class="btn-eliminar" data-index="${index}">X</button> -->
         `;
 
         contenedor.appendChild(item);
@@ -134,20 +134,20 @@ function mostrarReseñas() {
     });
 
     // Agregar evento a botones eliminar
-    document.querySelectorAll('.btn-eliminar').forEach(boton => {
+    /*document.querySelectorAll('.btn-eliminar').forEach(boton => {
         boton.addEventListener('click', e => {
             const idx = e.target.getAttribute('data-index');
             eliminarReseña(idx);
         });
-    });
+    });*/
 }
 
-function eliminarReseña(indice) {
+/*function eliminarReseña(indice) {
     const reseñas = JSON.parse(localStorage.getItem("reseñas")) || [];
     reseñas.splice(indice, 1);
     localStorage.setItem("reseñas", JSON.stringify(reseñas));
     mostrarReseñas();
-}
+}*/
 
 // Cargar reseñas guardadas al cargar la página
 mostrarReseñas();

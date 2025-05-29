@@ -241,7 +241,7 @@ button:hover {
   font-size: 20px;
 }
 
-.btn-eliminar {
+/*.btn-eliminar {
   padding: 6px 12px;
   background-color: #671414;
   color: #fff;
@@ -258,7 +258,7 @@ button:hover {
 
 .btn-eliminar:hover {
   background-color: #4A0606;
-}
+}*/
 
 /*Footer*/
 footer {
